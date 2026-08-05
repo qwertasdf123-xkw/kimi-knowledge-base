@@ -1,3 +1,13 @@
+---
+title: linux文件查询
+desc: 打包复习 ls / cat / less / head / tail / file / stat 七条查看类命令，强调三种时间戳与大文件处理。
+type: 笔记
+module: Linux目录
+pdf: 未知
+pdf_size: 未知
+scope: 7 条文件查看命令 + 时间戳（atime/mtime/ctime/birth）
+status: 完成
+---
 # Linux 文件查看类命令：`ls` / `cat` / `less` / `head` / `tail` / `file` / `stat`
 
 > 本篇把"看文件"相关的 7 条命令打包复习，刻意强调：

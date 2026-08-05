@@ -1,3 +1,13 @@
+---
+title: Linux vfs虚拟文件系统
+desc: 打通用户态命令的内核实现路径：VFS 四大核心对象、路径解析、dcache 与 page cache。
+type: 笔记
+module: Linux目录
+pdf: 未知
+pdf_size: 未知
+scope: super_block/inode/dentry/file + RCU walk + dcache/page cache
+status: 完成
+---
 # Linux VFS（虚拟文件系统）
 
 > 本篇把前面所有"用户态命令"（`ls` / `cd` / `cat` / `find` / `cp` / `stat` ...）的**内核实现路径**打通。 重点：

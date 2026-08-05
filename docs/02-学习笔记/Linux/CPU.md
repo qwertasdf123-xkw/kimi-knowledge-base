@@ -1,3 +1,13 @@
+---
+title: CPU
+desc: psutil 系统监控（CPU/内存/磁盘/网络）、IP 地址处理与 paramiko SSH 的 Python 运维速查备忘。
+type: 笔记
+module: 根目录
+pdf: 未知
+pdf_size: 未知
+scope: psutil / IP / paramiko 常用 API
+status: 进行中
+---
 cpu-times
 cpu-count
 注意：logical=false是真正的物理核心数

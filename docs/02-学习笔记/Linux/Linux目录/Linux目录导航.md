@@ -1,3 +1,13 @@
+---
+title: Linux目录导航
+desc: 聚焦 pwd 与 cd 的行为细节，讲清符号链接场景差异与 $PWD/$OLDPWD 的 shell 内部状态。
+type: 笔记
+module: Linux目录
+pdf: 未知
+pdf_size: 未知
+scope: pwd / cd / 符号链接 / shell 内置命令
+status: 完成
+---
 # Linux 文件导航复习（一）：`pwd` 与 `cd`
 
 > 本篇聚焦最基础、但最容易"知其然不知其所以然"的两条命令：`pwd` 与 `cd`。 重点讲清楚 **符号链接场景下** 的行为差异，以及 shell 内部状态（`$PWD` / `$OLDPWD`）和 **shell 内置** 概念。

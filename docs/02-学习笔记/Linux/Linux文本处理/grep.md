@@ -1,3 +1,13 @@
+---
+title: grep
+desc: 系统讲解 grep 逐行模式匹配，覆盖 BRE/ERE/PCRE 三大流派与管道筛选用法（面试强化版）。
+type: 笔记
+module: Linux文本处理
+pdf: 未知
+pdf_size: 未知
+scope: grep 选项 / 正则三流派 / 管道组合
+status: 完成
+---
 # Linux grep 命令（面试强化版）
 
 > 本文系统讲解 Linux **grep** —— 文本搜索的"瑞士军刀"。grep 本身只做一件事：**逐行匹配模式**。

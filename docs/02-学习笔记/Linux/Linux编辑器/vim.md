@@ -1,3 +1,13 @@
+---
+title: vim
+desc: vim 编辑器 CentOS-7 实操笔记，专注日常使用所需的快捷键与命令。
+type: 笔记
+module: Linux编辑器
+pdf: 未知
+pdf_size: 未知
+scope: vim 模式 / 快捷键 / 配置文件（CentOS-7 实操版）
+status: 完成
+---
 # Linux vim 编辑器（CentOS-7 实操版）
 
 > 本文是 **vim 编辑器的实操笔记**——按 CentOS-7 教学路径，专注**日常使用**所需的快捷键与命令。所有结论以本地 `man vim` / `vimtutor` 语义为准。

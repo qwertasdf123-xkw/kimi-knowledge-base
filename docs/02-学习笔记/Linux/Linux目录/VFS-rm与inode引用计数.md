@@ -1,3 +1,13 @@
+---
+title: VFS-rm与inode引用计数
+desc: 解释 rm 删除文件后磁盘空间不释放的经典问题——答案在 inode 的引用计数机制里。
+type: 笔记
+module: Linux目录
+pdf: 未知
+pdf_size: 未知
+scope: unlink() / dentry 与 inode 引用计数
+status: 完成
+---
 # VFS：rm 与 inode 引用计数
 
 > 一个经典 VFS 坑：`rm` 删了文件，磁盘空间为什么不释放？答案全在 inode 的两个计数里。

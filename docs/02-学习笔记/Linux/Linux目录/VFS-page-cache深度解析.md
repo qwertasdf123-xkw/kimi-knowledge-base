@@ -1,3 +1,13 @@
+---
+title: VFS-page-cache深度解析
+desc: 从 read()/write() 精细流程出发，解析 page cache 与 VFS 四组件的关系及常见性能现象。
+type: 笔记
+module: Linux目录
+pdf: 未知
+pdf_size: 未知
+scope: read/write 流程 / page cache / 性能现象
+status: 完成
+---
 # VFS：Page Cache 深度解析
 
 > Page Cache 是文件 I/O 性能的根基。本文从 `read()`/`write()` 的精细流程出发，把 page cache 与 VFS 四组件的关系串起来，并解释生产中最常见的几个性能现象。

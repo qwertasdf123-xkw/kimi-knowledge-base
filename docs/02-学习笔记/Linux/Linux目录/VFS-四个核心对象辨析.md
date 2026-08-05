@@ -1,3 +1,13 @@
+---
+title: VFS-四个核心对象辨析
+desc: 以纠错视角辨析 VFS 四个核心对象（super_block / inode / dentry / file）之间最易混淆的关系。
+type: 笔记
+module: Linux目录
+pdf: 未知
+pdf_size: 未知
+scope: VFS 四核心对象辨析（vfs虚拟文件系统 §1 补充）
+status: 完成
+---
 # VFS 四个核心对象辨析
 
 > 本文是对 [[Linux vfs虚拟文件系统]] §1 的补充——从"你以为...但其实..."的纠错角度，把 4 大对象之间最容易混淆的关系讲清楚。

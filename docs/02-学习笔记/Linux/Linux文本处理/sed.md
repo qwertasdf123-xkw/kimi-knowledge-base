@@ -1,3 +1,13 @@
+---
+title: sed
+desc: 系统讲解 sed 流编辑器的行级批量转换：替换、删除、插入、打印（面试强化版）。
+type: 笔记
+module: Linux文本处理
+pdf: 未知
+pdf_size: 未知
+scope: sed 脚本 / 地址定位 / 替换删除插入打印
+status: 完成
+---
 # Linux sed 命令（面试强化版）
 
 > 本文系统讲解 Linux **sed**（stream editor）—— 非交互式流编辑器。sed 是 **grep 之后的"加工车间"**：grep 筛出来，sed 改内容。
