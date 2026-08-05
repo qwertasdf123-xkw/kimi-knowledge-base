@@ -14,5 +14,6 @@
 - `docs/02-学习笔记/` —— 学习笔记、读书笔记、资料汇总
   - `docs/02-学习笔记/Linux/` —— Linux 系统管理 + 网络基础笔记库（31 个模块的 Obsidian vault 镜像，含 Canvas 画布，与本地 `E:\Linux` 逐字节一致）
 - `docs/03-Kimi使用技巧/` —— 提示词、最佳实践、使用案例
+- `tools/` —— 多 vault 维护脚本（`vault-maintain.sh`）与 vault 注册表（`vaults.conf`）
 
 每份文档顶部带 YAML Front Matter（标题 / 分类 / 标签 / 更新日期）。
