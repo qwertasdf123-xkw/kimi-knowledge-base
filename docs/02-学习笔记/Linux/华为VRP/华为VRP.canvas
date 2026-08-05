@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"f1c1d1e1f10001","type":"text","text":"# 华为VRP\n\n**模块说明**：华为网络设备的命令行操作系统\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":80,"color":"7"},
+		{"id":"f1c1d1e1f10002","type":"file","file":"华为VRP.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"f1c1d1e1f10003","type":"text","text":"华为VRP.md\n─────\n• §0 心智模型（VRP = 网络设备的 Windows）\n• §1 VRP 介绍：Versatile Routing Platform\n• §2 VRP 安装环境：eNSP 仿真套件\n• §3 VRP 配置方式：Console / VTY / Web\n• §4 用户等级：4 级权限划分\n• §5 命令格式：命令字 + 关键字 + 参数\n• §6 命令行视图：用户/系统/接口/协议\n• §7 功能键：Tab/?/undo\n• §8 文件操作 12 命令\n• §9 基本配置命令\n• §10 配置保存与启动\n• §11 易错点 ×10\n• §12 速查表\n• §13 面试 6 大追问","x":240,"y":-200,"width":420,"height":460}
+	],
+	"edges":[
+		{"id":"ef1c1d1e1f10001","fromNode":"f1c1d1e1f10001","fromSide":"bottom","toNode":"f1c1d1e1f10002","toSide":"top"},
+		{"id":"ef1c1d1e1f10002","fromNode":"f1c1d1e1f10002","fromSide":"right","toNode":"f1c1d1e1f10003","toSide":"left"}
+	]
+}

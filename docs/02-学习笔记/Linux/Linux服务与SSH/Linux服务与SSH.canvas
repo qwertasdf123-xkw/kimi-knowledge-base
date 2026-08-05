@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a9b1c1d1e1f10001","type":"text","text":"# Linux服务与SSH\n\n**模块说明**：systemd 单元管理 + SSH 全套\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"2"},
+		{"id":"a9b1c1d1e1f10002","type":"file","file":"Linux服务与SSH.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a9b1c1d1e1f10003","type":"text","text":"Linux服务与SSH.md\n─────\n• §0 心智模型\n• §1 init 演进\n• §2 systemd 是什么\n• §3 unit 12 种类型\n• §4 systemctl 入门\n• §5 list-unit-files\n• §6 systemctl 命令大全\n• §7 状态字段\n• §8 enable/disable\n• §9 mask/unmask\n• §10 unit 文件路径\n• §11 unit 文件结构\n• §12 sshd.service 实战\n• §13 Type= 类型\n• §14 ExecStart/Reload/Stop\n• §15 Restart=\n• §16 自制 studyd\n• §17 daemon-reload\n• §18 journalctl -u\n• §19 list-dependencies\n• §20 故障排查 5 步\n• §21 SSH 是什么\n• §22 SSH 三大功能\n• §23 SSH1 vs SSH2\n• §24 SSH 工作原理\n• §25 host key\n• §26 ssh CLI\n• §27 ssh 远程执行\n• §28 ~/.ssh/config\n• §29 ssh-keygen\n• §30 ssh-copy-id\n• §31 authorized_keys\n• §32 密钥登录权限\n• §33 sshd_config\n• §34 PermitRootLogin\n• §35 PasswordAuthentication\n• §36 UseDNS no\n• §37 实战：禁止 root 密码\n• §38 /var/log/secure\n• §39 SCP\n• §40 SFTP\n• §41 端口转发\n• §42 ProxyCommand\n• §43 速查表\n• §44 易错点\n• §45 面试追问\n• §46 链路","x":200,"y":-200,"width":380,"height":1060}
+	],
+	"edges":[
+		{"id":"e9b1c1d1e1f10001","fromNode":"a9b1c1d1e1f10001","fromSide":"bottom","toNode":"a9b1c1d1e1f10002","toSide":"top"},
+		{"id":"e9b1c1d1e1f10002","fromNode":"a9b1c1d1e1f10002","fromSide":"right","toNode":"a9b1c1d1e1f10003","toSide":"left"}
+	]
+}

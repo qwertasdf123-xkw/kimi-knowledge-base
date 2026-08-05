@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"b1c1d1e1f10001","type":"text","text":"# Linux启动原理\n\n**模块说明**：CentOS 7 启动链 + GRUB2 + 救援 + LUKS\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":80,"color":"2"},
+		{"id":"b1c1d1e1f10002","type":"file","file":"Linux启动原理.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"b1c1d1e1f10003","type":"text","text":"Linux启动原理.md\n─────\n• §0 心智模型（启动 = 汽车发动）\n• §1 启动 9 步流程（加电→登录）\n• §2 systemd target 入门\n• §3 运行级别 ↔ target 对照表\n• §4 救援模式 vs 单用户模式\n• §5 密码重置：rd.break / init=/bin/bash\n• §6 /etc/fstab 引起的启动问题\n• §7 GRUB2 配置（菜单+参数+加密）\n• §8 GRUB2 故障处理（MBR 三段）\n• §9 LUKS 磁盘加密（cryptsetup）\n• §10 思考：vmlinuz + initramfs 为什么分开\n• §11 易错点 ×10\n• §12 速查表（故障决策 + 路径 + 命令）\n• §13 面试 6 大追问","x":240,"y":-200,"width":400,"height":420}
+	],
+	"edges":[
+		{"id":"eb1c1d1e1f10001","fromNode":"b1c1d1e1f10001","fromSide":"bottom","toNode":"b1c1d1e1f10002","toSide":"top"},
+		{"id":"eb1c1d1e1f10002","fromNode":"b1c1d1e1f10002","fromSide":"right","toNode":"b1c1d1e1f10003","toSide":"left"}
+	]
+}

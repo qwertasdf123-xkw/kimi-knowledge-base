@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a9b1c1d1e1f10001","type":"text","text":"# LinuxKeepalived\n\n**模块说明**：VRRP 协议 + Keepalived 双机热备 + LVS-DR 高可用集群 + MariaDB 主主复制\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"5"},
+		{"id":"a9b1c1d1e1f10002","type":"file","file":"LinuxKeepalived.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a9b1c1d1e1f10003","type":"text","text":"LinuxKeepalived.md\n─────\n• §0 心智模型\n• §1 HA 是什么\n• §2 SPOF\n• §3 Keepalived 是什么\n• §4 VRRP 协议\n• §5 VRRP 状态机\n• §6 VRRP 通告\n• §7 Keepalived 架构\n• §8 Keepalived 安装\n• §9 全局配置\n• §10 VRRP 实例\n• §11 VIP 配置\n• §12 抢占 vs 非抢占\n• §13 单播 vs 多播\n• §14 认证配置\n• §15 健康检查脚本\n• §16 通知脚本\n• §17 Keepalived 日志\n• §18 实战 1：基础 VRRP\n• §19 实战 2：非抢占\n• §20 实战 3：互为主备\n• §21 LVS-DR + Keepalived\n• §22 LVS-DR 完整配置\n• §23 virtual_server\n• §24 real_server\n• §25 TCP_CHECK\n• §26 HTTP_GET\n• §27 MariaDB 主主\n• §28 主主配置\n• §29 主主实战\n• §30 LVS+Keepalived+MariaDB 综合\n• §31 故障切换演练\n• §32 脑裂问题\n• §33 性能调优\n• §34 易错点 ×10\n• §35 速查表\n• §36 面试 6 问\n• §37 跨模块链接","x":200,"y":-200,"width":380,"height":1060}
+	],
+	"edges":[
+		{"id":"e9b1c1d1e1f10001","fromNode":"a9b1c1d1e1f10001","fromSide":"bottom","toNode":"a9b1c1d1e1f10002","toSide":"top"},
+		{"id":"e9b1c1d1e1f10002","fromNode":"a9b1c1d1e1f10002","fromSide":"right","toNode":"a9b1c1d1e1f10003","toSide":"left"}
+	]
+}

@@ -1,0 +1,746 @@
+{
+	"nodes": [
+		{
+			"id": "f0b1c1d1e1f10001",
+			"type": "text",
+			"text": "# Linux总览\n\n**30 个模块 · 依赖关系图**",
+			"x": -110,
+			"y": -660,
+			"width": 260,
+			"height": 60,
+			"color": "5"
+		},
+		{
+			"id": "f0b1c1d1e1f10002",
+			"type": "text",
+			"text": "# Linux目录",
+			"x": -1100,
+			"y": -540,
+			"width": 200,
+			"height": 50,
+			"color": "1"
+		},
+		{
+			"id": "f0b1c1d1e1f10003",
+			"type": "text",
+			"text": "# Linux文本处理",
+			"x": -850,
+			"y": -540,
+			"width": 200,
+			"height": 50,
+			"color": "2"
+		},
+		{
+			"id": "f0b1c1d1e1f10004",
+			"type": "text",
+			"text": "# Linux编辑器",
+			"x": -600,
+			"y": -540,
+			"width": 200,
+			"height": 50,
+			"color": "3"
+		},
+		{
+			"id": "f0b1c1d1e1f10005",
+			"type": "text",
+			"text": "# LinuxShell",
+			"x": -1100,
+			"y": -380,
+			"width": 200,
+			"height": 50,
+			"color": "4"
+		},
+		{
+			"id": "f0b1c1d1e1f10006",
+			"type": "text",
+			"text": "# Linux用户权限",
+			"x": -850,
+			"y": -380,
+			"width": 200,
+			"height": 50,
+			"color": "5"
+		},
+		{
+			"id": "f0b1c1d1e1f10007",
+			"type": "text",
+			"text": "# Linux包管理",
+			"x": -850,
+			"y": -220,
+			"width": 200,
+			"height": 50,
+			"color": "6"
+		},
+		{
+			"id": "f0b1c1d1e1f10008",
+			"type": "text",
+			"text": "# Linux计划任务",
+			"x": -850,
+			"y": -60,
+			"width": 200,
+			"height": 50,
+			"color": "7"
+		},
+		{
+			"id": "f0b1c1d1e1f10009",
+			"type": "text",
+			"text": "# Linux进程与负载",
+			"x": -850,
+			"y": 100,
+			"width": 200,
+			"height": 50,
+			"color": "1"
+		},
+		{
+			"id": "f0b1c1d1e1f1000a",
+			"type": "text",
+			"text": "# Linux服务与SSH",
+			"x": -850,
+			"y": 260,
+			"width": 200,
+			"height": 50,
+			"color": "2"
+		},
+		{
+			"id": "f0b1c1d1e1f1000b",
+			"type": "text",
+			"text": "# Linux日志与时间",
+			"x": -1100,
+			"y": 420,
+			"width": 200,
+			"height": 50,
+			"color": "3"
+		},
+		{
+			"id": "f0b1c1d1e1f1000c",
+			"type": "text",
+			"text": "# Linux文件传输",
+			"x": -600,
+			"y": 420,
+			"width": 200,
+			"height": 50,
+			"color": "4"
+		},
+		{
+			"id": "f0b1c1d1e1f1000d",
+			"type": "text",
+			"text": "# Linux存储",
+			"x": -1100,
+			"y": 580,
+			"width": 200,
+			"height": 50,
+			"color": "6"
+		},
+		{
+			"id": "f0b1c1d1e1f1000e",
+			"type": "text",
+			"text": "# Linux网络",
+			"x": -850,
+			"y": 580,
+			"width": 200,
+			"height": 50,
+			"color": "5"
+		},
+		{
+			"id": "f0b1c1d1e1f1000f",
+			"type": "text",
+			"text": "# Linux防火墙",
+			"x": -850,
+			"y": 740,
+			"width": 200,
+			"height": 50,
+			"color": "7"
+		},
+		{
+			"id": "f0b1c1d1e1f10010",
+			"type": "text",
+			"text": "**底层基础**\nLinux存储 (独立)",
+			"x": -1100,
+			"y": -720,
+			"width": 260,
+			"height": 60,
+			"color": "6"
+		},
+		{
+			"id": "f0b1c1d1e1f10011",
+			"type": "text",
+			"text": "# Linux启动原理",
+			"x": -350,
+			"y": 260,
+			"width": 200,
+			"height": 50,
+			"color": "2"
+		},
+		{
+			"id": "f0b1c1d1e1f10012",
+			"type": "text",
+			"text": "# LinuxSELinux",
+			"x": -350,
+			"y": 420,
+			"width": 200,
+			"height": 50,
+			"color": "4"
+		},
+		{
+			"id": "f0b1c1d1e1f10013",
+			"type": "text",
+			"text": "# 网络基础原理",
+			"x": -100,
+			"y": -540,
+			"width": 200,
+			"height": 50,
+			"color": "3"
+		},
+		{
+			"id": "f0b1c1d1e1f10014",
+			"type": "text",
+			"text": "# 华为VRP",
+			"x": -100,
+			"y": -380,
+			"width": 200,
+			"height": 50,
+			"color": "7"
+		},
+		{
+			"id": "f0b1c1d1e1f10015",
+			"type": "text",
+			"text": "# 路由与VLAN",
+			"x": -100,
+			"y": -220,
+			"width": 200,
+			"height": 50,
+			"color": "5"
+		},
+		{
+			"id": "f0b1c1d1e1f10016",
+			"type": "text",
+			"text": "# LinuxDNS",
+			"x": 200,
+			"y": -380,
+			"width": 200,
+			"height": 50,
+			"color": "4"
+		},
+		{
+			"id": "f0b1c1d1e1f10017",
+			"type": "text",
+			"text": "# LinuxDHCP",
+			"x": 200,
+			"y": -220,
+			"width": 200,
+			"height": 50,
+			"color": "5"
+		},
+		{
+			"id": "f0b1c1d1e1f10018",
+			"type": "text",
+			"text": "# LinuxNFS",
+			"x": 200,
+			"y": -60,
+			"width": 200,
+			"height": 50,
+			"color": "6"
+		},
+		{
+			"id": "f0b1c1d1e1f10019",
+			"type": "text",
+			"text": "# LinuxRAID",
+			"x": 200,
+			"y": 100,
+			"width": 200,
+			"height": 50,
+			"color": "7"
+		},
+		{
+			"id": "f0b1c1d1e1f1001a",
+			"type": "text",
+			"text": "# LinuxiSCSI",
+			"x": 200,
+			"y": 260,
+			"width": 200,
+			"height": 50,
+			"color": "1"
+		},
+		{
+			"id": "f0b1c1d1e1f1001b",
+			"type": "text",
+			"text": "# LinuxNginx",
+			"x": 550,
+			"y": -380,
+			"width": 200,
+			"height": 50,
+			"color": "2"
+		},
+		{
+			"id": "f0b1c1d1e1f1001c",
+			"type": "text",
+			"text": "# LinuxWeb实战",
+			"x": 550,
+			"y": -220,
+			"width": 200,
+			"height": 50,
+			"color": "3"
+		},
+		{
+			"id": "f0b1c1d1e1f1001d",
+			"type": "text",
+			"text": "# LinuxLVS",
+			"x": 550,
+			"y": -60,
+			"width": 200,
+			"height": 50,
+			"color": "4"
+		},
+		{
+			"id": "f0b1c1d1e1f1001e",
+			"type": "text",
+			"text": "# LinuxKeepalived",
+			"x": 550,
+			"y": 100,
+			"width": 200,
+			"height": 50,
+			"color": "5"
+		},
+		{
+			"id": "f0b1c1d1e1f1001f",
+			"type": "text",
+			"text": "# LinuxRedis",
+			"x": 550,
+			"y": 260,
+			"width": 200,
+			"height": 50,
+			"color": "6"
+		},
+		{
+			"id": "f0b1c1d1e1f10020",
+			"type": "text",
+			"text": "# LinuxKVM",
+			"x": 900,
+			"y": 100,
+			"width": 200,
+			"height": 50,
+			"color": "4"
+		}
+	],
+	"edges": [
+		{
+			"id": "ef0b1c1d1e1f1001",
+			"fromNode": "f0b1c1d1e1f10002",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10005",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1002",
+			"fromNode": "f0b1c1d1e1f10002",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10006",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1003",
+			"fromNode": "f0b1c1d1e1f10002",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10003",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1004",
+			"fromNode": "f0b1c1d1e1f10005",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10006",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1005",
+			"fromNode": "f0b1c1d1e1f10005",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10007",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1006",
+			"fromNode": "f0b1c1d1e1f10005",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10008",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1007",
+			"fromNode": "f0b1c1d1e1f10005",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000a",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1008",
+			"fromNode": "f0b1c1d1e1f1006",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10007",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f1009",
+			"fromNode": "f0b1c1d1e1f1006",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10008",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f100a",
+			"fromNode": "f0b1c1d1e1f1006",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10009",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f100b",
+			"fromNode": "f0b1c1d1e1f1007",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000a",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f100c",
+			"fromNode": "f0b1c1d1e1f1008",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000a",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f100d",
+			"fromNode": "f0b1c1d1e1f1009",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000a",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f100e",
+			"fromNode": "f0b1c1d1e1f100a",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f100b",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f100f",
+			"fromNode": "f0b1c1d1e1f100a",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f100c",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f110",
+			"fromNode": "f0b1c1d1e1f100a",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000f",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f111",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000f",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f112",
+			"fromNode": "f0b1c1d1e1f100c",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1000f",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f113",
+			"fromNode": "f0b1c1d1e1f1005",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f114",
+			"fromNode": "f0b1c1d1e1f100a",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f115",
+			"fromNode": "f0b1c1d1e1f100d",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f116",
+			"fromNode": "f0b1c1d1e1f100f",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f117",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f118",
+			"fromNode": "f0b1c1d1e1f100b",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f119",
+			"fromNode": "f0b1c1d1e1f100c",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10011",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f11a",
+			"fromNode": "f0b1c1d1e1f100a",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10012",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f11b",
+			"fromNode": "f0b1c1d1e1f100f",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10012",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f11c",
+			"fromNode": "f0b1c1d1e1f10011",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10012",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f11d",
+			"fromNode": "f0b1c1d1e1f10013",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10014",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f11e",
+			"fromNode": "f0b1c1d1e1f10013",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10015",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f11f",
+			"fromNode": "f0b1c1d1e1f10014",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10015",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f120",
+			"fromNode": "f0b1c1d1e1f1005",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10013",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f121",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10013",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f122",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10014",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f123",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10015",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f124",
+			"fromNode": "f0b1c1d1e1f100f",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f10013",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f125",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10016",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f126",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10017",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f127",
+			"fromNode": "f0b1c1d1e1f100c",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10018",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f128",
+			"fromNode": "f0b1c1d1e1f100d",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10019",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f129",
+			"fromNode": "f0b1c1d1e1f100d",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001a",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f12a",
+			"fromNode": "f0b1c1d1e1f100a",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001b",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f12b",
+			"fromNode": "f0b1c1d1e1f1001b",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1001c",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f12c",
+			"fromNode": "f0b1c1d1e1f1001c",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001e",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f12d",
+			"fromNode": "f0b1c1d1e1f1001b",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001d",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f12e",
+			"fromNode": "f0b1c1d1e1f100f",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001d",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f12f",
+			"fromNode": "f0b1c1d1e1f100f",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001e",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f130",
+			"fromNode": "f0b1c1d1e1f1001d",
+			"fromSide": "bottom",
+			"toNode": "f0b1c1d1e1f1001e",
+			"toSide": "top"
+		},
+		{
+			"id": "ef0b1c1d1e1f131",
+			"fromNode": "f0b1c1d1e1f100e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001d",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f132",
+			"fromNode": "f0b1c1d1e1f10007",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001f",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f133",
+			"fromNode": "f0b1c1d1e1f10005",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001f",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f134",
+			"fromNode": "f0b1c1d1e1f1001c",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001f",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f135",
+			"fromNode": "f0b1c1d1e1f1001d",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001f",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f136",
+			"fromNode": "f0b1c1d1e1f1001e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f1001f",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f137",
+			"fromNode": "f0b1c1d1e1f10007",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f138",
+			"fromNode": "f0b1c1d1e1f1000d",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f139",
+			"fromNode": "f0b1c1d1e1f1000e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f13a",
+			"fromNode": "f0b1c1d1e1f1000f",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f13b",
+			"fromNode": "f0b1c1d1e1f10018",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f13c",
+			"fromNode": "f0b1c1d1e1f1001e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"dhcpb1c1d1e1f10001","type":"text","text":"# Linux DHCP 服务器\n\n**模块说明**：DORA / dhcpd / 作用域 / 中继\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":80,"color":"5"},
+		{"id":"dhcpb1c1d1e1f10002","type":"file","file":"LinuxDHCP.md","x":-130,"y":-50,"width":280,"height":50},
+		{"id":"dhcpb1c1d1e1f10003","type":"text","text":"LinuxDHCP.md\n─────\n• §0 心智模型 + DORA\n• §1 DHCP 是什么\n• §2 四步租约流程\n• §3 续租 T1/T2\n• §4 dhcpd 安装\n• §5 作用域声明\n• §6 保留地址\n• §7 DHCP 中继\n• §8 DHCP option\n• §9 超级作用域\n• §10 DHCP 客户端\n• §11 抓包分析\n• §12 故障排查\n• §13 多网卡场景\n• §14 实验配置\n• §15 易错点 ×10\n• §16 速查表\n• §17 面试追问","x":210,"y":-200,"width":400,"height":595}
+	],
+	"edges":[
+		{"id":"edhcpb1c1d1e1f0001","fromNode":"dhcpb1c1d1e1f10001","fromSide":"bottom","toNode":"dhcpb1c1d1e1f10002","toSide":"top"},
+		{"id":"edhcpb1c1d1e1f0002","fromNode":"dhcpb1c1d1e1f10002","fromSide":"right","toNode":"dhcpb1c1d1e1f10003","toSide":"left"}
+	]
+}

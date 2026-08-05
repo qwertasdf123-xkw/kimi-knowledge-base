@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"aeb1c1d1e1f10001","type":"text","text":"# Linux防火墙\n\n**模块说明**：Netfilter/iptables/firewalld\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"1"},
+		{"id":"aeb1c1d1e1f10002","type":"file","file":"Linux防火墙.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"aeb1c1d1e1f10003","type":"text","text":"Linux防火墙.md\n─────\n• §0 心智模型\n• §1 防火墙分类\n• §2 Netfilter\n• §3 iptables 系列\n• §4 nftables\n• §5 firewalld 是什么\n• §6 firewalld vs iptables\n• §7 9 大 zone\n• §8 firewall-cmd 基础\n• §9 zone 操作\n• §10 service 操作\n• §11 port 操作\n• §12 interface\n• §13 source\n• §14 masquerade\n• §15 port-forward\n• §16 rich-rule\n• §17 实战：开 HTTP/HTTPS/SSH\n• §18 实战：内网穿透\n• §19 配置持久化\n• §20 速查表\n• §21 易错点\n• §22 面试追问\n• §23 链路","x":200,"y":-200,"width":380,"height":595}
+	],
+	"edges":[
+		{"id":"eeb1c1d1e1f10001","fromNode":"aeb1c1d1e1f10001","fromSide":"bottom","toNode":"aeb1c1d1e1f10002","toSide":"top"},
+		{"id":"eeb1c1d1e1f10002","fromNode":"aeb1c1d1e1f10002","fromSide":"right","toNode":"aeb1c1d1e1f10003","toSide":"left"}
+	]
+}

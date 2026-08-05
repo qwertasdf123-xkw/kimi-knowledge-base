@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"e1c1d1e1f10001","type":"text","text":"# 路由与VLAN\n\n**模块说明**：路由基础 + VLAN + 单臂路由 + 三层交换\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":80,"color":"5"},
+		{"id":"e1c1d1e1f10002","type":"file","file":"路由与VLAN.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"e1c1d1e1f10003","type":"text","text":"路由与VLAN.md\n─────\n• §0 心智模型（路由 = 快递分拣中心）\n• §1 路由基础：路由表 4 大字段\n• §2 路由获取方式：直连/静态/动态\n• §3 静态路由 + 默认路由（含双路由器实战）\n• §4 路由转发流程：最长掩码匹配\n• §5 VLAN 是什么：解决广播域问题\n• §6 VLAN 标签：802.1Q 帧格式\n• §7 VLAN 划分方式 5 种（接口/MAC/IP子网/协议/策略）\n• §8 VLAN 接口类型：Access / Trunk / Hybrid\n• §9 单臂路由：路由器单接口 + 子接口\n• §10 三层交换：交换机内置路由模块（SVI）\n• §11 VLAN 间通信方案对比\n• §12 易错点 ×10\n• §13 速查表\n• §14 面试 6 大追问","x":240,"y":-200,"width":430,"height":460}
+	],
+	"edges":[
+		{"id":"ee1c1d1e1f10001","fromNode":"e1c1d1e1f10001","fromSide":"bottom","toNode":"e1c1d1e1f10002","toSide":"top"},
+		{"id":"ee1c1d1e1f10002","fromNode":"e1c1d1e1f10002","fromSide":"right","toNode":"e1c1d1e1f10003","toSide":"left"}
+	]
+}

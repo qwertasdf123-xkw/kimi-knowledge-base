@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"a4b1c1d1e1f10001","type":"text","text":"# LinuxShell\n\n**模块说明**：Shell 变量、环境、PATH、命令替换 + 流程控制、函数、数组、调试、Expect、子 Shell\n\n— 3 个笔记 —","x":-110,"y":-280,"width":260,"height":60,"color":"6"},
+		{"id":"a4b1c1d1e1f10002","type":"file","file":"shell.md","x":-130,"y":-130,"width":260,"height":50},
+		{"id":"a4b1c1d1e1f10003","type":"text","text":"shell.md\n─────\n• §0 心智模型：Shell = 翻译官\n• §1 自定义变量\n• §2 变量拼接\n• §3 环境变量 export\n• §4 常用环境变量\n• §5 PATH 详解\n• §6 PS1 提示符\n• §7 HISTTIMEFORMAT\n• §8 启动文件加载顺序\n• §9 命令替换\n• §10 算术运算\n• §11 引号与转义\n• §12 多行 echo\n• §13 速查表\n• §14 易错点\n• §15 面试追问\n• §16 链路\n• §17 进一步阅读","x":200,"y":-280,"width":380,"height":430},
+		{"id":"a4b1c1d1e1f10004","type":"file","file":"practice.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a4b1c1d1e1f10005","type":"text","text":"practice.md\n─────\n• 使用说明\n• 第 1 ~ 12 题","x":200,"y":-50,"width":380,"height":85},
+		{"id":"a4b1c1d1e1f10006","type":"file","file":"shell实战.md","x":-130,"y":30,"width":260,"height":50},
+		{"id":"a4b1c1d1e1f10007","type":"text","text":"shell实战.md\n─────\n• §0 心智模型：瑞士军刀\n• §1 为什么要学 Shell\n• §2 第一个脚本\n• §3 变量基础与进阶速补\n• §4 数值计算\n• §5 条件测试\n• §6 IF 条件\n• §7 函数（递归/fork 炸弹）\n• §8 CASE 条件\n• §9 WHILE/UNTIL（含并发）\n• §10 FOR/SELECT\n• §11 循环控制 break/continue\n• §12 数组\n• §13 开发规范\n• §14 调试（bash -x / set -x）\n• §15 vimrc 配置\n• §16 信号 trap（跳板机）\n• §17 Expect（spawn/expect/send）\n• §18 面试题（29 道）\n• §19 子 Shell（fork/exec/source）\n• §20 Linux 命令汇总\n• §21 21 主题速查表\n• §22 易错点 ×15\n• §23 面试 8 大追问\n• §24 链路","x":200,"y":30,"width":380,"height":530}
+	],
+	"edges":[
+		{"id":"e4b1c1d1e1f10001","fromNode":"a4b1c1d1e1f10001","fromSide":"bottom","toNode":"a4b1c1d1e1f10002","toSide":"top"},
+		{"id":"e4b1c1d1e1f10002","fromNode":"a4b1c1d1e1f10002","fromSide":"right","toNode":"a4b1c1d1e1f10003","toSide":"left"},
+		{"id":"e4b1c1d1e1f10003","fromNode":"a4b1c1d1e1f10002","fromSide":"bottom","toNode":"a4b1c1d1e1f10004","toSide":"top"},
+		{"id":"e4b1c1d1e1f10004","fromNode":"a4b1c1d1e1f10004","fromSide":"right","toNode":"a4b1c1d1e1f10005","toSide":"left"},
+		{"id":"e4b1c1d1e1f10005","fromNode":"a4b1c1d1e1f10001","fromSide":"bottom","toNode":"a4b1c1d1e1f10006","toSide":"top"},
+		{"id":"e4b1c1d1e1f10006","fromNode":"a4b1c1d1e1f10004","fromSide":"bottom","toNode":"a4b1c1d1e1f10006","toSide":"top"},
+		{"id":"e4b1c1d1e1f10007","fromNode":"a4b1c1d1e1f10006","fromSide":"right","toNode":"a4b1c1d1e1f10007","toSide":"left"}
+	]
+}

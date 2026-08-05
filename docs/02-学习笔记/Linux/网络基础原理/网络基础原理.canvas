@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"d1c1d1e1f10001","type":"text","text":"# 网络基础原理\n\n**模块说明**：网络概念 / 协议栈 / IP 编址 / 以太网 + 实验附录\n\n— 2 个笔记 —","x":-110,"y":-280,"width":280,"height":80,"color":"3"},
+		{"id":"d1c1d1e1f10002","type":"file","file":"网络基础原理.md","x":-130,"y":-130,"width":260,"height":50},
+		{"id":"d1c1d1e1f10003","type":"text","text":"网络基础原理.md\n─────\n• §0 心智模型（网络 = 城市交通系统）\n• §1 网络初探：概念/设备/分类\n• §2 网络参考模型：OSI 7 层 + TCP/IP 4 层\n• §3 IPv4 编址：分类/子网掩码/CIDR\n• §4 IPv6 简述：128 位 + 简化写法\n• §5 以太网基础：MAC/CSMA-CD/全双工\n• §6 ARP 协议：IP ↔ MAC 解析\n• §7 交换机原理：学习/转发/泛洪\n• §8 易错点 ×10\n• §9 速查表\n• §10 面试 6 大追问","x":240,"y":-280,"width":420,"height":400},
+		{"id":"d1c1d1e1f10004","type":"file","file":"实验附录.md","x":-130,"y":40,"width":260,"height":50},
+		{"id":"d1c1d1e1f10005","type":"text","text":"实验附录.md（eNSP 综合实战）\n─────\n• §0 心智模型（实验 = 把理论串起来）\n• §1 实验环境准备（eNSP + 设备清单 + IP 规划）\n• §2 实验 1：拓扑绘制与终端 IP 配置\n• §3 实验 2：FTP / Web 服务器配置\n• §4 实验 3：华为路由器接口配置（PDF 原文摘录）\n• §5 实验 4：连通性与服务验证\n• §6 易错点 ×10（实验特有）\n• §7 速查表（命令 + 验证清单 + 故障定位）\n• §8 面试 6 大追问（实验角度）","x":240,"y":40,"width":420,"height":300}
+	],
+	"edges":[
+		{"id":"ed1c1d1e1f10001","fromNode":"d1c1d1e1f10001","fromSide":"bottom","toNode":"d1c1d1e1f10002","toSide":"top"},
+		{"id":"ed1c1d1e1f10002","fromNode":"d1c1d1e1f10002","fromSide":"right","toNode":"d1c1d1e1f10003","toSide":"left"},
+		{"id":"ed1c1d1e1f10003","fromNode":"d1c1d1e1f10002","fromSide":"bottom","toNode":"d1c1d1e1f10004","toSide":"top"},
+		{"id":"ed1c1d1e1f10004","fromNode":"d1c1d1e1f10004","fromSide":"right","toNode":"d1c1d1e1f10005","toSide":"left"}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a9b1c1d1e1f10001","type":"text","text":"# Linux Web 项目实战\n\n**模块说明**：LAMP/LNMP 架构 + WordPress + ECshop 完整部署\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":60,"color":"5"},
+		{"id":"a9b1c1d1e1f10002","type":"file","file":"LinuxWeb实战.md","x":-130,"y":-50,"width":280,"height":50},
+		{"id":"a9b1c1d1e1f10003","type":"text","text":"LinuxWeb实战.md\n─────\n• §0 心智模型：Web 串联\n• §1 LAMP 架构\n• §2 LNMP 架构\n• §3 LAMP vs LNMP\n• §4 LAMP 环境准备\n• §5 Apache 部署\n• §6 MySQL/MariaDB\n• §7 PHP 部署\n• §8 LAMP 联调\n• §9 WordPress 部署\n• §10 WordPress 配置\n• §11 WordPress 优化\n• §12 WordPress 安全\n• §13 WordPress 备份迁移\n• §14 LNMP 环境准备\n• §15 Nginx + PHP-FPM\n• §16 Nginx fastcgi\n• §17 MariaDB 主主\n• §18 Keepalived 热备\n• §19 ECshop 部署\n• §20 ECshop 配置\n• §21 ECshop 优化\n• §22 ECshop 故障\n• §23 性能对比\n• §24 Web 安全\n• §25 Web 监控\n• §26 易错点 ×12\n• §27 速查表\n• §28 面试 ×6\n• §29 跨模块链接","x":200,"y":-200,"width":380,"height":920}
+	],
+	"edges":[
+		{"id":"e9b1c1d1e1f10001","fromNode":"a9b1c1d1e1f10001","fromSide":"bottom","toNode":"a9b1c1d1e1f10002","toSide":"top"},
+		{"id":"e9b1c1d1e1f10002","fromNode":"a9b1c1d1e1f10002","fromSide":"right","toNode":"a9b1c1d1e1f10003","toSide":"left"}
+	]
+}

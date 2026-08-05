@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "nfs-title-0001",
+      "type": "text",
+      "text": "# Linux NFS 服务器\n\n**模块说明**：NFS 原理 + RPC + exports + mount + autofs + NFSv4 + 性能调优\n\n— 1 个笔记 —",
+      "x": -120,
+      "y": -220,
+      "width": 300,
+      "height": 85,
+      "color": "5"
+    },
+    {
+      "id": "nfs-file-0002",
+      "type": "file",
+      "file": "LinuxNFS.md",
+      "x": -130,
+      "y": -70,
+      "width": 280,
+      "height": 55
+    },
+    {
+      "id": "nfs-list-0003",
+      "type": "text",
+      "text": "LinuxNFS.md\n─────\n• §0 心智模型：NFS = 网络文件系统\n• §1 NFS 是什么：Network File System\n• §2 NFS 版本演进：v2 / v3 / v4 / v4.1\n• §3 RPC 原理：rpcbind + 动态端口\n• §4 NFS 服务端部署：nfs-utils 与启动顺序\n• §5 /etc/exports 配置详解：路径、客户端与选项\n• §6 exports 客户端选项：权限与一致性\n• §7 exportfs 命令：不重启服务管理导出\n• §8 showmount 命令：查看服务端共享清单\n• §9 NFS 客户端挂载：mount + fstab\n• §10 mount 选项：可靠性、性能与语义\n• §11 autofs 自动挂载：按需触发\n• §12 NFSv4 特性：单端口、复合操作与伪文件系统\n• §13 NFS 性能调优：先测量，再改变\n• §14 NFS 与防火墙：按版本放行\n• §15 NFS 安全：最小权限、Kerberos 与 ACL\n• §16 NFS 故障排查：从网络到权限\n• §17 易错点 ×10：记住这些就少走弯路\n• §18 速查表：端口、路径与命令\n• §19 面试 6 大追问：从原理讲到实战",
+      "x": 220,
+      "y": -220,
+      "width": 430,
+      "height": 740
+    }
+  ],
+  "edges": [
+    {
+      "id": "nfs-edge-0001",
+      "fromNode": "nfs-title-0001",
+      "fromSide": "bottom",
+      "toNode": "nfs-file-0002",
+      "toSide": "top"
+    },
+    {
+      "id": "nfs-edge-0002",
+      "fromNode": "nfs-file-0002",
+      "fromSide": "right",
+      "toNode": "nfs-list-0003",
+      "toSide": "left"
+    }
+  ]
+}

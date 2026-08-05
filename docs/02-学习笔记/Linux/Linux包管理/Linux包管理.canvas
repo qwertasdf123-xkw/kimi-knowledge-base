@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a6b1c1d1e1f10001","type":"text","text":"# Linux包管理\n\n**模块说明**：RPM/YUM/源码编译\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"4"},
+		{"id":"a6b1c1d1e1f10002","type":"file","file":"package.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a6b1c1d1e1f10003","type":"text","text":"package.md\n─────\n• §0 心智模型：包管理 = 购物车 + 安装器\n• §1 三大流派\n• §2 RPM 包命名规则\n• §3 GPG 签名验证\n• §4 rpm 查询 8 件套\n• §5 rpm 安装/卸载/验证\n• §6 YUM/DNF 基础 4 件套\n• §7 YUM 仓库配置\n• §8 EPEL 第三方仓库\n• §9 yumdownloader\n• §10 yum group\n• §11 实战：装 Docker CE\n• §12 实战：装 Kubernetes\n• §13 源码编译 3 步走\n• §14 实战：编译 nginx\n• §15 速查表\n• §16 易错点\n• §17 面试追问\n• §18 链路","x":200,"y":-200,"width":380,"height":460}
+	],
+	"edges":[
+		{"id":"e6b1c1d1e1f10001","fromNode":"a6b1c1d1e1f10001","fromSide":"bottom","toNode":"a6b1c1d1e1f10002","toSide":"top"},
+		{"id":"e6b1c1d1e1f10002","fromNode":"a6b1c1d1e1f10002","fromSide":"right","toNode":"a6b1c1d1e1f10003","toSide":"left"}
+	]
+}

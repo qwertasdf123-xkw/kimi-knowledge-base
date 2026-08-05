@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"acb1c1d1e1f10001","type":"text","text":"# Linux存储\n\n**模块说明**：分区/RAID/LVM/swap\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"1"},
+		{"id":"acb1c1d1e1f10002","type":"file","file":"Linux存储.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"acb1c1d1e1f10003","type":"text","text":"Linux存储.md\n─────\n• §0 心智模型\n• §1 设备命名\n• §2 lsblk\n• §3 df\n• §4 du\n• §5 MBR vs GPT\n• §6 fdisk\n• §7 parted\n• §8 mkfs\n• §9 mount/umount\n• §10 /etc/fstab\n• §11 RAID 是什么\n• §12 RAID 级别\n• §13 mdadm RAID 5 实战\n• §14 RAID 故障\n• §15 LVM 是什么\n• §16 LVM 三层\n• §17 LVM 创建流程\n• §18 LVM 扩容缩容\n• §19 LVM 删除\n• §20 swap 是什么\n• §21 swap 创建\n• §22 swap 优先级\n• §23 速查表\n• §24 易错点\n• §25 面试追问\n• §26 链路","x":200,"y":-200,"width":380,"height":640}
+	],
+	"edges":[
+		{"id":"ecb1c1d1e1f10001","fromNode":"acb1c1d1e1f10001","fromSide":"bottom","toNode":"acb1c1d1e1f10002","toSide":"top"},
+		{"id":"ecb1c1d1e1f10002","fromNode":"acb1c1d1e1f10002","fromSide":"right","toNode":"acb1c1d1e1f10003","toSide":"left"}
+	]
+}

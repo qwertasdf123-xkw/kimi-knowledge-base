@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a8b1c1d1e1f10001","type":"text","text":"# Linux进程与负载\n\n**模块说明**：进程查看/前后台/信号/优先级/负载\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"3"},
+		{"id":"a8b1c1d1e1f10002","type":"file","file":"Linux进程与负载.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a8b1c1d1e1f10003","type":"text","text":"Linux进程与负载.md\n─────\n• §0 心智模型\n• §1 /proc 户口本\n• §2 ps 三派系\n• §3 ps -e/-ef\n• §4 ps -u/-t\n• §5 ps axu/axf\n• §6 ps 自定义字段\n• §7 进程状态 STAT\n• §8 top 实时监控\n• §9 进程前后台 jobs/bg/fg/&\n• §10 Ctrl+Z vs Ctrl+C\n• §11 nohup\n• §12 screen\n• §13 信号系统\n• §14 kill 系列\n• §15 whoami/who/w/last\n• §16 nice\n• §17 renice\n• §18 chrt\n• §19 top 里改优先级\n• §20 load average\n• §21 uptime/w 的负载\n• §22 stress 压测\n• §23 free\n• §24 sar\n• §25 vmstat/iostat\n• §26 僵尸进程 Z\n• §27 孤儿进程\n• §28 速查表\n• §29 易错点\n• §30 面试追问\n• §31 链路","x":200,"y":-200,"width":380,"height":730}
+	],
+	"edges":[
+		{"id":"e8b1c1d1e1f10001","fromNode":"a8b1c1d1e1f10001","fromSide":"bottom","toNode":"a8b1c1d1e1f10002","toSide":"top"},
+		{"id":"e8b1c1d1e1f10002","fromNode":"a8b1c1d1e1f10002","fromSide":"right","toNode":"a8b1c1d1e1f10003","toSide":"left"}
+	]
+}

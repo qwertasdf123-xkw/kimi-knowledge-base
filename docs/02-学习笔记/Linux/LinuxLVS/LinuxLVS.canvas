@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a9b1c1d1lvs00001","type":"text","text":"# Linux LVS 负载均衡全解析\n\n**模块说明**：LVS 原理 + 4 种工作模式 + ipvsadm + 8 种调度算法 + 实战部署\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":80,"color":"5"},
+		{"id":"a9b1c1d1lvs00002","type":"file","file":"LinuxLVS.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a9b1c1d1lvs00003","type":"text","text":"LinuxLVS.md\n─────\n• §0 心智模型\n• §1 LVS 是什么\n• §2 为什么需要 LVS\n• §3 LVS 架构\n• §4 LVS 术语\n• §5 LVS vs Nginx\n• §6 LVS vs HAProxy vs F5\n• §7 NAT 模式\n• §8 DR 模式（生产 99%）\n• §9 TUN 模式\n• §10 FULLNAT 模式\n• §11 4 模式对比表\n• §12 ipvsadm 安装\n• §13 ipvsadm 命令\n• §14 调度算法概述\n• §15 rr 轮询\n• §16 wrr 加权轮询\n• §17 lc 最少连接\n• §18 wlc 加权最少连接（默认）\n• §19 sed 最短延迟\n• §20 nq 永不排队\n• §21 lblc 局部性最少连接\n• §22 lblcr 复制版\n• §23 8 算法对比\n• §24 dh + sh 哈希\n• §25 持久连接 PCC/PPC\n• §26 健康检查\n• §27 NAT 实战（一）拓扑\n• §28 NAT 实战（二）配置\n• §29 NAT 实战（三）路由 + Web\n• §30 NAT 实战（四）ipvsadm + 验证\n• §31 NAT 实战 思考\n• §32 DR 实战（一）拓扑\n• §33 DR 实战（二）配置\n• §34 DR 实战（三）arp 参数\n• §35 DR 实战（四）LVS-DS\n• §36 DR 实战（五）LVS-RS + 验证\n• §37 DR 实战 脚本封装\n• §38 性能调优\n• §39 与防火墙\n• §40 常见故障\n• §41 易错点 ×10\n• §42 速查表\n• §43 面试 6 大追问\n• §44 跨模块链接","x":200,"y":-200,"width":400,"height":1160}
+	],
+	"edges":[
+		{"id":"e9b1c1d1lvs00001","fromNode":"a9b1c1d1lvs00001","fromSide":"bottom","toNode":"a9b1c1d1lvs00002","toSide":"top"},
+		{"id":"e9b1c1d1lvs00002","fromNode":"a9b1c1d1lvs00002","fromSide":"right","toNode":"a9b1c1d1lvs00003","toSide":"left"}
+	]
+}

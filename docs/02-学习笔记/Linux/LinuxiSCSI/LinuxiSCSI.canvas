@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"aiscsi10001","type":"text","text":"# Linux iSCSI 服务器\n\n**模块说明**：iSCSI 原理 + target/initiator + LUN + CHAP + multipath\n\n— 1 个笔记 —","x":-110,"y":-200,"width":280,"height":80,"color":"5"},
+		{"id":"aiscsi10002","type":"file","file":"LinuxiSCSI.md","x":-130,"y":-50,"width":280,"height":50},
+		{"id":"aiscsi10003","type":"text","text":"LinuxiSCSI.md\n─────\n• §0 心智模型\n• §1 iSCSI 是什么\n• §2 iSCSI 架构\n• §3 IQN 命名\n• §4 vs FC SAN\n• §5 targetcli\n• §6 backstore 类型\n• §7 创建 Target 五步\n• §8 Initiator 客户端\n• §9 iscsiadm 命令\n• §10 挂载 + _netdev\n• §11 CHAP 单向\n• §12 CHAP 双向\n• §13 ACL 访问控制\n• §14 multipath 多路径\n• §15 multipath.conf 详解\n• §16 性能调优\n• §17 防火墙 3260\n• §18 iSCSI 安全\n• §19 故障排查\n• §20 易错点 ×10\n• §21 速查表\n• §22 面试 6 大追问\n• §23 跨模块链接","x":200,"y":-200,"width":400,"height":640}
+	],
+	"edges":[
+		{"id":"eiscsi10001","fromNode":"aiscsi10001","fromSide":"bottom","toNode":"aiscsi10002","toSide":"top"},
+		{"id":"eiscsi10002","fromNode":"aiscsi10002","fromSide":"right","toNode":"aiscsi10003","toSide":"left"}
+	]
+}

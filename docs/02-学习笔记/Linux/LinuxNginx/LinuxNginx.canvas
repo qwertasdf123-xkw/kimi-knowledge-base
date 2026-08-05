@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a9b1c1d1e1f10001","type":"text","text":"# Linux Nginx 服务器\n\n**模块说明**：Nginx 架构 + 配置详解 + 反向代理 + 负载均衡 + HTTPS + 性能调优\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"5"},
+		{"id":"a9b1c1d1e1f10002","type":"file","file":"LinuxNginx.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a9b1c1d1e1f10003","type":"text","text":"LinuxNginx.md\n─────\n• §0 心智模型\n• §1 Nginx 是什么\n• §2 vs Apache (C10K)\n• §3 master/worker 架构\n• §4 安装方式\n• §5 目录结构\n• §6 配置结构\n• §7 全局配置\n• §8 events 块\n• §9 http 块\n• §10 server 块\n• §11 location 规则\n• §12 location 优先级实战\n• §13 root vs alias\n• §14 静态文件\n• §15 反向代理\n• §16 虚拟主机\n• §17 upstream 基础\n• §18 调度算法 rr\n• §19 调度算法 weight\n• §20 调度算法 ip_hash\n• §21 调度算法 hash\n• §22 调度算法 least_conn\n• §23 健康检查\n• §24 rewrite\n• §25 return\n• §26 HTTPS\n• §27 Let's Encrypt\n• §28 HTTP→HTTPS\n• §29 PHP-FPM\n• §30 Basic Auth\n• §31 gzip\n• §32 防盗链\n• §33 限流\n• §34 访问控制\n• §35 日志\n• §36 stub_status\n• §37 性能调优\n• §38 平滑升级\n• §39 systemd\n• §40 易错点\n• §41 速查表\n• §42 面试追问\n• §43 跨模块链接","x":200,"y":-200,"width":380,"height":1080}
+	],
+	"edges":[
+		{"id":"e9b1c1d1e1f10001","fromNode":"a9b1c1d1e1f10001","fromSide":"bottom","toNode":"a9b1c1d1e1f10002","toSide":"top"},
+		{"id":"e9b1c1d1e1f10002","fromNode":"a9b1c1d1e1f10002","fromSide":"right","toNode":"a9b1c1d1e1f10003","toSide":"left"}
+	]
+}

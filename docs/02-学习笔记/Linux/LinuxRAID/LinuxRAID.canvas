@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"acb1c1d1e1f10001","type":"text","text":"# Linux RAID 实战\n\n**模块说明**：RAID 0/1/5/6/10 + mdadm 实战 + 故障 + 性能\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"5"},
+		{"id":"acb1c1d1e1f10002","type":"file","file":"LinuxRAID.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"acb1c1d1e1f10003","type":"text","text":"LinuxRAID.md\n─────\n• §0 心智模型\n• §1 RAID 是什么\n• §2 RAID 级别对比\n• §3 实现方式\n• §4 RAID 0\n• §5 RAID 1\n• §6 RAID 5\n• §7 RAID 6\n• §8 RAID 10\n• §9 RAID 01 vs 10\n• §10 mdadm 安装\n• §11 命令速查\n• §12 RAID 0 实战\n• §13 RAID 1 实战\n• §14 RAID 5 实战\n• §15 配置文件\n• §16 /proc/mdstat\n• §17 --grow 扩容\n• §18 --assemble 重构\n• §19 故障模拟流程\n• §20 RAID + LVM\n• §21 硬件 vs 软件\n• §22 监控告警\n• §23 性能基准\n• §24 随堂笔记复盘\n• §25 易错点 ×12\n• §26 速查表\n• §27 面试 6 大追问\n• §28 跨模块链接","x":200,"y":-200,"width":380,"height":640}
+	],
+	"edges":[
+		{"id":"ecb1c1d1e1f10001","fromNode":"acb1c1d1e1f10001","fromSide":"bottom","toNode":"acb1c1d1e1f10002","toSide":"top"},
+		{"id":"ecb1c1d1e1f10002","fromNode":"acb1c1d1e1f10002","fromSide":"right","toNode":"acb1c1d1e1f10003","toSide":"left"}
+	]
+}
