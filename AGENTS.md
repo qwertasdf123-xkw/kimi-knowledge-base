@@ -24,15 +24,22 @@
 ## 工作规则
 
 1. 内容修改直接推送到本仓库 main 分支，无需通知主会话重新构建网页（网页实时拉取）
-2. 严格遵守 `docs/02-学习笔记/Linux/CLAUDE.md`：frontmatter 规范、模块目录结构、不删除 0 字节占位文件、canvas JSON 的 `nodes`/`edges` 结构保持完整
-3. `tools/`（vault-maintain.sh、fix-frontmatter.py、vaults.conf）是既有维护工具，保持可用，改动需先开 issue
-4. 结构级变更（新增分区、改 frontmatter 字段、改 tools/ 行为、调整目录约定）**不要直接实施**——先开 issue 描述方案，由主会话评审
-5. 提交信息使用中文，格式：`<动作> <范围>：<说明>`，如 `导入 LinuxRedis 模块笔记`
+2. **推送 `docs/` 变更时必须同步更新根目录 `manifest.json`**（网页靠它获取文件列表），生成命令：
+
+   ```bash
+   git -c core.quotepath=false ls-files docs | grep '\.md$' | sort | python3 -c "import sys,json;fs=[l.strip() for l in sys.stdin];print(json.dumps({'updated':'$(date +%F)','count':len(fs),'files':fs},ensure_ascii=False,indent=2))" > manifest.json
+   ```
+
+3. 严格遵守 `docs/02-学习笔记/Linux/CLAUDE.md`：frontmatter 规范、模块目录结构、不删除 0 字节占位文件、canvas JSON 的 `nodes`/`edges` 结构保持完整
+4. `tools/`（vault-maintain.sh、fix-frontmatter.py、vaults.conf）是既有维护工具，保持可用，改动需先开 issue
+5. 结构级变更（新增分区、改 frontmatter 字段、改 tools/ 行为、调整目录约定）**不要直接实施**——先开 issue 描述方案，由主会话评审
+6. 提交信息使用中文，格式：`<动作> <范围>：<说明>`，如 `导入 LinuxRedis 模块笔记`
 
 ## 仓库结构
 
 ```
 ├── AGENTS.md                 ← 本文件
+├── manifest.json             ← 知识文件清单（网页拉取入口，随 docs 变更更新）
 ├── README.md
 ├── docs/
 │   ├── 01-工作项目/           ← 复盘模板、会议纪要规范、周报框架
@@ -47,12 +54,12 @@
 
 ## 自检
 
-提交推送后，打开 https://gsfixhvth5fpg.ok.kimi.link 确认新内容可见（CDN 可能有几小时缓存延迟，属正常）。
+提交推送后，打开 https://gsfixhvth5fpg.ok.kimi.link 确认新内容可见。若网页未显示：检查 manifest.json 是否已更新并包含新文件；浏览器硬刷新（Ctrl/Cmd+Shift+R）。
 
 ## 最新状态
 
 > 由执行端在每次任务结束后更新。
 
+- 2026-08-07：新增 Linux网络工具模块（1525 行）；引入 manifest.json 清单机制（解决 CDN 缓存导致网页不更新）；AGENTS.md 增加清单更新规则
 - 2026-08-05：仓库初始化；导入 Linux vault 30+ 模块；tools/ 自动同步上线；网页改为实时拉取架构；技能包 v2（含 Linux 索引）发布
-- 2026-08-07：执行端处理本地/远端 divergence（[issue #1](https://github.com/qwertasdf123-xkw/kimi-knowledge-base/issues/1)）；`git pull --rebase` 合入 AGENTS.md（9837d6f），推送本地 vault 自动同步（548299b → 588bab8）；网页 CDN 自检待确认
 - 待办：（暂无）
