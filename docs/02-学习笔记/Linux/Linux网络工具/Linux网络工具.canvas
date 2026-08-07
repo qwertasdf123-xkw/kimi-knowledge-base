@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"a9b1c1d1e1f10001","type":"text","text":"# Linux 网络工具\n\n**模块说明**：curl/wget/httpie/aria2c + 诊断工具（ping/traceroute/dig）\n\n— 1 个笔记 —","x":-110,"y":-200,"width":260,"height":60,"color":"5"},
+		{"id":"a9b1c1d1e1f10002","type":"file","file":"Linux网络工具.md","x":-130,"y":-50,"width":260,"height":50},
+		{"id":"a9b1c1d1e1f10003","type":"text","text":"Linux网络工具.md\n─────\n• §0 心智模型（4 类工具）\n• §1 工具全景速查表\n• §2 curl 详解（500 行）\n• §3 wget 详解\n• §4 curl vs wget 13 维度对比\n• §5 httpie 详解\n• §6 aria2c 多线程下载\n• §7 诊断工具 ping/traceroute/dig\n• §8 实战场景 10 例\n• §9 易错+速查+面试+链接","x":200,"y":-200,"width":380,"height":720}
+	],
+	"edges":[
+		{"id":"e9b1c1d1e1f10001","fromNode":"a9b1c1d1e1f10001","fromSide":"bottom","toNode":"a9b1c1d1e1f10002","toSide":"top"},
+		{"id":"e9b1c1d1e1f10002","fromNode":"a9b1c1d1e1f10002","fromSide":"right","toNode":"a9b1c1d1e1f10003","toSide":"left"}
+	]
+}

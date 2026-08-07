@@ -69,12 +69,12 @@ E:\notes\                         镜像
 - 2026-07-16 第二批 canvas 镜像缺失：8 个模块（DHCP/NFS/RAID/iSCSI/Nginx/Web实战/LVS/Keepalived）缺失 `.canvas` 镜像，由主会话 `cp` 修复
 - 教训：Agent prompt 必须显式检查 **`.md` 和 `.canvas` 两个文件的 MD5**，缺一不可
 
-## 模块总览（30 个）
+## 模块总览（31 个）
 
 | 类别 | 模块 |
 |------|------|
 | Linux 内核/基础 | Linux目录(10) Linux文本处理(7) LinuxShell(3) Linux编辑器 Linux用户权限 Linux包管理 |
-| Linux 服务/运维 | Linux进程与负载 Linux服务与SSH Linux计划任务 Linux日志与时间 Linux文件传输 LinuxDNS LinuxDHCP LinuxNFS LinuxNginx LinuxWeb实战 LinuxLVS LinuxKeepalived **LinuxRedis** **LinuxKVM** |
+| Linux 服务/运维 | Linux进程与负载 Linux服务与SSH Linux计划任务 Linux日志与时间 Linux文件传输 LinuxDNS LinuxDHCP LinuxNFS LinuxNginx LinuxWeb实战 LinuxLVS LinuxKeepalived **LinuxRedis** **LinuxKVM** **Linux网络工具** |
 | Linux 底层/安全 | Linux存储 Linux启动原理 LinuxSELinux Linux防火墙 LinuxRAID LinuxiSCSI |
 | 网络 | Linux网络 网络基础原理(2) 路由与VLAN 华为VRP |
 

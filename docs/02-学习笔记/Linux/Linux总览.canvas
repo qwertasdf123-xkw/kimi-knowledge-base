@@ -3,7 +3,7 @@
 		{
 			"id": "f0b1c1d1e1f10001",
 			"type": "text",
-			"text": "# Linux总览\n\n**30 个模块 · 依赖关系图**",
+			"text": "# Linux总览\n\n**31 个模块 · 依赖关系图**",
 			"x": -110,
 			"y": -660,
 			"width": 260,
@@ -319,6 +319,16 @@
 			"width": 200,
 			"height": 50,
 			"color": "4"
+		},
+		{
+			"id": "f0b1c1d1e1f10021",
+			"type": "text",
+			"text": "# Linux网络工具",
+			"x": 900,
+			"y": 260,
+			"width": 200,
+			"height": 50,
+			"color": "5"
 		}
 	],
 	"edges": [
@@ -740,6 +750,41 @@
 			"fromNode": "f0b1c1d1e1f1001e",
 			"fromSide": "right",
 			"toNode": "f0b1c1d1e1f10020",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f13d",
+			"fromNode": "f0b1c1d1e1f1000e",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10021",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f13e",
+			"fromNode": "f0b1c1d1e1f1000c",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10021",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f13f",
+			"fromNode": "f0b1c1d1e1f1001b",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10021",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f140",
+			"fromNode": "f0b1c1d1e1f1000a",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10021",
+			"toSide": "left"
+		},
+		{
+			"id": "ef0b1c1d1e1f141",
+			"fromNode": "f0b1c1d1e1f10016",
+			"fromSide": "right",
+			"toNode": "f0b1c1d1e1f10021",
 			"toSide": "left"
 		}
 	]
