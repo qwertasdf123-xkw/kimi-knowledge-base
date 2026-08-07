@@ -54,4 +54,5 @@
 > 由执行端在每次任务结束后更新。
 
 - 2026-08-05：仓库初始化；导入 Linux vault 30+ 模块；tools/ 自动同步上线；网页改为实时拉取架构；技能包 v2（含 Linux 索引）发布
+- 2026-08-07：执行端处理本地/远端 divergence（[issue #1](https://github.com/qwertasdf123-xkw/kimi-knowledge-base/issues/1)）；`git pull --rebase` 合入 AGENTS.md（9837d6f），推送本地 vault 自动同步（548299b → 588bab8）；网页 CDN 自检待确认
 - 待办：（暂无）
