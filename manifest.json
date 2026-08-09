@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-07",
-  "count": 70,
+  "updated": "2026-08-09",
+  "count": 71,
   "files": [
     "docs/01-工作项目/周报写作框架.md",
     "docs/01-工作项目/项目复盘模板.md",
@@ -62,6 +62,7 @@
     "docs/02-学习笔记/Linux/kubernetes/07-调度资源弹性与健康检查.md",
     "docs/02-学习笔记/Linux/kubernetes/08-Kubernetes命令与故障排查.md",
     "docs/02-学习笔记/Linux/kubernetes/09-Kubernetes面试与架构设计.md",
+    "docs/02-学习笔记/Linux/kubernetes/10-K8s安装配置手册.md",
     "docs/02-学习笔记/Linux/华为VRP/华为VRP.md",
     "docs/02-学习笔记/Linux/网络基础原理/实验附录.md",
     "docs/02-学习笔记/Linux/网络基础原理/网络基础原理.md",
