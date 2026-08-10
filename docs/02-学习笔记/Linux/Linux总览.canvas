@@ -329,6 +329,16 @@
 			"width": 200,
 			"height": 50,
 			"color": "5"
+		},
+		{
+			"id": "openstack-node-20260811",
+			"type": "text",
+			"text": "# LinuxOpenStack\n\n**说明**：OpenStack IaaS 云计算\n\n— 8 份笔记（理论+实战+业务案例） —",
+			"x": 1250,
+			"y": 100,
+			"width": 300,
+			"height": 80,
+			"color": "5"
 		}
 	],
 	"edges": [
@@ -786,6 +796,38 @@
 			"fromSide": "right",
 			"toNode": "f0b1c1d1e1f10021",
 			"toSide": "left"
+		},
+		{
+			"id": "e-linuxnet-openstack-20260811",
+			"fromNode": "f0b1c1d1e1f1000e",
+			"fromSide": "right",
+			"toNode": "openstack-node-20260811",
+			"toSide": "left",
+			"label": "Neutron/OVS"
+		},
+		{
+			"id": "e-linuxstorage-openstack-20260811",
+			"fromNode": "f0b1c1d1e1f1000d",
+			"fromSide": "right",
+			"toNode": "openstack-node-20260811",
+			"toSide": "left",
+			"label": "Cinder LVM"
+		},
+		{
+			"id": "e-linuxkvm-openstack-20260811",
+			"fromNode": "f0b1c1d1e1f10020",
+			"fromSide": "right",
+			"toNode": "openstack-node-20260811",
+			"toSide": "left",
+			"label": "虚拟化基础"
+		},
+		{
+			"id": "e-linuxservice-openstack-20260811",
+			"fromNode": "f0b1c1d1e1f1000a",
+			"fromSide": "right",
+			"toNode": "openstack-node-20260811",
+			"toSide": "left",
+			"label": "systemd+SSH"
 		}
 	]
 }

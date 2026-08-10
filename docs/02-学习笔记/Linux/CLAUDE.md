@@ -68,8 +68,9 @@ E:\notes\                         镜像
 - 2026-07-16 第二批 RAID agent 镜像 bug：仅复制 20% 内容到 `E:\notes\linux-raid.md`，由主会话 `cp` 修复
 - 2026-07-16 第二批 canvas 镜像缺失：8 个模块（DHCP/NFS/RAID/iSCSI/Nginx/Web实战/LVS/Keepalived）缺失 `.canvas` 镜像，由主会话 `cp` 修复
 - 教训：Agent prompt 必须显式检查 **`.md` 和 `.canvas` 两个文件的 MD5**，缺一不可
+- 2026-08-11 LinuxOpenStack 模块新增：32 个模块，遵循"主会话 cp + md5sum"原则避免 sub-agent 镜像 bug
 
-## 模块总览（31 个）
+## 模块总览（32 个）
 
 | 类别 | 模块 |
 |------|------|
@@ -77,6 +78,7 @@ E:\notes\                         镜像
 | Linux 服务/运维 | Linux进程与负载 Linux服务与SSH Linux计划任务 Linux日志与时间 Linux文件传输 LinuxDNS LinuxDHCP LinuxNFS LinuxNginx LinuxWeb实战 LinuxLVS LinuxKeepalived **LinuxRedis** **LinuxKVM** **Linux网络工具** |
 | Linux 底层/安全 | Linux存储 Linux启动原理 LinuxSELinux Linux防火墙 LinuxRAID LinuxiSCSI |
 | 网络 | Linux网络 网络基础原理(2) 路由与VLAN 华为VRP |
+| **云计算** | **LinuxOpenStack**（8 笔记：核心/网络/认证/存储/安装/故障+业务案例） |
 
 括号内为笔记数（>1 的标注）。完整依赖关系见 `Linux总览.canvas`。
 

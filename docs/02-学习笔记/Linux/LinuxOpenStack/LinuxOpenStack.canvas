@@ -1,0 +1,305 @@
+{
+	"nodes": [
+		{
+			"id": "openstack-title",
+			"type": "text",
+			"text": "# OpenStack 模块\n\n**说明**：理论（核心/网络/认证/存储）+ 实战（安装/故障）+ 业务案例（电商云平台）\n\n— 8 份笔记 —",
+			"x": -200,
+			"y": -340,
+			"width": 400,
+			"height": 80,
+			"color": "5"
+		},
+		{
+			"id": "openstack-main",
+			"type": "file",
+			"file": "LinuxOpenStack.md",
+			"x": -200,
+			"y": -200,
+			"width": 400,
+			"height": 60
+		},
+		{
+			"id": "openstack-main-list",
+			"type": "text",
+			"text": "LinuxOpenStack.md 主页\n─────\n• §0 模块心智模型\n• §1 模块依赖图（vault 位置）\n• §2 7 章节摘要\n• §3 部署架构全景\n• §4 故障排查索引\n• §5 业务案例索引\n• §6 跨模块链接\n• §7 学习路线与面试地图",
+			"x": 240,
+			"y": -200,
+			"width": 420,
+			"height": 220
+		},
+		{
+			"id": "openstack-00",
+			"type": "file",
+			"file": "00-OpenStack学习路线.md",
+			"x": -1100,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-00-list",
+			"type": "text",
+			"text": "00-OpenStack学习路线.md\n─────\n• §0 心智模型（7 服务地图）\n• §1 4 PDF + 2 部署项目\n• §2 2-3 天复习顺序\n• §3 每个主题 7 问\n• §4 VMware 三网段\n• §8 复习题库 30 题\n• §9 速查表 + §10 Checklist",
+			"x": -1400,
+			"y": -50,
+			"width": 280,
+			"height": 220
+		},
+		{
+			"id": "openstack-01",
+			"type": "file",
+			"file": "01-OpenStack核心概念.md",
+			"x": -700,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-01-list",
+			"type": "text",
+			"text": "01-OpenStack核心概念.md\n─────\n• Nova 架构 + 组件\n• nova-scheduler filter/weigher\n• Nova Cell 架构\n• Glance 镜像 + 后端\n• Horizon Web 控制台\n• 7 大服务协作流\n• 与 K8s 对比",
+			"x": -1000,
+			"y": -50,
+			"width": 280,
+			"height": 200
+		},
+		{
+			"id": "openstack-02",
+			"type": "file",
+			"file": "02-OpenStack网络.md",
+			"x": -300,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-02-list",
+			"type": "text",
+			"text": "02-OpenStack网络.md\n─────\n• Neutron 三层架构\n• ML2 + OVS + OVN\n• Provider vs Tenant\n• 浮动 IP 完整通信流\n• br-ex IP 迁移实战\n• DVR + 冷启动恢复\n• 调试命令 14 项",
+			"x": -600,
+			"y": -50,
+			"width": 280,
+			"height": 200
+		},
+		{
+			"id": "openstack-03",
+			"type": "file",
+			"file": "03-OpenStack认证与多租户.md",
+			"x": 100,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-03-list",
+			"type": "text",
+			"text": "03-OpenStack认证与多租户.md\n─────\n• Domain/User/Group/Project/Role\n• Service/Endpoint/Token\n• 3 个认证时序图\n• Domain vs Project 命名空间\n• policy.json 规则\n• 30 题复习 + 速查表",
+			"x": -200,
+			"y": -50,
+			"width": 280,
+			"height": 200
+		},
+		{
+			"id": "openstack-04",
+			"type": "file",
+			"file": "04-OpenStack存储与镜像.md",
+			"x": 500,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-04-list",
+			"type": "text",
+			"text": "04-OpenStack存储与镜像.md\n─────\n• Glance / Cinder / Swift 三类存储\n• Cinder 多后端：LVM/Ceph/NFS\n• Cinder 卷类型 + QoS\n• Swift Ring + 副本策略\n• 业务案例：电商云平台 ECShop\n• thesis 6 章知识地图",
+			"x": 200,
+			"y": -50,
+			"width": 280,
+			"height": 220
+		},
+		{
+			"id": "openstack-05",
+			"type": "file",
+			"file": "05-OpenStack安装配置手册.md",
+			"x": 900,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-05-list",
+			"type": "text",
+			"text": "05-OpenStack安装配置手册.md\n─────\n• packstack 单节点 + 3 节点\n• kolla-ansible 双节点 5 阶段\n• kolla-ansible HA 三控制节点\n• 镜像同步：国内源 + ACR\n• 离线部署\n• 集群升级路径",
+			"x": 600,
+			"y": -50,
+			"width": 280,
+			"height": 220
+		},
+		{
+			"id": "openstack-06",
+			"type": "file",
+			"file": "06-OpenStack故障排查与运维.md",
+			"x": 1300,
+			"y": -50,
+			"width": 300,
+			"height": 50
+		},
+		{
+			"id": "openstack-06-list",
+			"type": "text",
+			"text": "06-OpenStack故障排查与运维.md\n─────\n• 故障排查方法论（5 层穿透）\n• 7 类故障分类\n  – 认证 / 计算 / 网络\n  – 存储 / 镜像 / 控制 / HA\n• 每类含 Runbook 脚本\n• 性能调优 + 监控告警\n• 应急响应 Runbook",
+			"x": 1000,
+			"y": -50,
+			"width": 280,
+			"height": 240
+		},
+		{
+			"id": "openstack-vault-link",
+			"type": "text",
+			"text": "vault 内位置\n─────\n• 前置：Linux网络 / Linux存储 / LinuxKVM\n• 前置：LinuxShell / Linux服务与SSH\n• 前置：Linux用户权限 / Linux防火墙\n• 业务对照：kubernetes\n• 同级可选：华为VRP / 网络基础原理\n\n详见 §1 模块依赖图",
+			"x": -1500,
+			"y": 280,
+			"width": 340,
+			"height": 260
+		},
+		{
+			"id": "openstack-case",
+			"type": "text",
+			"text": "业务案例：电商云平台（ECShop）\n─────\n• 毕业论文 thesis 6 章\n• 3 VM：Web + DB + Image\n• 浮动 IP + 私有网络\n• Cinder 卷 + 安全组\n• MySQL 主从 + 备份\n\n详见 [[04-OpenStack存储与镜像#§9 业务案例]]",
+			"x": 1100,
+			"y": 280,
+			"width": 320,
+			"height": 240
+		}
+	],
+	"edges": [
+		{
+			"id": "e-main-00",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-00",
+			"toSide": "right",
+			"label": "00 路线"
+		},
+		{
+			"id": "e-main-01",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-01",
+			"toSide": "right",
+			"label": "01 核心"
+		},
+		{
+			"id": "e-main-02",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-02",
+			"toSide": "right",
+			"label": "02 网络"
+		},
+		{
+			"id": "e-main-03",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-03",
+			"toSide": "right",
+			"label": "03 认证"
+		},
+		{
+			"id": "e-main-04",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-04",
+			"toSide": "right",
+			"label": "04 存储"
+		},
+		{
+			"id": "e-main-05",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-05",
+			"toSide": "right",
+			"label": "05 安装"
+		},
+		{
+			"id": "e-main-06",
+			"fromNode": "openstack-main",
+			"fromSide": "left",
+			"toNode": "openstack-06",
+			"toSide": "right",
+			"label": "06 故障"
+		},
+		{
+			"id": "e-01-03",
+			"fromNode": "openstack-01",
+			"fromSide": "right",
+			"toNode": "openstack-03",
+			"toSide": "left",
+			"label": "认证集成"
+		},
+		{
+			"id": "e-01-06",
+			"fromNode": "openstack-01",
+			"fromSide": "bottom",
+			"toNode": "openstack-06",
+			"toSide": "top",
+			"label": "计算故障"
+		},
+		{
+			"id": "e-02-05",
+			"fromNode": "openstack-02",
+			"fromSide": "bottom",
+			"toNode": "openstack-05",
+			"toSide": "top",
+			"label": "网络部署"
+		},
+		{
+			"id": "e-02-06",
+			"fromNode": "openstack-02",
+			"fromSide": "bottom",
+			"toNode": "openstack-06",
+			"toSide": "top",
+			"label": "网络故障"
+		},
+		{
+			"id": "e-03-06",
+			"fromNode": "openstack-03",
+			"fromSide": "bottom",
+			"toNode": "openstack-06",
+			"toSide": "top",
+			"label": "认证故障"
+		},
+		{
+			"id": "e-04-05",
+			"fromNode": "openstack-04",
+			"fromSide": "bottom",
+			"toNode": "openstack-05",
+			"toSide": "top",
+			"label": "存储部署"
+		},
+		{
+			"id": "e-04-06",
+			"fromNode": "openstack-04",
+			"fromSide": "bottom",
+			"toNode": "openstack-06",
+			"toSide": "top",
+			"label": "存储故障"
+		},
+		{
+			"id": "e-case-04",
+			"fromNode": "openstack-case",
+			"fromSide": "top",
+			"toNode": "openstack-04",
+			"toSide": "bottom",
+			"label": "业务案例"
+		},
+		{
+			"id": "e-link-vault",
+			"fromNode": "openstack-vault-link",
+			"fromSide": "right",
+			"toNode": "openstack-01",
+			"toSide": "left"
+		}
+	]
+}
