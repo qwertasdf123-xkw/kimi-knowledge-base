@@ -1,0 +1,56 @@
+Tue Oct  7 15:30:04 2025 - [info]  Replication filtering check ok.
+Tue Oct  7 15:30:04 2025 - [info] GTID (with auto-pos) is not supported
+Tue Oct  7 15:30:04 2025 - [info] Starting SSH connection tests..
+Tue Oct  7 15:30:06 2025 - [info] All SSH connection tests passed successfully.
+Tue Oct  7 15:30:06 2025 - [info] Checking MHA Node version..
+Tue Oct  7 15:30:06 2025 - [info]  Version check ok.
+Tue Oct  7 15:30:06 2025 - [info] Checking SSH publickey authentication settings 
+on the current master..
+Tue Oct  7 15:30:06 2025 - [info] HealthCheck: SSH to 192.168.108.131 is 
+reachable.
+Tue Oct  7 15:30:06 2025 - [info] Master MHA Node version is 0.57.
+Tue Oct  7 15:30:06 2025 - [info] Checking recovery script configurations on 
+192.168.108.131(192.168.108.131:3306)..
+Tue Oct  7 15:30:06 2025 - [info]   Executing command: save_binary_logs --
+command=test --start_pos=4 --binlog_dir=/usr/local/mysql/data --
+output_file=/tmp/save_binary_logs_test --manager_version=0.57 --
+start_file=master-bin.000002
+Tue Oct  7 15:30:06 2025 - [info]   Connecting to 
+root@192.168.108.131(192.168.108.131:22)..
+  Creating /tmp if not exists..    ok.
+  Checking output directory is accessible or not..
+   ok.
+  Binlog found at /usr/local/mysql/data, up to master-bin.000002
+Tue Oct  7 15:30:06 2025 - [info] Binlog setting check done.
+Tue Oct  7 15:30:06 2025 - [info] Checking SSH publickey authentication and 
+checking recovery script configurations on all alive slave servers..
+Tue Oct  7 15:30:06 2025 - [info]   Executing command : apply_diff_relay_logs --
+command=test --slave_user='mha' --slave_host=192.168.108.132 --
+slave_ip=192.168.108.132 --slave_port=3306 --workdir=/tmp --
+target_version=5.7.17-log --manager_version=0.57 --
+relay_log_info=/usr/local/mysql/data/relay-log.info  --
+relay_dir=/usr/local/mysql/data/  --slave_pass=xxx
+Tue Oct  7 15:30:06 2025 - [info]   Connecting to 
+root@192.168.108.132(192.168.108.132:22)..
+  Checking slave recovery environment settings..
+    Opening /usr/local/mysql/data/relay-log.info ... ok.
+    Relay log found at /usr/local/mysql/data, up to relay-log-bin.000002
+    Temporary relay log file is /usr/local/mysql/data/relay-log-bin.000002
+    Testing mysql connection and privileges..mysql: [Warning] Using a password on 
+the command line interface can be insecure.
+ done.
+    Testing mysqlbinlog output.. done.
+    Cleaning up test file(s).. done.
+Tue Oct  7 15:30:07 2025 - [info]   Executing command : apply_diff_relay_logs --
+command=test --slave_user='mha' --slave_host=192.168.108.133 --
+slave_ip=192.168.108.133 --slave_port=3306 --workdir=/tmp --target_version=5.7.17 
+--manager_version=0.57 --relay_log_info=/usr/local/mysql/data/relay-log.info  --
+relay_dir=/usr/local/mysql/data/  --slave_pass=xxx
+Tue Oct  7 15:30:07 2025 - [info]   Connecting to 
+root@192.168.108.133(192.168.108.133:22)..
+  Checking slave recovery environment settings..
+    Opening /usr/local/mysql/data/relay-log.info ... ok.
+    Relay log found at /usr/local/mysql/data, up to relay-log-bin.000002
+    Temporary relay log file is /usr/local/mysql/data/relay-log-bin.000002
+    Testing mysql connection and privileges..mysql: [Warning] Using a password on 
+the command line interface can be insecure.

@@ -1,0 +1,45 @@
+ 
+增量备份
+ 
++------------------+
+1 row in set (0.00 sec)
+mysql> drop table info;
+Query OK, 0 rows affected (0.01 sec)
+mysql> source /mysql_bak/info.sql
+mysql> show tables;
++------------------+
+| Tables_in_school |
++------------------+
+| info             |
++------------------+
+1 row in set (0.00 sec)
+[root@mysql01 ~]# vim /etc/my.cnf
+------------------------
+[mysqld]
+log-bin=mysql-bin #这段下面最后加一行
+[root@web-server ~]# systemctl restart mysqld.service
+[root@mysql01 ~]# ls /usr/local/mysql/data/
+auto.cnf    client-cert.pem  ibdata1      ibtmp1            mysql-bin.index     
+public_key.pem   server-key.pem
+ca-key.pem  client-key.pem   ib_logfile0  mysql             performance_schema  
+school           sys
+ca.pem      ib_buffer_pool   ib_logfile1  mysql-bin.000001  private_key.pem     
+server-cert.pem
+#先进行完整性备份
+[root@mysql01 ~]# mysqldump -uroot -p school > /opt/school.sql
+Enter password:
+#日志刷新生效
+[root@mysql01 ~]# mysqladmin -uroot -p flush-logs
+Enter password:
+#新产生的mysql-bin.000002只记录上次刷新后的操作
+[root@mysql01 ~]# ls /usr/local/mysql/data/
+auto.cnf    client-cert.pem  ibdata1      ibtmp1            mysql-bin.000002    
+private_key.pem  server-cert.pem
+ca-key.pem  client-key.pem   ib_logfile0  mysql             mysql-bin.index     
+public_key.pem   server-key.pem
+ca.pem      ib_buffer_pool   ib_logfile1  mysql-bin.000001  performance_schema  
+school           sys
+[root@mysql01 ~]# mysql -uroot -p
+Enter password:
+----------------------------------------
+mysql> use school;

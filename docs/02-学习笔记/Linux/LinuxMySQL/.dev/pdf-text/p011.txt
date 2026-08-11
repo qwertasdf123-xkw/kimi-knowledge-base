@@ -1,0 +1,68 @@
+id
+teacher_name
+class_1
+class_2
+class_3
+1
+ma
+golang
+linux
+python
+2
+gao
+golang
+linu
+ 
+3
+ma
+golang
+ 
+ 
+id
+teacher_name
+class
+1
+ma
+golang
+2
+ma
+linux
+3
+ma
+python
+4
+gao
+golang
+5
+gao
+linux
+6
+ma
+golang
+teacher_name
+city
+age
+city_code
+gao
+bj
+22
+010
+ 
+列不重复
+第一范式（1NF）——原子性
+核心要求：表中的每个字段都必须是不可再分的原子值。
+反例：
+ → “联系方式”包含多个值，违反 1NF。
+正例：
+💡 简单说：每一列只能存一个值，不能是列表、集合或复合结构。
+ 
+第二范式2NF（确保表中的每列都和主键相关）
+第二范式在第一范式的基础之上更进一层。第二范式需要确保数据库表中的每一列都和主键相关，而不
+能只与主键的某一部分相关（主要针对联合主键而言）。也就是说在一个数据库表中，一个表中只能保
+存一种数据，不可以把多种数据保存在同一张数据库表中。
+teacher_name 和city组成联合主键，city_code与city——对应，city_code依赖了部份主键，违反了第二
+范式
+学生ID | 联系方式
+001    | 13800138000, zhang@example.com
+学生ID | 手机号         | 邮箱
+001    | 13800138000   | zhang@example.com

@@ -1,0 +1,8 @@
+二：mysql.zip安装
+ 
+安装过程
+ 
+将mysql-8.4.6-winx64.zip放到指定目录，案列中是C:\Program Files，右击解压缩到当前文件夹
+mysql的根目录为C:\Program Files\mysql-8.4.6-winx64
+ 
+将C:\Program Files\mysql-8.4.6-winx64\bin目录设置到环境变量Path当中

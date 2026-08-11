@@ -1,0 +1,47 @@
+[root@mysql01 ~]# vim /etc/my.cnf
+[client]
+port = 3306
+default-character-set=utf8
+socket = /usr/local/mysql/mysql.sock
+[mysql]
+port = 3306
+default-character-set=utf8
+socket = /usr/local/mysql/mysql.sock
+[mysqld]
+user = mysql
+basedir = /usr/local/mysql
+datadir = /usr/local/mysql/data
+port = 3306
+character_set_server=utf8
+pid-file = /usr/local/mysql/mysqld.pid
+socket = /usr/local/mysql/mysql.sock
+server-id = 1
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_AUTO_V
+ALUE_ON_ZERO,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,PIPES_AS_CON
+CAT,ANSI_QUOTES
+#配置文件所属主和组
+[root@mysql01 ~]# chown mysql:mysql /etc/my.cnf
+#配置环境变量
+[root@mysql01 ~]# echo 'PATH=/usr/local/mysql/bin:/usr/local/mysql/lib:$PATH' >> 
+/etc/profile
+[root@mysql01 ~]# echo 'export PATH' >> /etc/profile
+#加载修改过的配置
+[root@mysql01 ~]# source /etc/profile
+#数据库初始化
+[root@mysql01 ~]# cd /usr/local/mysql/
+[root@mysql01 mysql]# bin/mysqld \
+--initialize-insecure \
+--user=mysql \
+--basedir=/usr/local/mysql \
+--datadir=/usr/local/mysql/data
+[root@mysql01 mysql]# cp /usr/local/mysql/usr/lib/systemd/system/mysqld.service 
+/usr/lib/systemd/system/
+[root@mysql01 mysql]# systemctl daemon-reload
+[root@mysql01 mysql]# systemctl start mysqld
+[root@mysql01 mysql]# netstat -anpt | grep 3306
+tcp6       0      0 :::3306                 :::*                    LISTEN     
+ 70276/mysqld        
+[root@mysql01 mysql]# systemctl enable mysqld
+#给root账号设置密码为huawei
+[root@mysql01 mysql]# mysqladmin -uroot password "huawei"
+Enter password: 

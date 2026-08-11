@@ -1,0 +1,49 @@
+范例：跨行
+#区分大小写
+mysql> SELect user,host from mysql.user;
++------------------+-----------+
+| user             | host      |
++------------------+-----------+
+| mysql.infoschema | localhost |
+| mysql.session    | localhost |
+| mysql.sys        | localhost |
+| root             | localhost |
++------------------+-----------+
+4 rows in set (0.01 sec)
+mysql> SELect user,host from mysql.USER;
+ERROR 1146 (42S02): Table 'mysql.USER' doesn't exist
+mysql> SELect user,HOST from mysql.USER;
+ERROR 1146 (42S02): Table 'mysql.USER' doesn't exist
+#字段不区分大小写，库名表名区分大小写
+mysql> SELect user,HOST from mysql.user;
++------------------+-----------+
+| user             | HOST      |
++------------------+-----------+
+| mysql.infoschema | localhost |
+| mysql.session    | localhost |
+| mysql.sys        | localhost |
+| root             | localhost |
++------------------+-----------+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+mysql> show
+    -> databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+#关键字不能跨行
+mysql> show data

@@ -1,0 +1,42 @@
+ 
+5. 外键的删除
+ 
+如果不需要外键约束了，可以删除外键，语法格式：ALTER TABLE 表名 DROP FOREIGN KEY 外键名;
+补充：测试完成后，可执行以下语句删除测试表，避免占用空间（不影响原有4张核心表）：
+ 
+6. 外键的注意事项（必记）
+ 
+1. 外键字段的数据类型，必须和关联的主键字段完全一致（比如yingxiong.yingxiong_id是INT，
+pifu.yingxiong_id也必须是INT），否则无法创建外键。
+2. 关联的表必须是InnoDB引擎（MySQL默认引擎），MyISAM引擎不支持外键。
+3. 外键字段可以允许为NULL（如玩家表的yaoqingren_id），但如果设置为NOT NULL，就必须填写
+关联表中存在的主键值。
+4. 外键是“表级约束”，只影响数据的插入、删除、更新，不影响查询（多表查询的关联的是字段，和
+外键约束本身无关，但外键保证了关联数据的有效性）。
+5. 不要滥用外键：小项目、数据量小的场景可以用外键保证完整性；大数据量、高并发场景，建议不
+用外键（会降低效率），用程序逻辑控制数据关联。
+-- 2. 插入测试数据
+INSERT INTO wanjia_zhikong (wanjia_nicheng, yaoqingren_id) VALUES 
+('国服韩信', NULL), 
+('野王妹妹', 1), -- 邀请人是国服韩信（wanjia_id=1）
+('菜鸡互啄', 2); -- 邀请人是野王妹妹（wanjia_id=2）
+-- 3. 测试置空约束：删除邀请人（国服韩信，wanjia_id=1）
+DELETE FROM wanjia_zhikong WHERE wanjia_id=1;
+-- 4. 验证结果：野王妹妹的yaoqingren_id自动变为NULL
+SELECT * FROM wanjia_zhikong; -- 野王妹妹的yaoqingren_id显示NULL，菜鸡互啄的不变
+-- 1. 查看wanjia_zhikong表的外键名（MySQL自动生成，通过以下语句查询）
+SHOW CREATE TABLE wanjia_zhikong; -- 查看表结构，找到外键名（如：
+wanjia_zhikong_ibfk_1）
+-- 2. 删除外键（替换外键名为查询到的名称，示例为wanjia_zhikong_ibfk_1）
+ALTER TABLE wanjia_zhikong DROP FOREIGN KEY wanjia_zhikong_ibfk_1;
+-- 验证：删除外键后，置空约束失效，可删除被关联的邀请人，且被邀请人的yaoqingren_id不会自动置空
+-- 插入测试数据用于验证
+INSERT INTO wanjia_zhikong (wanjia_nicheng, yaoqingren_id) VALUES 
+('上单老高', NULL), 
+('野王小帅', 2);
+-- 删除邀请人（野王妹妹，wanjia_id=2）
+DELETE FROM wanjia_zhikong WHERE wanjia_id=2;
+-- 查看结果：野王小帅的yaoqingren_id仍为2（未置空），说明外键已删除、约束失效
+SELECT * FROM wanjia_zhikong;
+-- 删除约束模式测试用的临时表
+DROP TABLE IF EXISTS pifu_jilian, yingxiong_jilian, wanjia_zhikong;

@@ -1,0 +1,10 @@
+查看mysql服务名称：此电脑-右键-管理-服务和应用程序-服务-找MySQL服务，如下图mysql服务名称：
+MySQL
+MySQL服务启动和停止
+ 
+windows+r打开运行，运行中输入cmd回车
+登录mysql：输入mysql -uroot -p跟上刚才随机产生的密码，然后回车，看到下图表示成功登录mysql
+启动 MySQL 服务命令：
+net start MySQL
+停止 MySQL 服务命令：
+net stop MySQL

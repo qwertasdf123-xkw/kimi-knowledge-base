@@ -1,0 +1,9 @@
+Writing configuration file        写配置文件
+Updating Windows Firewall rules       更新防火墙规则，添加为防火墙信任程序
+Adjusting Windows service               添加Mysql服务名到服务列表
+Initializing database (may take a long time)           初始化系统库
+Updating permissions for the data folder and related server files      更新数据文件夹和相关服务器文
+件的权限
+Starting the server                  启动mysql服务
+Applying security settings            应用安全设置
+Updating the Start menu link          更新启动菜单

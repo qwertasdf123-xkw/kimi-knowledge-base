@@ -1,0 +1,42 @@
+范例：重连
+范例：往文件中保存输出结果
+[root@localhost ~]# vim test.sql
+show databases;
+mysql> \. /root/test.sql
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+[root@localhost ~]# mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> \r
+Connection id:    20
+Current database: *** NONE ***
+mysql> use mysql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+Database changed
+mysql> \r
+Connection id:    21
+Current database: mysql
+mysql>
+mysql> tee db.txt                 #设置写到文件db.txt
+Logging to file 'db.txt'
+mysql> select version();          #执行SQL语句
++-----------+
+| version() |
++-----------+
+| 8.0.26    |
++-----------+

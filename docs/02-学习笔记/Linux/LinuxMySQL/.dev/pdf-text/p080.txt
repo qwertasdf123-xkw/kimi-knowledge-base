@@ -1,0 +1,49 @@
+查看库中所有表状态
+格式
+范例
+      Data_free: 0
+ Auto_increment: 12
+    Create_time: 2025-09-18 22:10:21
+    Update_time: 2025-09-18 22:24:45
+     Check_time: NULL
+      Collation: utf8mb4_0900_ai_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+1 row in set (0.01 sec)
+#不能有库名
+mysql> SHOW TABLE STATUS LIKE 'db1.student'\G
+Empty set (0.00 sec)
+SHOW TABLE STATUS FROM db_name
+mysql> SHOW TABLE STATUS FROM db1\G
+*************************** 1. row ***************************
+           Name: student
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 2
+ Avg_row_length: 8192
+    Data_length: 16384
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: 12
+    Create_time: 2025-09-18 22:10:21
+    Update_time: 2025-09-18 22:24:45
+     Check_time: NULL
+      Collation: utf8mb4_0900_ai_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+*************************** 2. row ***************************
+           Name: student2
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 2
+ Avg_row_length: 8192
+    Data_length: 16384
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: NULL

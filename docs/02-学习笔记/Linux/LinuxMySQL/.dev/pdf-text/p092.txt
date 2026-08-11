@@ -1,0 +1,46 @@
+保证无法在没有条件的情况下更新所有
+| 15 | test2    |   21 | M      |      1 |
+| 16 | test3    |   31 | F      |      1 |
+| 17 | NULL     |   22 | M      |      0 |
+| 18 | xiaohong |   31 | F      |      1 |
+| 19 | xiaohong |   31 | F      |      1 |
+| 20 | zhangsan |   31 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+#NULL要写 IS NULL
+mysql> update stu set gender='F' where name=NULL;
+Query OK, 0 rows affected (0.01 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+mysql> update stu set gender='F' where name IS NULL;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+-U, --i-am-a-dummy  Synonym for option --safe-updates, -U.
+[root@localhost ~]# mysql -U
+#该配置还可以写到配置文件中
+[root@localhost ~]# vim /etc/my.cnf.d/client.cnf
+[client]
+safe-updates
+#无法完全更新
+mysql> update stu set age=22;
+ERROR 1175 (HY000): You are using safe update mode and you tried to update a 
+table without a WHERE that uses a KEY column.
+mysql> update stu set age=23 where name='test3';
+ERROR 1175 (HY000): You are using safe update mode and you tried to update a 
+table without a WHERE that uses a KEY column.
+#必须要指定主键
+mysql> UPDATE stu SET age=23 WHERE id=17;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 10 | xiaoming |   30 | F      |      0 |
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |
+| 14 | test1    |   30 | F      |      1 |
+| 15 | test2    |   21 | M      |      1 |
+| 16 | test3    |   31 | F      |      1 |
+| 17 | NULL     |   23 | F      |      0 |
+| 18 | xiaohong |   31 | F      |      1 |

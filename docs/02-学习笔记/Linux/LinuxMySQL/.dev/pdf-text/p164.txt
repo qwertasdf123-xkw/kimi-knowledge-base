@@ -1,0 +1,42 @@
+mysql从服务器配置
+mysql-slave01,mysql-slave02都要做如下操作
++-------------------+----------+--------------+------------------+---------------
+----+
+1 row in set (0.00 sec)
+#检查有没有master-bin.000001
+[root@mysql-master ~]# ls /usr/local/mysql/data
+auto.cnf        ibdata1      ib_logfile1  master-bin.000001  mysql               
+sys
+ib_buffer_pool  ib_logfile0  ibtmp1       master-bin.index   performance_schema
+#主从是克隆的要做这个操作，否则UUID一致
+[root@mysql-slave01 ~]# systemctl stop mysqld
+[root@mysql-slave01 ~]# rm -f /usr/local/mysql/data/auto.cnf
+[root@mysql-slave01 ~]# systemctl start mysqld
+[root@mysql-slave01 ~]# vim /etc/my.cnf
+server-id = 22                                     #另外一台为23
+relay-log = relay-log-bin                          #从主服务器上同步日志文件记录到本地
+relay-log-index = slave-relay-bin.index           #定义relay-log的位置和名称
+[root@mysql-slave01 ~]# systemctl restart mysqld
+[root@mysql-slave01 ~]# mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.17 Source distribution
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> change master to 
+master_host='192.168.108.101',master_user='myslave',master_password='123456',mast
+er_log_file='master-bin.000001',master_log_pos=604;             
+ #master_log_file，master_log_pos与前面查询的相同
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+mysql> start slave;
+Query OK, 0 rows affected (0.02 sec)
+mysql> show slave status\G;
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 192.168.108.101
+                  Master_User: myslave
+                  Master_Port: 3306

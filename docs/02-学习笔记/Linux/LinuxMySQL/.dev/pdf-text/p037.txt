@@ -1,0 +1,45 @@
+范例：只输出不执行
+ 
+2.4.4.3 mysqladmin工具
+ 
+mysqladmin也是用于管理mysql服务的本地工具
+格式
+mysql> select version()        #这里要断句
+    -> go
++-----------+
+| version() |
++-----------+
+| 8.0.26    |
++-----------+
+1 row in set (0.00 sec)
+mysql> select version()       #这里要断句
+    -> ego
+*************************** 1. row ***************************
+version(): 8.0.26
+1 row in set (0.00 sec)
+mysql> select version()\p
+--------------
+select version()
+--------------
+    ->
+[root@localhost ~]# mysqladmin --help
+mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Administration program for the mysqld daemon.
+Usage: mysqladmin [OPTIONS] command command....
+  --bind-address=name IP address to bind to.
+  -c, --count=#       Number of iterations to make. This works with -i         #
+总共执行多少次，配合-i选项使用
+                      (--sleep) only.
+  -#, --debug[=#]     This is a non-debug version. Catch this and exit.
+  --debug-check       This is a non-debug version. Catch this and exit.
+  --debug-info        This is a non-debug version. Catch this and exit.
+  -f, --force         Don't ask for confirmation on drop database; with
+                      multiple commands, continue even if an error occurs.
+  -C, --compress      Use compression in server/client protocol.           #启用压
+缩
+  --character-sets-dir=name
+                      Directory for character set files.

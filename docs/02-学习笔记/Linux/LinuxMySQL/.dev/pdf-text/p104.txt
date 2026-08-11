@@ -1,0 +1,50 @@
+| 18 | xiaohong |   31 |
+| 19 | xiaohong |   31 |
+| 20 | zhangsan |   31 |
++----+----------+------+
+10 rows in set (0.00 sec)
+#降序
+mysql> select id,name,age from stu order by id desc;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+| 20 | zhangsan |   31 |
+| 19 | xiaohong |   31 |
+| 18 | xiaohong |   31 |
+| 17 | NULL     |   23 |
+| 16 | test3    |   31 |
+| 15 | test2    |   21 |
+| 14 | test1    |   30 |
+| 13 | xiaozhou |   30 |
+| 12 | zhangsan |   30 |
+| 11 | xiaohong |   30 |
++----+----------+------+
+10 rows in set (0.00 sec)
+#降序变升序
+mysql> select id,name,age from stu order by -id desc;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+| 11 | xiaohong |   30 |
+| 12 | zhangsan |   30 |
+| 13 | xiaozhou |   30 |
+| 14 | test1    |   30 |
+| 15 | test2    |   21 |
+| 16 | test3    |   31 |
+| 17 | NULL     |   23 |
+| 18 | xiaohong |   31 |
+| 19 | xiaohong |   31 |
+| 20 | zhangsan |   31 |
++----+----------+------+
+10 rows in set (0.00 sec)
+#用分组结果排序
+mysql> select sum(age) as sum_age,avg(age) avg_age,gender 性别 from stu where name 
+is not null group by gender order by sum_age asc;
++---------+---------+--------+
+| sum_age | avg_age | 性别   |
++---------+---------+--------+
+|      82 | 27.3333 | M      |
+|     183 | 30.5000 | F      |
++---------+---------+--------+
+2 rows in set (0.00 sec)
+mysql> 

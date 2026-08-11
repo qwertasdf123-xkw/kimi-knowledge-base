@@ -1,0 +1,47 @@
+ 
+3.2.5字符集和排序
+ 
+早期MySQL版本默认为latin1，从MySQL8.0开始默认字符集已经为utf8mb4
+查看当前版本可用的字符集
+   CREATE TABLE
+   CREATE TABLESPACE
+   CREATE TRIGGER
+   CREATE VIEW
+   DROP DATABASE
+   DROP EVENT
+   DROP FUNCTION
+   DROP INDEX
+   DROP PROCEDURE
+   DROP SCHEMA
+   DROP SERVER
+   DROP SPATIAL REFERENCE SYSTEM
+   DROP TABLE
+   DROP TABLESPACE
+   DROP TRIGGER
+   DROP VIEW
+   FOREIGN KEY
+   RENAME TABLE
+   TRUNCATE TABLE
+mysql> help CREATE DATABASE;
+Name: 'CREATE DATABASE'
+Description:
+Syntax:
+CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+    [create_option] ...
+create_option: [DEFAULT] {
+    CHARACTER SET [=] charset_name
+  | COLLATE [=] collation_name
+  | ENCRYPTION [=] {'Y' | 'N'}
+}
+CREATE DATABASE creates a database with the given name. To use this
+statement, you need the CREATE privilege for the database. CREATE
+SCHEMA is a synonym for CREATE DATABASE.
+URL: https://dev.mysql.com/doc/refman/8.0/en/create-database.html
+mysql> show CHARACTER SET;                #查看所有支持的字符集
++----------+---------------------------------+---------------------+--------+
+| Charset  | Description                     | Default collation   | Maxlen |
++----------+---------------------------------+---------------------+--------+
+| armscii8 | ARMSCII-8 Armenian              | armscii8_general_ci |      1 |
+| ascii    | US ASCII                        | ascii_general_ci    |      1 |
+| big5     | Big5 Traditional Chinese        | big5_chinese_ci     |      2 |
+| binary   | Binary pseudo charset           | binary              |      1 |

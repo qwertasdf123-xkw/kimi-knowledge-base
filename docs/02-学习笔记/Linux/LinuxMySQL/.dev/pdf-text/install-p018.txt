@@ -1,0 +1,23 @@
+修改MySQL的root账户密码：ALTER USER 'root'@'localhost' IDENTIFIED  BY '新密码';
+ALTER USER 'root'@'localhost' IDENTIFIED  BY 'huawei';
+使用新密码登陆
+linux系统安装
+ 
+资源准备
+ 
+最小化系统即可。                    
+安装MySQL
+ 
+步骤 1     查看CentOS Stream 8自带yum源支持的MySQL版本
+在CentOS Stream 8输入以下命令查看CentOS Stream 8自带yum源支持的MySQL版本信息：
+ 从查询结果可知，用户可选择安装8.0.x版本的MySQL.
+步骤 2     安装8.0.26版本的MySQL
+使用dnf命令安装MySQL-server，如下图所示：
+ 等待安装完成后，使用命令systemctl enable mysqld --now启动该服务并设置开机启动，并查看对应端
+口是否处于监听状态，如下图所示：
+[root@localhost ~]# dnf list mysql-server*
+Last metadata expiration check: 0:01:09 ago on Wed 27 Aug 2025 04:40:36 PM CST.
+Available Packages
+mysql-server.x86_64             8.0.26-1.module_el8.4.0+915+de215114             
+       appstream       
+[root@localhost ~]# dnf install -y mysql-server-8.0.26

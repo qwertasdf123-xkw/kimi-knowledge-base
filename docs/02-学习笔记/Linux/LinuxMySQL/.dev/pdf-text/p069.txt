@@ -1,0 +1,52 @@
+类型
+关键字
+定点数类型
+DECIMAL
+位类型
+BIT
+日期时间类型
+YEAR TIME DATE DATETIME TIMESTAMP
+文本字符串类型
+CHAR VARCHAR TINYTEXT TEXT MEDIUMTEXT LONGTEXT
+枚举类型
+ENUM
+集合类型
+SET
+二进制字符串类型
+BINARY VARBINARY TINYBLOB BLOB MEDIUMBLOB LONGBLOB
+JSON 类型
+JSON对象 JSON 数组
+空间数据类型 (单值类
+型)
+GEOMETRY POINT LINESTRING POLYGON
+空间数据类型 (集合类
+型)
+MULTIPOINT MULTILINESTRING MULTIPOLYGON
+GEOMETRYCOLLECTION
+关键字
+含义
+NULL
+数据列可包含 NULL 值
+NOT NULL
+数据列不允许包含 NULL 值
+DEFAULT
+默认值
+PRIMARY KEY
+主键
+AUTO_INCREMENT
+自动递增，适用于整数类型
+UNSIGNED
+无符号
+CHARACTER SET name
+指定一个字符集
+在常见数据表时，除了可以指定列的数据类型，还可以指定列的属性。
+ 
+常见数据库（MySQL）核心数据类型（必考分类）
+1. 数值类型（存储数字，最常用）
+用于存储整数、小数等数值，按范围和精度分为两类：
+整数类型：INT（最常用，存储-2147483648~2147483647，如年龄、学号）、TINYINT（小
+整数，如性别0/1）、BIGINT（大整数，如手机号、身份证号）；
+小数类型：DECIMAL（高精度小数，如金额、价格，推荐使用，避免精度丢失）、FLOAT
+（单精度小数）、DOUBLE（双精度小数）。
+2. 字符串类型（存储文字、符号，最常用）
+VARCHAR(n)：可变长度字符串，n表示最大长度（如姓名、地址，推荐使用，节省空间）；

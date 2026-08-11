@@ -1,0 +1,46 @@
+范例：
+mysqladmin命令也可以创建和删除数据库
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb1            |
+| testdb2            |
++--------------------+
+6 rows in set (0.00 sec)
+#删除数据库
+mysql> DROP DATABASE testdb2;
+Query OK, 0 rows affected (0.00 sec)
+#删除不存在的库
+mysql> DROP DATABASE testdb2;
+ERROR 1008 (HY000): Can't drop database 'testdb2'; database doesn't exist
+#加if exists判断
+mysql> DROP DATABASE IF EXISTS testdb2;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb1            |
++--------------------+
+5 rows in set (0.00 sec)
+#testdb2对应的目录已不存在
+[root@localhost ~]# ls -d /var/lib/mysql/testdb* -d
+/var/lib/mysql/testdb1
+#创建数据库db1
+[root@localhost ~]# mysqladmin create db1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db1                |
+| information_schema |
+| mysql              |

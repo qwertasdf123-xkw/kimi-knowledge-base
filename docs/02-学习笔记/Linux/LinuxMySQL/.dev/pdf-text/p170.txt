@@ -1,0 +1,37 @@
+配置文件
+作用
+amoeba.xml
+代理核心配置：端口、认证、读写池、路由规则、线程池
+dbServers.xml
+定义后端 MySQL 节点（主 / 从）、连接信息、连接池
+核心组件（配置文件）
+Amoeba 核心配置在 $AMOEBA_HOME/conf/  下，共 7 个，最关键 2 个：
+路由规则（读写分离核心）
+在 amoeba.xml  中配置：
+writePool ：指定写操作转发的主库节点池。
+readPool ：指定读操作转发的从库节点池（多从库自动轮询）。
+规则优先级：readPools/writePools  > defaultPools 。
+在三台mysql上添加权限开放给amoeba访问
+#普通linux克隆得出amoeba
+[root@amoeba ~]# hostnamectl set-hostname amoeba
+[root@amoeba ~]# systemctl stop firewalld.service
+[root@amoeba ~]# setenforce 0
+[root@amoeba ~]# chmod +x jdk-6u14-linux-x64.bin
+[root@amoeba ~]# ./jdk-6u14-linux-x64.bin
+到yes的时候,输入yes按enter
+[root@amoeba ~]# mv jdk1.6.0_14/ /usr/local/jdk1.6
+[root@amoeba ~]# vim /etc/profile
+最下面加
+export JAVA_HOME=/usr/local/jdk1.6                   #java家目录
+export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib             #类环境
+和jre
+export PATH=$JAVA_HOME/lib:$JAVA_HOME/jre/bin/:$PATH:$HOME/bin          
+export AMOEBA_HOME=/usr/local/amoeba                  #指定amoeba路径
+export PATH=$PATH:$AMOEBA_HOME/bin
+[root@amoeba ~]# source /etc/profile
+[root@amoeba ~]# mkdir /usr/local/amoeba
+[root@amoeba ~]# tar zxvf amoeba-mysql-binary-2.2.0.tar.gz -C /usr/local/amoeba/
+[root@amoeba ~]# chmod -R 755 /usr/local/amoeba/
+#执行结果显示amoeba start|stop说明安装成功
+[root@amoeba ~]# /usr/local/amoeba/bin/amoeba
+amoeba start|stop

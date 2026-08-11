@@ -1,0 +1,17 @@
+环境变量名
+操作
+环境变量值
+MYSQL_HOME
+新建
+C:\Program Files\MySQL\MySQL Server 8.4
+Path
+编辑
+%MYSQL_HOME%\bin
+mysql环境变量配置
+ 
+如果运行mysql命令，报如下错误，说明需要配置环境变量
+右击此电脑，属性>高级系统设置>高级>环境变量
+环境变量名设置如下
+或者直接
+C:\Users\Administrator>mysql
+'mysql' 不是内部或外部命令，也不是可运行的程序或批处理文件。

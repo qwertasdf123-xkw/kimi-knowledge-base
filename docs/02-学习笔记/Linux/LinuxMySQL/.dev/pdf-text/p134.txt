@@ -1,0 +1,45 @@
+范例
++----+----------+------+--------+
+| id | name     | age  | gender |
++----+----------+------+--------+
+| 10 | xiaoming |   20 | M      |
++----+----------+------+--------+
+1 row in set (0.00 sec)
+#没有更新权限，远程操作
+mysql> update student set age=25 where id=10;
+ERROR 1142 (42000): UPDATE command denied to user 'root'@'192.168.108.1' for 
+table 'student'
+#没有删除权限，远程操作
+mysql> delete from student where id=10;
+ERROR 1142 (42000): DELETE command denied to user 'root'@'192.168.108.1' for 
+table 'student'
+#继续授权，本地操作
+mysql> grant update,delete on db1.student to root@'192.168.108.%';
+#再次查看，远程操作
+mysql> SHOW GRANTS FOR CURRENT_USER;
++---------------------------------------------------------------------------+
+| Grants for root@192.168.108.%                                             |
++---------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `root`@`192.168.108.%`                              |
+| GRANT SELECT, UPDATE, DELETE ON `db1`.`student` TO `root`@`192.168.108.%` |
++---------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+#测试，远程操作
+mysql> update student set age=25 where id=10;
+mysql> select * from student;
++----+----------+------+--------+
+| id | name     | age  | gender |
++----+----------+------+--------+
+| 10 | xiaoming |   25 | M      |
++----+----------+------+--------+
+1 row in set (0.00 sec)
+mysql> delete from student where id=10;
+mysql> select * from student;
+Empty set (0.00 sec)
+#创建数据库，本地操作
+mysql> create database eshop;
+Query OK, 1 row affected (0.00 sec)
+#创建用户，本地操作
+mysql> create user eshoper@'192.168.108.%' identified by '123456';
+Query OK, 0 rows affected (0.00 sec)
+#授权，本地操作

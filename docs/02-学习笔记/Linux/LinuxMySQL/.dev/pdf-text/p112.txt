@@ -1,0 +1,50 @@
+2. 创建 4 张测试表
+ 
+3. 插入王者荣耀测试数据
+ 
+-- 1. 英雄表：存储所有英雄的基础信息
+CREATE TABLE IF NOT EXISTS yingxiong (
+  yingxiong_id INT PRIMARY KEY AUTO_INCREMENT,
+  yingxiong_ming VARCHAR(50) NOT NULL COMMENT '英雄名',
+  zhiye VARCHAR(20) NOT NULL COMMENT '职业：刺客/法师/射手/辅助',
+  fenlu VARCHAR(20) NOT NULL COMMENT '分路：打野/中路/下路/游走'
+) COMMENT '英雄表';
+-- 2. 玩家表：存储玩家信息，包含邀请人字段（用于自连接案例）
+CREATE TABLE IF NOT EXISTS wanjia (
+  wanjia_id INT PRIMARY KEY AUTO_INCREMENT,
+  wanjia_nicheng VARCHAR(50) NOT NULL COMMENT '玩家昵称',
+  duanwei VARCHAR(20) NOT NULL COMMENT '段位：青铜/星耀/王者',
+  yaoqingren_id INT COMMENT '邀请该玩家的人ID（关联自身玩家表）'
+) COMMENT '玩家表';
+-- 3. 皮肤表：存储英雄的皮肤信息，关联英雄表
+CREATE TABLE IF NOT EXISTS pifu (
+  pifu_id INT PRIMARY KEY AUTO_INCREMENT,
+  yingxiong_id INT NOT NULL COMMENT '所属英雄ID',
+  pifu_ming VARCHAR(50) NOT NULL COMMENT '皮肤名',
+  jiage INT NOT NULL COMMENT '皮肤价格（点券）',
+  FOREIGN KEY (yingxiong_id) REFERENCES yingxiong(yingxiong_id)
+) COMMENT '皮肤表';
+-- 4. 战绩表：中间表，关联玩家和英雄，记录玩家用该英雄的对战数据
+CREATE TABLE IF NOT EXISTS zhanji (
+  zhanji_id INT PRIMARY KEY AUTO_INCREMENT,
+  wanjia_id INT NOT NULL COMMENT '玩家ID',
+  yingxiong_id INT NOT NULL COMMENT '使用的英雄ID',
+  shenglv DECIMAL(4,1) NOT NULL COMMENT '胜率',
+  zongchangci INT NOT NULL COMMENT '总场次',
+  mvp_cishu INT NOT NULL COMMENT 'MVP次数',
+  FOREIGN KEY (wanjia_id) REFERENCES wanjia(wanjia_id),
+  FOREIGN KEY (yingxiong_id) REFERENCES yingxiong(yingxiong_id)
+) COMMENT '对战战绩表';
+-- 插入英雄数据
+INSERT INTO yingxiong (yingxiong_ming, zhiye, fenlu) VALUES
+('韩信', '刺客', '打野'),
+('李白', '刺客', '打野'),
+('妲己', '法师', '中路'),
+('鲁班七号', '射手', '下路'),
+('蔡文姬', '辅助', '游走'),
+('澜', '刺客', '打野'),
+('暃', '刺客', '打野'); -- 新出的英雄，暂时没人用
+-- 插入玩家数据
+INSERT INTO wanjia (wanjia_nicheng, duanwei, yaoqingren_id) VALUES
+('国服韩信', '王者', NULL),
+('野王妹妹', '星耀', 1),

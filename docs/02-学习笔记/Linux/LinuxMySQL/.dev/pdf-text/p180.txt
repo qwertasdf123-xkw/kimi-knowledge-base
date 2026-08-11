@@ -1,0 +1,41 @@
+三节点都要操作
+Important
+mysql5.7注意
+请注释/etc/my.cnf 中 【client】下 #default-character-set=utf8
+一定要注释，否则报错
+ln -s /usr/local/mysql/bin/mysqlbinlog /usr/bin/
+ln -s /usr/local/mysql/bin/mysql /usr/bin/ 
+ 
+配置 MySQL 一主两从
+ 
+MySQL 主从配置相对比较简单。需要注意的是授权。步骤如下：
+在所有数据库节点上授权两个用户，一个是从库同步使用，另外一个是 manager 使用。
+#mysql-slave01，请注释/etc/my.cnf 中 [client]下 #default-character-set=utf8
+[root@mysql-slave01 ~]# vim /etc/my.cnf         #下面只列出了要改的内容
+[client]
+#default-character-set=utf8
+[mysqld]
+server-id = 2           
+log_bin = master-bin                
+relay-log = relay-log-bin 
+relay-log-index = slave-relay-bin.index 
+#mysql-slave02，请注释/etc/my.cnf 中 [client]下 #default-character-set=utf8
+[root@mysql-slave02 ~]# vim /etc/my.cnf
+[client]
+#default-character-set=utf8
+[mysqld]
+server-id = 3                    
+relay-log = relay-log-bin 
+relay-log-index = slave-relay-bin.index 
+[root@mysql-master ~]# ln -s /usr/local/mysql/bin/mysqlbinlog /usr/bin/
+[root@mysql-master ~]# ln -s /usr/local/mysql/bin/mysql /usr/bin/
+[root@mysql-master ~]# systemctl restart mysqld
+[root@mysql-slave01 ~]# ln -s /usr/local/mysql/bin/mysqlbinlog /usr/bin/
+[root@mysql-slave01 ~]# ln -s /usr/local/mysql/bin/mysql /usr/bin/
+[root@mysql-slave01 ~]# systemctl restart mysqld
+[root@mysql-slave02 ~]# ln -s /usr/local/mysql/bin/mysqlbinlog /usr/bin/
+[root@mysql-slave02 ~]# ln -s /usr/local/mysql/bin/mysql /usr/bin/
+[root@mysql-slave02 ~]# systemctl restart mysqld
+#mysql-master
+mysql> grant replication slave on *.* to 'myslave'@'192.168.108.%' identified by 
+'123';

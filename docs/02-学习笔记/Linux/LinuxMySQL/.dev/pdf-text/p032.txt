@@ -1,0 +1,41 @@
+范例：切换数据库
+范例：调用系统命令
+范例：修改提示符
+在配置文件中修改提示符
+Current user:           root@localhost                 #连接使用的用户名
+SSL:                    Not in use                     #是否使用ssl
+Current pager:          stdout
+Using outfile:          ''
+Using delimiter:        ;
+Server version:         8.0.26 Source distribution     #版本
+Protocol version:       10                             #协议版本
+Connection:             Localhost via UNIX socket
+Server characterset:    utf8mb4                        #服务器编码
+Db     characterset:    utf8mb4                        #数据库编码
+Client characterset:    utf8mb4                        #客户端编码
+Conn.  characterset:    utf8mb4
+UNIX socket:            /var/lib/mysql/mysql.sock      #连接使用的socket文件
+Binary data as:         Hexadecimal
+Uptime:                 28 min 46 sec                  #服务器运行时长
+Threads: 2  Questions: 6  Slow queries: 0  Opens: 117  Flush tables: 3  Open 
+tables: 36  Queries per second avg: 0.003                                         
+    
+--------------
+mysql> use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+Database changed
+mysql>
+mysql> \! hostname          #查看宿主机主机名，！号后面有空格
+localhost.localdomain
+mysql> \! clear             #清屏
+mysql> prompt [\h--\D]
+PROMPT set to '[\h--\D]'
+[localhost--Mon Sep 15 22:09:09 2025]
+[localhost--Mon Sep 15 22:10:01 2025]\R abcd
+PROMPT set to 'abcd'
+abcd
+abcd
+[root@localhost ~]# vim /etc/my.cnf.d/client.cnf
+[client]
+prompt=(\\u@\\h) [\\d]>\\

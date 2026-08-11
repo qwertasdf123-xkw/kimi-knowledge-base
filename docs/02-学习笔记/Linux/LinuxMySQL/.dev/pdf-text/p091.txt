@@ -1,0 +1,51 @@
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 10 | xiaoming |   30 | F      |      0 |
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |
+| 14 | test1    |   30 | F      |      1 |
+| 15 | test2    |   30 | F      |      1 |
+| 16 | test3    |   31 | F      |      1 |
+| 17 | NULL     |   31 | F      |      0 |
+| 18 | xiaohong |   31 | F      |      1 |
+| 19 | xiaohong |   31 | F      |      1 |
+| 20 | zhangsan |   31 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+#多个条件，满足任何一个条件都更新 OR 可以写成 ||
+mysql> update stu set age=21,gender='M' where (id=15 OR name is null);
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 10 | xiaoming |   30 | F      |      0 |
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |
+| 14 | test1    |   30 | F      |      1 |
+| 15 | test2    |   21 | M      |      1 |
+| 16 | test3    |   31 | F      |      1 |
+| 17 | NULL     |   21 | M      |      0 |
+| 18 | xiaohong |   31 | F      |      1 |
+| 19 | xiaohong |   31 | F      |      1 |
+| 20 | zhangsan |   31 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+#多个条件满足，AND 可以写成 &&
+mysql> update stu set age=22,gender='M' WHERE (id=17 AND name is null);
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 10 | xiaoming |   30 | F      |      0 |
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |
+| 14 | test1    |   30 | F      |      1 |

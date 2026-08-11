@@ -1,0 +1,48 @@
+验证配置
+ 
+测试 ssh 无密码认证，如果正常最后会输出 successfully，如下所示。
+ping_interval=1　　　　　　#设置监控主库，发送ping包的时间间隔，默认是3秒，尝试三次没有回应的
+时候自动进行railover
+remote_workdir=/tmp　　　　#设置远端mysql在发生切换时binlog的保存位置
+repl_password=123　　　　　　　　#设置复制用户的密码
+repl_user=myslave　　　　　　 　　　　#设置复制用户的用户
+report_script=/usr/local/send_report　　　　　　#设置发生切换后发送的报警的脚本
+secondary_check_script=/usr/local/bin/masterha_secondary_check -s 192.168.108.132 
+-s 192.168.108.133
+shutdown_script=""　　#设置故障发生后关闭故障主机脚本（该脚本的主要作用是关闭主机防止发生脑裂,
+这里没有使用）
+ssh_user=root　　　　　　#设置ssh的登录用户名
+[server1]
+hostname=192.168.108.131
+port=3306
+[server2]
+hostname=192.168.108.132
+port=3306
+candidate_master=1　　　　#//设置为候选master，如果设置该参数以后，发生主从切换以后将会将此
+从库提升为主库，即使这个主库不是集群中事件最新的slave
+check_repl_delay=0　　　　#默认情况下如果一个slave落后master 100M的relay logs的话，MHA将
+不会选择该slave作为一个新的master，因为对于这个slave的恢复需要花费很长时间，通过设置
+check_repl_delay=0,MHA触发切换在选择一个新的master的时候将会忽略复制延时，这个参数对于设置了
+candidate_master=1的主机非常有用，因为这个候选主在切换的过程中一定是新的master
+[server3]
+hostname=192.168.108.133
+port=3306
+#检测SSH无密码认证
+[root@mha ~]# masterha_check_ssh -conf=/etc/masterha/app1.cnf
+Tue Oct  7 15:16:58 2025 - [warning] Global configuration file 
+/etc/masterha_default.cnf not found. Skipping.
+Tue Oct  7 15:16:58 2025 - [info] Reading application default configuration from 
+/etc/masterha/app1.cnf..
+Tue Oct  7 15:16:58 2025 - [info] Reading server configuration from 
+/etc/masterha/app1.cnf..
+Tue Oct  7 15:16:58 2025 - [info] Starting SSH connection tests..
+Tue Oct  7 15:16:58 2025 - [debug]
+Tue Oct  7 15:16:58 2025 - [debug]  Connecting via SSH from 
+root@192.168.108.131(192.168.108.131:22) to 
+root@192.168.108.132(192.168.108.132:22)..
+Tue Oct  7 15:16:58 2025 - [debug]   ok.
+Tue Oct  7 15:16:58 2025 - [debug]  Connecting via SSH from 
+root@192.168.108.131(192.168.108.131:22) to 
+root@192.168.108.133(192.168.108.133:22)..
+Tue Oct  7 15:16:58 2025 - [debug]   ok.
+Tue Oct  7 15:16:59 2025 - [debug]

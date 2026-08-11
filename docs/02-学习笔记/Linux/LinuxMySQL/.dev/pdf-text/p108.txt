@@ -1,0 +1,33 @@
+结果：3 部门 × 4 员工 = 12 条数据
+实际开发极少用。
+2. 内连接 INNER JOIN
+只显示两边表能匹配上的数据（交集）。
+部门存在、员工也归属这个部门，才显示。
+语法
+语法介绍
+INNER JOIN ：内连接关键字
+ON ：必须写关联条件
+只保留两边都存在的数据
+完整SQL
+结果：
+张三、李四、王五 显示
+赵六（无部门）、运营部（无人）都不显示
+3. 左连接 LEFT JOIN
+左边表（bumen）全部保留
+右边表（yuangong）能匹配就显示，不能匹配显示 NULL
+语法
+LEFT JOIN  = 左表全部保留
+ON  关联条件必须写
+左表数据一条都不会少
+sql
+SELECT *
+FROM bumen
+CROSS JOIN yuangong;
+SELECT *
+FROM bumen
+INNER JOIN yuangong
+ON bumen.bumen_id = yuangong.bumen_id;
+SELECT 列名
+FROM 表1
+LEFT JOIN 表2
+ON 表1.关联字段 = 表2.关联字段;

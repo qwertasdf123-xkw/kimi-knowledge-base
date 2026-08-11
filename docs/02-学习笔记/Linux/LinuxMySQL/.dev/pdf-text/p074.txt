@@ -1,0 +1,48 @@
+)ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+#选择数据库
+mysql> use db1;
+Database changed
+#执行SQL语句
+mysql> CREATE TABLE student (
+    -> id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(20) NOT NULL,
+    -> age tinyint UNSIGNED,
+    -> #height DECIMAL(5,2),
+    -> gender ENUM('M','F') default 'M'
+    -> )ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+Query OK, 0 rows affected (0.02 sec)
+#查看
+mysql> show tables；
++---------------+
+| Tables_in_db1 |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+#查看结构
+mysql> desc student;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+#插入一条数据
+mysql> insert student (name,age)values('xiaoming',20);
+Query OK, 1 row affected (0.01 sec)
+#查询表中的所有数据
+mysql> select * from student;
++----+----------+------+--------+
+| id | name     | age  | gender |
++----+----------+------+--------+
+| 10 | xiaoming |   20 | M      |
++----+----------+------+--------+
+1 row in set (0.00 sec)
+#再次插入一条数据
+mysql> insert student(name,age,gender)values('xiaohong',18,'f');
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from student;
++----+----------+------+--------+

@@ -1,0 +1,48 @@
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+Database changed
+mysql> select * from info;
++----+--------+-------+---------+-------+
+| id | name   | score | address | hobby |
++----+--------+-------+---------+-------+
+|  1 | 唐三   | 90.00 | 广州    |     1 |
+|  2 | 叶凡   | 91.00 | 伦敦    |     2 |
+|  4 | 曹操   | 66.50 | 合肥    |     4 |
++----+--------+-------+---------+-------+
+3 rows in set (0.00 sec)
+#再次插入数据生产增量备份
+mysql> insert into info (name,score,address,hobby) values ('美猴王',75,'武汉',1);
+Query OK, 1 row affected (0.00 sec)
+mysql> exit
+Bye
+[root@mysql01 ~]# mysqladmin -uroot -p flush-log
+Enter password:
+#新产生mysql-bin.000003日志记录insert操作
+[root@mysql01 ~]# ls /usr/local/mysql/data/
+auto.cnf    client-cert.pem  ibdata1      ibtmp1            mysql-bin.000002  
+performance_schema  school           sys
+ca-key.pem  client-key.pem   ib_logfile0  mysql             mysql-bin.000003  
+private_key.pem     server-cert.pem
+ca.pem      ib_buffer_pool   ib_logfile1  mysql-bin.000001  mysql-bin.index   
+public_key.pem      server-key.pem
+[root@mysql01 ~]# mysql -uroot -p
+Enter password:
+---------------------------------------------------------------
+mysql> use school;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+Database changed
+mysql> insert into info (name,score,address,hobby) values ('超人',83,'上海',2);
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from info;
++----+-----------+-------+---------+-------+
+| id | name      | score | address | hobby |
++----+-----------+-------+---------+-------+
+|  1 | 唐三      | 90.00 | 广州    |     1 |
+|  2 | 叶凡      | 91.00 | 伦敦    |     2 |
+|  4 | 曹操      | 66.50 | 合肥    |     4 |
+|  5 | 美猴王    | 75.00 | 武汉    |     1 |
+|  6 | 超人      | 83.00 | 上海    |     2 |
++----+-----------+-------+---------+-------+
+5 rows in set (0.00 sec)
+mysql> exit

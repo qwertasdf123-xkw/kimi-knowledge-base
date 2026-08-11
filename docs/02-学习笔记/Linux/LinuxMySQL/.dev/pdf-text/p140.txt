@@ -1,0 +1,48 @@
+IP地址规划
+主机名
+作用
+软件
+192.168.108.100
+web
+提供WEB服务，PHP动态解析
+Apache，PHP
+192.168.108.101
+mysql
+提供数据库服务
+MySQL
+php常见配置项
+ 
+3.11.3实现博客项目
+ 
+服务器配置
+通过Centos-Stream8-template克隆web
+通过mysql克隆mysql
+WordPress
+WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务器上架设属于
+自己的网站。也可以把WordPress当作一个内容管理系统（CMS）来使用。
+官方网站
+https://cn.wordpress.org/
+ 
+具体实现
+expose_php=On                   #响应报文显示首部字段x-powered-by：PHP/x.y.z，暴露php
+版本，建议为off
+max_execution_time=30           #最长执行时间30s
+memory_limit=128M               #生产不够，可调大
+display_errors=off              #调试使用，不要打开，否则可能暴露重要信息
+display_startup_errors=off      #建议关闭
+post_max_size=8M                #最大上传数据大小，生产可能调大，比下面项大
+upload_max_filesize=2M          #最大上传文件，生产可能要调大
+max_file_uploads=20             #同时上传最多文件数
+date.timezone=Asia/shanghai     #指定时区
+short_open_tag=On               #支持短标签
+#在100上安装apapche和PHP
+[root@web ~]# yum -y install httpd php php-mysqlnd php-json php-gd php-xml php-
+mbstring php-zip
+[root@web ~]# php -v
+PHP 7.2.24 (cli) (built: Oct 22 2019 08:28:36) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+#关闭防火墙
+[root@web ~]# systemctl disable --now firewalld
+#启动WEB服务
+[root@web ~]# systemctl start httpd.service

@@ -1,0 +1,25 @@
+删库跑路
+ 
+ 
+| performance_schema |
+| sys                |
+| testdb1            |
++--------------------+
+6 rows in set (0.00 sec)
+#删除数据库db1
+[root@localhost ~]# mysqladmin drop testdb1
+Dropping the database is potentially a very bad thing to do.
+Any data stored in the database will be destroyed.
+Do you really want to drop the 'testdb1' database [y/N] y            #回答Y
+Database "testdb1" dropped
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db1                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)

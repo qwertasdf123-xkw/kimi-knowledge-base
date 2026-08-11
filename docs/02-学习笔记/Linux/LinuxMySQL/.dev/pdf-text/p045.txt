@@ -1,0 +1,43 @@
+3.2 SQL语言介绍
+ 
+SQL:（Structured Query Language）结构化查询语言。
+SQL语言是对IBM公司San Jose,California研究实验室的埃德加·科德的关系模型的第一个商业化语言
+实现。尽管SQL并非完全按照科德的关系模型设计，但其依然成为最为广泛运用的数据库语言
+1970年代初，由埃德加·科德发表将资料组成表格的应用原则（Codd's Relational Algebra）。
+1974年，同一实验室的D.D.Chamberlin 和 R.F.Boyce对Codd's Relational Algebra在研制关系数据
+库管理系统System R中，研制出一套规范语言SEQUEL(Structured English Query Language)。
+1976年11月的IBM Journal of R&D上公布新版本的 SQL(叫SEQUEL/2)。1980年改名为SQL。
+1979年ORACLE公司首先提供商用的SQL，IBM公司在DB2和SQL/DS数据库系统中也实现了SQL。
+1986年10月美国国家标准学会ANSI采用SQL作为关系数据库管理系统的标准语言（ANSIX3.135-
+1986)。
+1987年成为国际标准化组织（(ISO）采纳为国际标准。
+1989年美国ANSI采纳在ANSIX3.135-1989报告中定义的关系数据库管理系统的SQL标准语言，称为 
+ANSI SQL 89。
+后续SQL标准经过了一系列的增订，加入了大量新特性，有各种版本：ANSISQL，SQL-1986，SQL-
+1989，SQL-1992，SQL-1999，SQL-2003，SQL-2008，SQL-2011。
+目前，所有主要的关系数据库管理系统支持某些形式的SQL，大部分数据库至少遵守ANSISQL89标
+准。
+虽然有这一标准的存在，但大部分的SQL代码在不同的数据库系统中并不具有完全的跨平台性。
+业内标准微软和 Sybase 的T-SQL，Oracle 的 PL/SQL。
+3.2.1 SQL 语言规范
+ 
+在数据库系统中，SQL语句不区分大小写，建议用大写。
+SQL语句可单行或多行书写，默认以    ；结尾。
+关键词不能跨多行或简写。
+用空格和TAB缩进来提高语句的可读性。
+子句通常位于独立行，便于编辑，提高可读性。
+#不区分大小写
+mysql> select @@hostname;
++-----------------------+
+| @@hostname            |
++-----------------------+
+| localhost.localdomain |
++-----------------------+
+1 row in set (0.00 sec)
+mysql> SELect @@HOSTname;
++-----------------------+
+| @@HOSTname            |
++-----------------------+
+| localhost.localdomain |
++-----------------------+
+1 row in set (0.00 sec)

@@ -1,0 +1,69 @@
+类型
+大小 (
+bytes)
+范围
+格式
+用途
+TIMESTAMP
+4
+'1970-01-01 00:00:01' UTC 到 '2038-
+01-19 03:14:07' UTC结束时间是第
+2147483647 秒，北京时间 2038-1-19
+11:14:07，格林尼治时间 2038年1月19
+日 凌晨 03:14:07
+YYYY-MM-
+DD
+hh:mm:ss
+混合日
+期和时
+间值，
+时间戳
+类型
+大小
+用途
+CHAR
+0-255 bytes
+定长字符串
+VARCHAR
+0-65535 bytes
+变长字符串
+TINYBLOB
+0-255 bytes
+不超过 255 个字符的二进制字符串
+TINYTEXT
+0-255 bytes
+短文本字符串
+BLOB
+0-65 535 bytes
+二进制形式的长文本数据
+TEXT
+0-65 535 bytes
+长文本数据
+MEDIUMBLOB
+0-16 777 215 bytes
+二进制形式的中等长度文本数据
+MEDIUMTEXT
+0-16 777 215 bytes
+中等长度文本数据
+LONGBLOB
+0-4 294 967 295 bytes
+二进制形式的极大文本数据
+LONGTEXT
+0-4 294 967 295 bytes
+极大文本数据
+3.4.3字符串类型
+ 
+字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。该节描述了这
+些类型如何工作以及如何在查询中使用这些类型。
+注意：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存
+储 30 个字符。
+CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等
+方面也不同。在存储或检索过程中不进行大小写转换。
+BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字
+符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基
+于列值字节的数值值。
+BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、
+MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
+有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存
+储的最大长度不同，可根据实际情况选择。
+### 

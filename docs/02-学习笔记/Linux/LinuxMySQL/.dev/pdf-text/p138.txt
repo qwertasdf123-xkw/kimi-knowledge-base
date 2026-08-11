@@ -1,0 +1,7 @@
+PHP是通用服务器端脚本编程语言，主要用于WEB开发实现动态WEB页面，也是最早实现将脚本嵌入
+HTML源码文档中的服务器端脚本语言之一。同时，PHP还提供了一个命令行接口，因此，其也可以在大
+多数系统上作为一个独立的SHELL来使用。Rasmus Lerdorf于1994年开始开发PHP，最初是一组被
+Rasmus Lerdorf称作"Personal Home PageTool”的Perl脚本，可以用于显示作者的简历并记录用户对其
+网站的访问。后来，Rasmus Lerdorf使用C语言将这些Perl脚本重写为CGI程序，还为其增加了运行Web 
+forms的能力以及与数据库交互的特性，并将其重命名为“Personal Home Page/Forms Interpreter”或
+“PHP/FI”。此时，PHP/FI已经可以用于开发简单的动态WEB程序了，这即PHP1.0。1995年6月,Rasmus 

@@ -1,0 +1,47 @@
+ERROR 1044 (42000): Access denied for user 'root'@'192.168.108.%' to database 
+'db1'
+#本地操作
+mysql> create database db1;
+mysql> create database db2;
+mysql> use db1;
+CREATE TABLE student (
+id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(20) NOT NULL,
+age tinyint UNSIGNED,
+#height DECIMAL(5,2),
+gender ENUM('M','F') default 'M'
+)ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+mysql> insert student (name,age)values('xiaoming',20);
+#授权能查看 mysql 中的 user 表，本地操作
+mysql> grant select on db1.student to root@'192.168.108.%';
+Query OK, 0 rows affected (0.00 sec)
+#远程用户再次刷新，远程操作
+mysql> SHOW GRANTS FOR CURRENT_USER;
++-----------------------------------------------------------+
+| Grants for root@192.168.108.%                             |
++-----------------------------------------------------------+
+| GRANT USAGE ON *.* TO `root`@`192.168.108.%`              |
+| GRANT SELECT ON `db1`.`student` TO `root`@`192.168.108.%` |
++-----------------------------------------------------------+
+2 rows in set (0.00 sec)
+#能看到数据库，远程操作
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| db1                |
+| information_schema |
++--------------------+
+2 rows in set (0.00 sec)
+#远程操作
+mysql> use db1;     
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+#远程操作
+mysql> select * from student;

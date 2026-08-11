@@ -1,0 +1,13 @@
+MySQL服务启动和停止
+ 
+方式一：图形化方式
+ 
+运行-->services.msc
+方式二：命令行方式
+ 
+windows+r打开运行，运行中输入cmd回车
+ 
+启动 MySQL 服务命令：
+net start MySQL84
+停止 MySQL 服务命令：
+net stop MySQL84

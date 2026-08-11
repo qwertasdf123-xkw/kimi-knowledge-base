@@ -1,0 +1,15 @@
+MySQL历史
+MySQL 的海豚标志的名字叫 “sakila”，它是由 MySQL AB 的创始人从用户在 “海豚命名” 的竞赛中
+建议的大量的名字表中选出的。获胜的名字是由来自非洲斯威士兰的开源软件开发者 Ambrose 
+Twebaze 提供。根据 Ambrose 所说，Sakila 来自一种叫 SiSwati 的斯威士兰方言，也是在 
+Ambrose 的家乡乌干达附近的坦桑尼亚的 Arusha 的一个小镇的名字
+MySQL 的历史可以追溯到 1979 年。当时 Allan Larsson 和 Michael Widenius (Monty) 开了一家自己的
+咨询公司，取名 TcX，名字的由来已无从考证。有道是” 前世尽付真情，今生亦现福缘积厚”。那年一个夜
+黑风高的晚上，Michael 基于 BASIC 语言写出了他的第一款数据库报表工具 UNIREG。
+有当年的天气记录为证，Michael 写完该工具时极光异常明亮，炫彩无比。大凡重大事情的发生，后来的
+著述人都会记录有一些类似的怪现象。比如刮风、下雨、冒仙气什么的，还有天上星星异常闪烁等等，
+反正就是说明这种事情很不简单。
+最初的 UNIREG 是运行在瑞典人制造的 ABC800 计算机上的。ABC800 的内存只有 32KB，CPU 是频率
+只有 4MHz 的 Z80。在 1983 年 Monty 遇到了 David Axmark，两人相见恨晚，开始合作运营 TcX，
+Monty 负责技术，David 搞管理。后来 TcX 将 UNIREG 移植到其他更加强大的硬件平台，主要是 Sun 的
+平台。

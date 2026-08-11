@@ -1,0 +1,6 @@
+环境变量名
+操作
+环境变量值
+Path
+编辑
+C:\Program Files\MySQL\MySQL Server 8.4\bin

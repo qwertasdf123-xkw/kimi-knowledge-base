@@ -1,0 +1,42 @@
+ 
+范例：执行完退出，非交互式执行
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+#打印参数列表，并不连接服务端，--print-defaults要放在第一个
+[root@localhost ~]# mysql --print-defaults -uroot -hlocalhost --connect-timeout=2
+mysql would have been started with the following arguments:
+-uroot -hlocalhost --connect-timeout=2
+#以html格式显示输出
+[root@localhost ~]# mysql -H
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 25
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> select version();
+<TABLE BORDER=1><TR><TH>version()</TH></TR><TR><TD>8.0.26</TD></TR></TABLE>1 row 
+in set (0.00 sec)
+#环境准备
+[root@localhost ~]# vim /root/test.sql
+show databases;
+#执行客户端命令
+[root@localhost ~]# mysql -e "source /root/test.sql"
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+#管道执行
+[root@localhost ~]# cat test.sql | mysql
+Database
+information_schema
+mysql

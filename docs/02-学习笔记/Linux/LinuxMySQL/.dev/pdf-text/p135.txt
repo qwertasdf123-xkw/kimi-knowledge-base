@@ -1,0 +1,40 @@
+ 
+ 
+ 
+3.10MySQL图形化远程管理工具
+ 
+在MySQL数据库中创建用户并授权后，可以使用相关图形化工具进行远程的管理。
+常见的图形化管理工具包括Navicat，SQLyog，DBbear等。
+mysql> grant all on eshop.* to eshoper@'192.168.108.%';
+Query OK, 0 rows affected (0.00 sec)
+#远程测试
+C:\Users\69466>mysql -ueshoper -p123456 -h192.168.108.128
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| eshop              |
+| information_schema |
++--------------------+
+2 rows in set (0.00 sec)
+#创建表
+mysql> use eshop;
+Database changed
+mysql> create table product (id int,name varchar(10));
+Query OK, 0 rows affected (0.10 sec)
+mysql> show tables;
++-----------------+
+| Tables_in_eshop |
++-----------------+
+| product         |
++-----------------+
+1 row in set (0.00 sec)

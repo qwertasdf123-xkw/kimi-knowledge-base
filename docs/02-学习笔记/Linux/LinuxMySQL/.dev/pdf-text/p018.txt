@@ -1,0 +1,25 @@
+2005 年，MySQL 5.0 发布。同年 Oracle 把 InnoDB 引擎的开发公司 innobase 收购完成。MySQL 明确
+地表现出迈向高性能数据库的发展步伐。
+2006 年，sun 公司收购了 MySQL 公司，出价 10 亿美元。
+2009 年，Oracle 公司收购 sun，将 MySQL 纳入囊中。
+2010 年，MySQL 5.5 正式版发布，Oracle 完成了大量改进，并将 innodb 改成默认引擎。
+2013 年，MySQL 5.6 GA 版本发布。
+近期 - MySQL 5.7 GA 版本横空出世，其性能、新特性、性能分析带来了质的改变。
+ 
+全球最大网站Top20,90%在使用Mysql
+ 
+Facebook.com
+Google.com
+YouTube.com
+Yahoo.com
+WIKipedia.org - 维基百科
+Live.com – 微软新的电子邮件服务
+qq.com – 腾讯
+Microsoft.com – 微软产品 / 更新 / 下载
+Baidu.com – 百度
+Msn.com – 微软自有互联网信息
+Blogger.com – 博客平台
+ASK.com - 搜索引擎
+Taobao.com 淘宝
+Twiter.com – 实时通讯平台
+Bing.com – 必应

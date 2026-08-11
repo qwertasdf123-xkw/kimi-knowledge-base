@@ -1,0 +1,67 @@
+玩家昵称
+使用英雄
+胜率
+总场次
+菜鸡互啄
+鲁班七号
+42.5
+200
+法王妲己
+妲己
+72.8
+800
+玩家昵称
+使用英雄
+胜率
+总场次
+国服韩信
+韩信
+68.5
+1200
+国服韩信
+李白
+55.2
+300
+野王妹妹
+韩信
+62.3
+500
+野王妹妹
+澜
+58.1
+400
+菜鸡互啄
+鲁班七号
+42.5
+200
+法王妲己
+妲己
+72.8
+800
+新玩家小 A
+NULL
+NULL
+NULL
+注意：新玩家新玩家小A 没有出现在结果里！因为他没有战绩，和战绩表匹配不上，被内连接过滤
+掉了。
+3. 左连接（LEFT JOIN）：保留左表全部数据
+ 
+概念
+ 
+左表的所有行全部保留，右表只返回匹配上的数据，匹配不上的显示 NULL。
+案例：查询所有玩家，哪怕没打过战绩也要显示
+ 
+查询结果
+ 
+新玩家出现在结果里了！他没有战绩，所以右表的字段全部是 NULL，完美保留了左表的所有数
+据。
+ 
+SELECT 
+  wj.wanjia_nicheng AS 玩家昵称,
+  yx.yingxiong_ming AS 使用英雄,
+  zj.shenglv AS 胜率,
+  zj.zongchangci AS 总场次
+FROM wanjia wj
+-- 左连接：玩家表是左表，所有玩家都要保留
+LEFT JOIN zhanji zj ON wj.wanjia_id = zj.wanjia_id
+LEFT JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id;

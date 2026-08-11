@@ -1,0 +1,45 @@
+修改mariadb-server的默认字符集
+ 
+查看当前版本可用的排序规则
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+8 rows in set (0.01 sec)
+[root@localhost ~]# vim /etc/my.cnf.d/mysql-server.cnf
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+log-error=/var/log/mysql/mysqld.log
+pid-file=/run/mysqld/mysqld.pid
+character-set-server=latin1                #新加一行
+[root@localhost ~]# vim /etc/my.cnf.d/client.cnf
+[client]
+default-character-set=latin1               #新加一样
+[root@localhost ~]# systemctl restart mysqld        #重启服务
+mysql> show variables like 'character%';
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | latin1                     |
+| character_set_connection | latin1                     |
+| character_set_database   | latin1                     |
+| character_set_filesystem | binary                     |
+| character_set_results    | latin1                     |
+| character_set_server     | latin1                     |
+| character_set_system     | utf8mb3                    |
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+8 rows in set (0.00 sec)
+#再改回来，或者还原快照
+mysql> SHOW COLLATION;
++----------------------------+----------+-----+---------+----------+---------+---
+------------+
+| Collation                  | Charset  | Id  | Default | Compiled | Sortlen | 
+Pad_attribute |
++----------------------------+----------+-----+---------+----------+---------+---
+------------+
+| armscii8_bin               | armscii8 |  64 |         | Yes      |       1 | 
+PAD SPACE     |
+| armscii8_general_ci        | armscii8 |  32 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| ascii_bin                  | ascii    |  65 |         | Yes      |       1 | 
+PAD SPACE     |

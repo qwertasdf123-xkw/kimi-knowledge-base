@@ -1,0 +1,58 @@
+玩家昵称
+使用英雄
+胜率
+总场次
+国服韩信
+韩信
+68.5
+1200
+国服韩信
+李白
+55.2
+300
+野王妹妹
+韩信
+62.3
+500
+野王妹妹
+澜
+58.1
+400
+三、多表查询核心类型 & 实战案例
+ 
+多表查询的核心：把分散在多张表的数据，通过关联字段拼接成你需要的完整信息，下面逐个拆解所有
+常用类型。
+1. 交叉连接（CROSS JOIN）：笛卡尔积
+ 
+概念
+ 
+最基础的连接，会把左表的每一行，和右表的所有行做组合，产生笛卡尔积，一般很少直接用，因为会
+产生大量无效数据。
+案例：玩家和英雄的全组合
+ 
+结果说明
+ 
+5 个玩家 × 7 个英雄 = 35 行结果，大部分都是无效的（比如玩家根本没玩过这个英雄），所以交叉连接
+必须加过滤条件，否则数据量会爆炸。
+2. 内连接（INNER JOIN）：只查匹配数据
+ 
+概念
+ 
+最常用的连接，只返回两张表中，关联字段能匹配上的数据，匹配不上的会被过滤掉。
+案例：查询所有有对战记录的玩家 & 英雄战绩
+ 
+查询结果
+ 
+SELECT wj.wanjia_nicheng, yx.yingxiong_ming
+FROM wanjia wj
+CROSS JOIN yingxiong yx;
+SELECT 
+  wj.wanjia_nicheng AS 玩家昵称,
+  yx.yingxiong_ming AS 使用英雄,
+  zj.shenglv AS 胜率,
+  zj.zongchangci AS 总场次
+FROM wanjia wj
+-- 玩家表 关联 战绩表：玩家ID匹配
+INNER JOIN zhanji zj ON wj.wanjia_id = zj.wanjia_id
+-- 战绩表 关联 英雄表：英雄ID匹配
+INNER JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id;

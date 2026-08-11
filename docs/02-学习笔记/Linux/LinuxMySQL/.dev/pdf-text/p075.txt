@@ -1,0 +1,48 @@
+通过查询现存表创建，新表会被直接插入查询而来的数据
+范例
+| id | name     | age  | gender |
++----+----------+------+--------+
+| 10 | xiaoming |   20 | M      |
+| 11 | xiaohong |   18 | F      |
++----+----------+------+--------+
+2 rows in set (0.00 sec)
+mysql> desc student;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+#查询其他表创建
+mysql> create table student2 select name,age from student;
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+#查看
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| student       |
+| student2      |
++---------------+
+2 rows in set (0.00 sec)
+#查看结构
+mysql> desc student2;
++-------+------------------+------+-----+---------+-------+
+| Field | Type             | Null | Key | Default | Extra |
++-------+------------------+------+-----+---------+-------+
+| name  | varchar(20)      | NO   |     | NULL    |       |
+| age   | tinyint unsigned | YES  |     | NULL    |       |
++-------+------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+#数据也复制过来了
+mysql> select * from student2;
++----------+------+
+| name     | age  |
++----------+------+
+| xiaoming |   20 |
+| xiaohong |   18 |
++----------+------+

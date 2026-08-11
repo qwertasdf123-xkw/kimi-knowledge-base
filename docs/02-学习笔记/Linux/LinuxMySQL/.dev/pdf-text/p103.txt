@@ -1,0 +1,50 @@
+范例：排序
+|        6 |      19 |  30.5000 | F      |
+|        4 |      20 |  26.2500 | M      |
++----------+---------+----------+--------+
+2 rows in set (0.00 sec)
+mysql> 
+#默认按ID升序排列
+mysql> select id,name,age from stu;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+| 11 | xiaohong |   30 |
+| 12 | zhangsan |   30 |
+| 13 | xiaozhou |   30 |
+| 14 | test1    |   30 |
+| 15 | test2    |   21 |
+| 16 | test3    |   31 |
+| 17 | NULL     |   23 |
+| 18 | xiaohong |   31 |
+| 19 | xiaohong |   31 |
+| 20 | zhangsan |   31 |
++----+----------+------+
+10 rows in set (0.00 sec)
+mysql> select id,name,age from stu order by id;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+| 11 | xiaohong |   30 |
+| 12 | zhangsan |   30 |
+| 13 | xiaozhou |   30 |
+| 14 | test1    |   30 |
+| 15 | test2    |   21 |
+| 16 | test3    |   31 |
+| 17 | NULL     |   23 |
+| 18 | xiaohong |   31 |
+| 19 | xiaohong |   31 |
+| 20 | zhangsan |   31 |
++----+----------+------+
+10 rows in set (0.00 sec)
+mysql> select id,name,age from stu order by id asc;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+| 11 | xiaohong |   30 |
+| 12 | zhangsan |   30 |
+| 13 | xiaozhou |   30 |
+| 14 | test1    |   30 |
+| 15 | test2    |   21 |
+| 16 | test3    |   31 |
+| 17 | NULL     |   23 |

@@ -1,0 +1,30 @@
+修改完成后，退出MySQL，然后重新使用root账户登录，具体如下所示：
+使用命令SHOW DATABASES; 查看默认有哪些数据库，具体如下：
+安装完成后，记得拍摄快照
+MACOS系统安装
+ 
+没有苹果电脑，略
+ 
+[root@localhost ~]# mysql -uroot -p'Huawei@123'
+mysql: [Warning] Using a password on the command line interface can be insecure. 
+  #提示命令行使用密码可能不安全
+Welcome to the MySQL monitor.  Commands end with ; or \g.     
+Your MySQL connection id is 10
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+mysql>

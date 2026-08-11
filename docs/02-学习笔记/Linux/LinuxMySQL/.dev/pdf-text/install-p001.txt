@@ -1,0 +1,13 @@
+mysql安装
+ 
+mysql安装
+ 
+windows系统安装
+ 
+mysql下载
+ 
+msyql官网：MySQL
+mysql下载地址：MySQL :: MySQL Community Downloads
+下载8.4.6 LTS三个(LTS长期支持版)
+点击Download安装，在弹出的页面点击“No thanks, just start my download.”开始下载，直到下载完
+毕。

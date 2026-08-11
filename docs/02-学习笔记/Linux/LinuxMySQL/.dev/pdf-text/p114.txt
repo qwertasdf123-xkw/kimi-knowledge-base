@@ -1,0 +1,41 @@
+（1）建表时创建外键（推荐）
+ 
+语法格式：FOREIGN KEY (当前表外键字段) REFERENCES 关联表名(关联表主键字段)
+说明：这行外键代码，就相当于给皮肤表的 yingxiong_id 加了“规矩”——只能填英雄表中已经存在的 
+yingxiong_id 值。
+（2）建表后添加外键（适合后期修改表结构）
+ 
+语法格式：ALTER TABLE 当前表名 ADD FOREIGN KEY (外键字段) REFERENCES 关联表名(关联表主键);
+3. 外键的核心作用
+ 
+外键的核心是“保证数据完整性”，主要体现在两个方面，我们用王者荣耀案例实际验证。
+作用1：禁止插入“无主数据”（最核心）
+ 
+运行结果：报错（提示“Cannot add or update a child row: a foreign key constraint fails”），意思是
+“不能插入，外键约束失败”。
+原因：yingxiong_id=100 在英雄表（yingxiong）中不存在，违反外键约束，避免出现“没有对应英雄的
+孤儿皮肤”。
+作用2：禁止删除“被关联的数据”
+ 
+运行结果：报错，因为韩信（yingxiong_id=1）被皮肤表的多个皮肤关联，删除韩信后，这些皮肤就变成
+“无主皮肤”，外键约束会阻止删除。
+正确操作：先删除关联的皮肤，再删除英雄，或解除外键约束后删除。
+案例：皮肤表建表时，给yingxiong_id添加外键，关联英雄表的yingxiong_id-- 皮肤表完整建表语句
+（含外键）
+CREATE TABLE IF NOT EXISTS pifu (
+  pifu_id INT PRIMARY KEY AUTO_INCREMENT,
+  yingxiong_id INT NOT NULL COMMENT '所属英雄ID', -- 外键字段
+  pifu_ming VARCHAR(50) NOT NULL COMMENT '皮肤名',
+  jiage INT NOT NULL COMMENT '皮肤价格（点券）',
+  -- 外键关联：pifu.yingxiong_id 关联 yingxiong.yingxiong_id
+  FOREIGN KEY (yingxiong_id) REFERENCES yingxiong(yingxiong_id)
+) COMMENT '皮肤表';
+案例：给玩家表的yaoqingren_id添加外键，关联玩家表自身的wanjia_id（自关联外键）-- 给wanjia表
+的yaoqingren_id添加外键，关联wanjia.wanjia_id（邀请人也是玩家）
+ALTER TABLE wanjia 
+ADD FOREIGN KEY (yaoqingren_id) REFERENCES wanjia(wanjia_id);
+-- 验证：此时yaoqingren_id的值，只能填wanjia表中已存在的wanjia_id，或NULL（没有邀请人）
+-- 错误案例：插入一个不存在英雄的皮肤（yingxiong_id=100，英雄表没有yingxiong_id=100的英雄）
+INSERT INTO pifu (yingxiong_id, pifu_ming, jiage) VALUES (100, '测试皮肤', 688);
+-- 错误案例：删除有皮肤的英雄（韩信yingxiong_id=1，有2个皮肤关联它）
+DELETE FROM yingxiong WHERE yingxiong_id=1;

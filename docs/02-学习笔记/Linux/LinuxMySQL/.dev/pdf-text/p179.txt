@@ -1,0 +1,47 @@
+主机名
+IP地址
+作用
+mysql-master
+192.168.108.131
+mysql主服务器，安装node组件
+mysql-slave01
+192.168.108.132
+mysql从节点1，安装node组件
+mysql-slave02
+192.168.108.133
+mysql从节点2，安装node组件
+mha
+192.168.108.130
+amoeba，安装node组件、manager组件
+根据下表，将IP地址，主机名更改好
+这里操作系统是 CentOS7 版本，所以这里下载 MHA 版本是 0.57 版本。
+2. 案例需求
+本案例要求通过 MHA 监控 MySQL 数据库在故障时进行自动切换，不影响业务。
+3. 案例实现思路
+1） 安装 MySQL 数据库
+2） 配置 MySQL 一主两从
+3） 安装 MHA 软件
+4） 配置无密码认证
+5） 配置 MySQL MHA 高可用
+6） 模拟 master 故障切换
+在三台 MySQL 节点上分别安装前置环境
+安装编译依赖的环境
+修改 Master 的主配置文件/etc/my.cnf 文件
+配置从服务器：
+在/etc/my.cnf 中修改或者增加下面内容。
+#主从是克隆的要做这个操作，否则UUID一致
+[root@mysql-slave01 ~]# systemctl stop mysqld
+[root@mysql-slave01 ~]# rm -f /usr/local/mysql/data/auto.cnf
+[root@mysql-slave01 ~]# systemctl start mysqld
+[root@mysql-slave02 ~]# systemctl stop mysqld
+[root@mysql-slave02 ~]# rm -f /usr/local/mysql/data/auto.cnf
+[root@mysql-slave02 ~]# systemctl start mysqld
+#mysql-master，mysql-slave01，mysql-slave02配置
+[root@mysql-master ~]# yum -y install perl-Module-Install
+[root@mysql-slave01 ~]# yum -y install perl-Module-Install
+[root@mysql-slave02 ~]# yum -y install perl-Module-Install
+[root@mysql-master ~]# vim /etc/my.cnf
+[mysqld]
+server-id = 1                     #三台服务器的 server-id 不能一样
+log_bin = master-bin
+log-slave-updates = true

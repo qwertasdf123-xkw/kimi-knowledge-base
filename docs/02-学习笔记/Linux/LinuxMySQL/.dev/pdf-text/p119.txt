@@ -1,0 +1,50 @@
+玩家昵称
+英雄名
+胜率
+国服韩信
+韩信
+68.5
+国服韩信
+李白
+55.2
+法王妲己
+妲己
+72.8
+菜鸡互啄
+鲁班七号
+42.5
+NULL
+蔡文姬
+NULL
+野王妹妹
+澜
+58.1
+NULL
+暃
+NULL
+4. 右连接（RIGHT JOIN）：保留右表全部数据
+ 
+概念
+ 
+和左连接相反，右表的所有行全部保留，左表只返回匹配上的数据，匹配不上的显示 NULL。
+案例：查询所有英雄，哪怕没人用过也要显示
+ 
+查询结果
+ 
+新英雄暃和没人用的蔡文姬都出现在结果里了！没人用他们，所以玩家和胜率字段都是 NULL。
+ 
+5. 全连接（FULL JOIN）：保留所有表全部数据
+ 
+概念
+ 
+把左表和右表的所有行全部保留，不管有没有匹配上。
+注意：MySQL 不支持直接写FULL JOIN ，我们用LEFT JOIN + UNION + RIGHT JOIN 来实现。
+ 
+SELECT 
+  wj.wanjia_nicheng AS 玩家昵称,
+  yx.yingxiong_ming AS 英雄名,
+  zj.shenglv AS 胜率
+FROM wanjia wj
+RIGHT JOIN zhanji zj ON wj.wanjia_id = zj.wanjia_id
+-- 右连接：英雄表是右表，所有英雄都要保留
+RIGHT JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id;

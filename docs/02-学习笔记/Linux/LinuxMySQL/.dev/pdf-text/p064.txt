@@ -1,0 +1,46 @@
+范例：
+SHOW CREATE DATABASE DBNAME;
+mysql> create database testdb1;
+Query OK, 1 row affected (0.00 sec)
+#如果已存在，再次创建会报错
+mysql> create database testdb1;
+ERROR 1007 (HY000): Can't create database 'testdb1'; database exists
+#不报错，但也没有创建，if not exists表示如果不存在则创建
+mysql> create database if not exists testdb1;
+Query OK, 1 row affected, 1 warning (0.00 sec)
+#查看数据库列表
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb1            |
++--------------------+
+5 rows in set (0.01 sec)
+#查看创建语句，包含默认字符集
+mysql> SHOW CREATE DATABASE testdb1;
++----------+---------------------------------------------------------------------
+--------------------------------------------------------------+
+| Database | Create Database                                                     
+                                                              |
++----------+---------------------------------------------------------------------
+--------------------------------------------------------------+
+| testdb1  | CREATE DATABASE `testdb1` /*!40100 DEFAULT CHARACTER SET utf8mb4 
+COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */ |
++----------+---------------------------------------------------------------------
+--------------------------------------------------------------+
+1 row in set (0.00 sec)
+#创建时指定字符集
+mysql> create database testdb2 DEFAULT CHARACTER SET latin1;
+Query OK, 1 row affected (0.01 sec)
+#查看创建语句
+mysql> show create database testdb2;
++----------+---------------------------------------------------------------------
+----------------------------------+
+| Database | Create Database                                                     
+                                  |
++----------+---------------------------------------------------------------------
+----------------------------------+

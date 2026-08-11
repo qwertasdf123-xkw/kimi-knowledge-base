@@ -1,0 +1,46 @@
+名字
+类型
+胜率
+妲己
+高胜率英雄
+72.8
+鲁班七号
+低胜率英雄
+42.5
+完美！我们一眼就能看到：野王妹妹是国服韩信邀请的，菜鸡是野王妹妹邀请的，太清晰了。
+ 
+7. 联合查询（UNION/UNION ALL）：合并多个结果集
+ 
+概念
+ 
+把多个 SELECT 查询的结果，合并成一个结果集。
+UNION ：自动去重，效率稍低
+UNION ALL ：不做去重，直接合并，效率更高，优先用这个
+案例：查询所有高胜率和低胜率的英雄，合并成一个结果
+ 
+查询结果
+ 
+ 
+四、多表查询注意事项
+ 
+1. 必须加关联条件：如果忘记加，会产生笛卡尔积，数据量会指数级爆炸。
+2. 优先用 UNION ALL：除非你需要去重，否则用 UNION ALL，效率比 UNION 高很多。
+3. 关联字段加索引：关联的字段（比如 wanjia_id、yingxiong_id）一定要建索引，否则大数据量下查
+询会很慢。
+4. 注意 NULL 值：左 / 右连接会产生 NULL 值，写 WHERE 条件的时候要注意，不要误把 NULL 过滤
+掉。
+5. 表别名简化 SQL：给表起短别名（比如 wj、yx、zj），可以大幅简化 SQL，提高可读性。
+3.8 MySQL用户管理
+ 
+MySQL服务的账户是独立存在的，只用于MySQL服务的登录验证。
+-- 查胜率>70%的高胜率英雄
+SELECT yx.yingxiong_ming, '高胜率英雄' AS 类型, zj.shenglv
+FROM zhanji zj
+JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id
+WHERE zj.shenglv > 70
+UNION ALL
+-- 查胜率<45%的低胜率英雄
+SELECT yx.yingxiong_ming, '低胜率英雄' AS 类型, zj.shenglv
+FROM zhanji zj
+JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id
+WHERE zj.shenglv < 45;

@@ -1,0 +1,12 @@
+ 
+2.1.1 MySQL 历史
+ 
+MySQL 之父
+关于 MariaDB、MySQL、MaxDB 名字的由来，这里有个不得不说的小插曲。Monty 有一个女
+儿，名叫 My，因此他将自己开发的数据库命名为 MySQL。Monty 还有一个儿子，名为 Max，因
+此在 2003 年，SAP 公司与 MySQL 公司建立合作伙伴关系后，Monty 又将与 SAP 合作开发的数据
+库命名为 MaxDB。而现在的 MariaDB 中的 Maria 是 Monty 小孙女(小女儿？)的名字。
+Michael “Monty” Widenius, 1962 年 3 月 3 日出生于芬兰赫尔辛基。
+开源 MySQL 数据库的创始成员、MySQL AB 公司的首席技术官、MySQL 数据库第一行代码的作者、
+MySQL 数据库命名人、MariaDB 创始人兼首席技术官；独自完成撰写 MySQL 数据库服务器端 95% 的
+代码。

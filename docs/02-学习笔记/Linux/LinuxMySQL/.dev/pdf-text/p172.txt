@@ -1,0 +1,17 @@
+ vim conf/dbServers.xml 结果如下
+ <poolConfig class="com.meidusa.amoeba.server.MultipleServerPool   #不改
+<property name="poolNames">slave1,slave2</property>
+ </poolConfig>           #不改
+[root@amoeba ~]# /usr/local/amoeba/bin/amoeba start&
+[1] 33499
+[root@amoeba ~]# netstat -anpt | grep java
+tcp6       0      0 :::8066                 :::*                    LISTEN     
+ 33499/java
+tcp6       0      0 127.0.0.1:21128         :::*                    LISTEN     
+ 33499/java
+tcp6       0      0 192.168.108.110:41754   192.168.108.101:3306    ESTABLISHED 
+33499/java
+tcp6       0      0 192.168.108.110:41722   192.168.108.102:3306    ESTABLISHED 
+33499/java
+tcp6       0      0 192.168.108.110:36956   192.168.108.103:3306    ESTABLISHED 
+33499/java

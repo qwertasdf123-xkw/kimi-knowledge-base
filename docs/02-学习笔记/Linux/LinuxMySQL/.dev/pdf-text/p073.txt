@@ -1,0 +1,43 @@
+3.5 DDL 语句
+ 
+DDL语句主要用来操作数据库中的表。
+同一个库中不同表可以使用不同的存储引擎，但建议使用同一种存储引擎。
+ 
+3.5.1创建表
+ 
+格式
+直接创建
+范例
+#帮助
+mysql> help create table
+Name: 'CREATE TABLE'
+Description:
+Syntax:
+CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+    (create_definition,...)
+    [table_options]
+    [partition_options]
+CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+    [(create_definition,...)]
+    [table_options]
+    [partition_options]
+    [IGNORE | REPLACE]
+    [AS] query_expression
+CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+    { LIKE old_tbl_name | (LIKE old_tbl_name) }
+.....
+CREATE TABLE [IF NOT EXISTS] 'tbl_name' (col1 type1 修饰符,col2 type2 修饰符,...)
+#字段格式
+col type1              #定义字段数据类型
+PRIMARY KEY(col1,...)  #将该字段设为主键
+INDEX(col1,...)        #设置为索引
+UNIQUE KEY(COL1,...)   #设置为联合主键
+#表选项
+ENGINE [=] engine_name
+ROW_FORMAT [=] {DEFAULT|DYNAMIC|FIXED|COMPRESSED|REDUNDANT|COMPACT}
+CREATE TABLE student (
+id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(20) NOT NULL,
+age tinyint UNSIGNED,
+#height DECIMAL(5,2),
+gender ENUM('M','F') default 'M'

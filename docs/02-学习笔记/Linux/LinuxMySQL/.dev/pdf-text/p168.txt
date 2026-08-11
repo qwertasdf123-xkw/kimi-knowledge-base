@@ -1,0 +1,23 @@
+验证主从同步
+ 
+# 主服务器上:
+[root@mysql-master ~]# mysql -uroot -phuawei
+mysql> create database school;
+Query OK, 1 row affected (0.01 sec)
+mysql> use school;
+CREATE TABLE student (
+id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(20) NOT NULL,
+age tinyint UNSIGNED,
+#height DECIMAL(5,2),
+gender ENUM('M','F') default 'M'
+)ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+mysql> insert student (name,age)values('路飞',20);
+# 去从服务器上 show databases;
+[root@mysql-slave01 ~]# mysql -uroot -phuawei
+mysql> select * from school.student;
++----+--------+------+--------+
+| id | name   | age  | gender |
++----+--------+------+--------+
+| 10 | 路飞   |   20 | M      |
++----+--------+------+--------+

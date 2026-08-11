@@ -1,0 +1,56 @@
+| utf8mb4_slovenian_ci       | utf8mb4  | 228 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_sl_0900_ai_ci      | utf8mb4  | 260 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_sl_0900_as_cs      | utf8mb4  | 283 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_spanish2_ci        | utf8mb4  | 238 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_spanish_ci         | utf8mb4  | 231 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_sv_0900_ai_ci      | utf8mb4  | 264 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_sv_0900_as_cs      | utf8mb4  | 287 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_swedish_ci         | utf8mb4  | 232 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_tr_0900_ai_ci      | utf8mb4  | 265 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_tr_0900_as_cs      | utf8mb4  | 288 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_turkish_ci         | utf8mb4  | 233 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_unicode_520_ci     | utf8mb4  | 246 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_unicode_ci         | utf8mb4  | 224 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_vietnamese_ci      | utf8mb4  | 247 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_vi_0900_ai_ci      | utf8mb4  | 277 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_vi_0900_as_cs      | utf8mb4  | 300 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_zh_0900_as_cs      | utf8mb4  | 308 |         | Yes      |       0 | NO 
+PAD        |
+| utf8_bin                   | utf8     |  83 |         | Yes      |       1 | 
+PAD SPACE     |
+| utf8_croatian_ci           | utf8     | 213 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_czech_ci              | utf8     | 202 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_danish_ci             | utf8     | 203 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_esperanto_ci          | utf8     | 209 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_estonian_ci           | utf8     | 198 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_general_ci            | utf8     |  33 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| utf8_general_mysql500_ci   | utf8     | 223 |         | Yes      |       1 | 
+PAD SPACE     |
+| utf8_german2_ci            | utf8     | 212 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_hungarian_ci          | utf8     | 210 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8_icelandic_ci          | utf8     | 193 |         | Yes      |       8 | 
+PAD SPACE     |

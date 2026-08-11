@@ -1,0 +1,46 @@
+修改表内容
+mysql> insert into info (name,score,address,hobby) values ('唐三',90,'广州',1);
+Query OK, 1 row affected (0.01 sec)
+mysql> select * from info;
++----+--------+-------+---------+-------+
+| id | name   | score | address | hobby |
++----+--------+-------+---------+-------+
+|  1 | 唐三   | 90.00 | 广州    |     1 |
++----+--------+-------+---------+-------+
+1 row in set (0.00 sec)
+mysql> insert into info (name,score,address,hobby) values ('叶凡',91,'伦敦',2);
+Query OK, 1 row affected (0.00 sec)
+mysql> insert into info (name,score,address,hobby) values ('喜羊羊',92,'',3);
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from info;
++----+-----------+-------+---------+-------+
+| id | name      | score | address | hobby |
++----+-----------+-------+---------+-------+
+|  1 | 唐三      | 90.00 | 广州    |     1 |
+|  2 | 叶凡      | 91.00 | 伦敦    |     2 |
+|  3 | 喜羊羊    | 92.00 |         |     3 |
++----+-----------+-------+---------+-------+
+3 rows in set (0.00 sec)
+mysql> insert into info (name,score,address,hobby) values ('曹操',93,default,4);
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from info;
++----+-----------+-------+---------+-------+
+| id | name      | score | address | hobby |
++----+-----------+-------+---------+-------+
+|  1 | 唐三      | 90.00 | 广州    |     1 |
+|  2 | 叶凡      | 91.00 | 伦敦    |     2 |
+|  3 | 喜羊羊    | 92.00 |         |     3 |
+|  4 | 曹操      | 93.00 | 南京    |     4 |
++----+-----------+-------+---------+-------+
+4 rows in set (0.00 sec)
+mysql> update info set address='华盛顿' where name='喜羊羊';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> select * from info;
++----+-----------+-------+-----------+-------+
+| id | name      | score | address   | hobby |
++----+-----------+-------+-----------+-------+
+|  1 | 唐三      | 90.00 | 广州      |     1 |
+|  2 | 叶凡      | 91.00 | 伦敦      |     2 |
+|  3 | 喜羊羊    | 92.00 | 华盛顿    |     3 |
+|  4 | 曹操      | 93.00 | 南京      |     4 |

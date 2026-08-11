@@ -1,0 +1,43 @@
+说明
+字段显示可以使用别名：col1 AS alias1,col2 AS alias2，…
+WHERE子句：指明过滤条件以实现“选择”的功能
+过滤条件：布尔型表达式
+算术操作符：+,-,*,/，%
+比较操作符：=，<=>(相等或都为空）,<>，!=(非标准SQL，>，>=，<，<=
+范围查询：BETWEEN min_num AND max_num
+不连续的查询：IN(element1，element2，..)
+空查询：IS NULL,，IS NOT NULL
+DISTINCT去除重复行，范例：SELECT DISTINCT gender FROM students;
+模糊查询：LIKE使用%表示任意长度的任意字符_表示任意单个字符
+RLIKE：正则表达式，索引失效，不建议使用
+REGEXP：匹配字符串可用正则表达式书写模式，同上
+逻辑操作符：NOT，AND，OR，XOR
+ 
+GROUPBY：根据指定的条件把查询结果进行“分组"以用于做“聚合“运算
+常见聚合函数：count()，sum()，max(),min()，avg()，注意：聚合函数不对null统计
+    [SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
+    select_expr [, select_expr] ...
+    [into_option]
+    [FROM table_references
+      [PARTITION partition_list]]
+    [WHERE where_condition]
+    [GROUP BY {col_name | expr | position}, ... [WITH ROLLUP]]
+    [HAVING where_condition]
+    [WINDOW window_name AS (window_spec)
+        [, window_name AS (window_spec)] ...]
+    [ORDER BY {col_name | expr | position}
+      [ASC | DESC], ... [WITH ROLLUP]]
+    [LIMIT {[offset,] row_count | row_count OFFSET offset}]
+    [into_option]
+    [FOR {UPDATE | SHARE}
+        [OF tbl_name [, tbl_name] ...]
+        [NOWAIT | SKIP LOCKED]
+      | LOCK IN SHARE MODE]
+    [into_option]
+into_option: {
+    INTO OUTFILE 'file_name'
+        [CHARACTER SET charset_name]
+        export_options
+  | INTO DUMPFILE 'file_name'
+  | INTO var_name [, var_name] ...
+}

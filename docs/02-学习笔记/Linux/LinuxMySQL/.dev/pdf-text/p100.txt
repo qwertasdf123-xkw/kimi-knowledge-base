@@ -1,0 +1,50 @@
+范例：区域间过滤
++----+----------+
+| 13 | xiaozhou |
++----+----------+
+1 row in set (0.00 sec)
+#多个LIKE
+mysql> select id,name from stu where name like '%n%' or name like '%i%';
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 12 | zhangsan |
+| 13 | xiaozhou |
+| 18 | xiaohong |
+| 19 | xiaohong |
+| 20 | zhangsan |
++----+----------+
+6 rows in set (0.01 sec)
+#连续
+mysql> select id,name from stu where id between 12 and 15;
++----+----------+
+| id | name     |
++----+----------+
+| 12 | zhangsan |
+| 13 | xiaozhou |
+| 14 | test1    |
+| 15 | test2    |
++----+----------+
+4 rows in set (0.00 sec)
+#取反
+mysql> select id,name from stu where id not between 12 and 15;
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 16 | test3    |
+| 17 | NULL     |
+| 18 | xiaohong |
+| 19 | xiaohong |
+| 20 | zhangsan |
++----+----------+
+6 rows in set (0.00 sec)
+#不连续
+mysql> select id,name from stu where id in(12,15,19);
++----+----------+
+| id | name     |
++----+----------+
+| 12 | zhangsan |
+| 15 | test2    |
+| 19 | xiaohong |

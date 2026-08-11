@@ -1,0 +1,11 @@
+配置完成后，通过浏览器访问
+ 
+4.mysql 5.x源码安装
+ 
+环境准备：
+使用CentOS-7-template模板克隆mysql01
+mysql5.7稳定版安装
+#设置主机名
+[root@localhost ~]# hostnamectl set-hostname mysql01
+#关闭防火墙
+[root@mysql01 ~]# systemctl disable firewalld.service --now

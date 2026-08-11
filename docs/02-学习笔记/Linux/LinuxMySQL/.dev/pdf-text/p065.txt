@@ -1,0 +1,41 @@
+创建两个数据库，本质上是在硬盘上创建了两个目录
+ 
+3.3.3 修改数据库
+ 
+范例：修改字符集
+ 
+3.3.4删除数据库
+ 
+格式：
+| testdb2  | CREATE DATABASE `testdb2` /*!40100 DEFAULT CHARACTER SET latin1 */ 
+/*!80016 DEFAULT ENCRYPTION='N' */ |
++----------+---------------------------------------------------------------------
+----------------------------------+
+1 row in set (0.00 sec)
+[root@localhost ~]# ls -d /var/lib/mysql/testdb*
+/var/lib/mysql/testdb1  /var/lib/mysql/testdb2
+mysql> help ALTER DATABASE;
+Name: 'ALTER DATABASE'
+Description:
+Syntax:
+ALTER {DATABASE | SCHEMA} [db_name]
+    alter_option ...
+alter_option: {
+    [DEFAULT] CHARACTER SET [=] charset_name
+  | [DEFAULT] COLLATE [=] collation_name
+  | [DEFAULT] ENCRYPTION [=] {'Y' | 'N'}
+  | READ ONLY [=] {DEFAULT | 0 | 1}
+}
+mysql> ALTER DATABASE testdb2 character set utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+Query OK, 1 row affected (0.00 sec)
+mysql> show create database testdb2\G
+*************************** 1. row ***************************
+       Database: testdb2
+Create Database: CREATE DATABASE `testdb2` /*!40100 DEFAULT CHARACTER SET utf8mb4 
+COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */
+1 row in set (0.00 sec)
+mysql> help DROP DATABASE
+Name: 'DROP DATABASE'
+Description:
+Syntax:
+DROP {DATABASE | SCHEMA} [IF EXISTS] db_name

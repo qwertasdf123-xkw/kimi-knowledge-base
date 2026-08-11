@@ -1,0 +1,46 @@
+复制上述的自动切换时 VIP 管理的脚本到/usr/local/bin 目录，这里使用脚本管理 VIP，
+修改内容如下：（删除原有内容，直接复制）
+[root@mha ~]# cp -ra /root/mha4mysql-manager-0.57/samples/scripts /usr/local/bin
+#拷贝后会有四个执行文件
+[root@mha ~]# ll /usr/local/bin/scripts/
+总用量 32
+-rwxr-xr-x 1 mysql mysql 3648 5 月 31 2015 master_ip_failover  #自动切换时 VIP 管理
+的脚本
+-rwxr-xr-x 1 mysql mysql 9872 5 月 25 09:07 master_ip_online_change #在线切换时 vip 
+的管理
+-rwxr-xr-x 1 mysql mysql 11867 5 月 31 2015 power_manager #故障发生后关闭主机的脚本
+-rwxr-xr-x 1 mysql mysql 1360 5 月 31 2015 send_report #因故障切换后发送报警的脚本
+[root@mha ~]# cp /usr/local/bin/scripts/master_ip_failover /usr/local/bin
+#复制时，#号间一段段复制
+[root@mha ~]# vim /usr/local/bin/master_ip_failover
+#!/usr/bin/env perl
+use strict;
+use warnings FATAL => 'all';
+use Getopt::Long;
+my (
+$command, $ssh_user, $orig_master_host, $orig_master_ip,
+$orig_master_port, $new_master_host, $new_master_ip, $new_master_port
+);
+#############################添加内容部分#########################################
+my $vip = '192.168.108.200';
+my $brdc = '192.168.108.255';
+my $ifdev = 'ens33';
+my $key = '1';
+my $ssh_start_vip = "/sbin/ifconfig ens33:$key $vip";
+my $ssh_stop_vip = "/sbin/ifconfig ens33:$key down";
+my $exit_code = 0;
+#my $ssh_start_vip = "/usr/sbin/ip addr add $vip/24 brd $brdc dev $ifdev label 
+$ifdev:$key;/usr/sbin/arping -q -A -c 1 -I $ifdev $vip;iptables -F;";
+#my $ssh_stop_vip = "/usr/sbin/ip addr del $vip/24 dev $ifdev label $ifdev:$key";
+#################################################################################
+#
+GetOptions(
+'command=s' => \$command,
+'ssh_user=s' => \$ssh_user,
+'orig_master_host=s' => \$orig_master_host,
+'orig_master_ip=s' => \$orig_master_ip,
+'orig_master_port=i' => \$orig_master_port,
+'new_master_host=s' => \$new_master_host,
+'new_master_ip=s' => \$new_master_ip,
+'new_master_port=i' => \$new_master_port,
+);

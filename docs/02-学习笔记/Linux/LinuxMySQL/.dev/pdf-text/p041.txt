@@ -1,0 +1,39 @@
+范例：显示状态信息
+范例：设置连接超时
+范例：持续执行
+范例：关闭服务
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Server version          8.0.26
+Protocol version        10
+Connection              Localhost via UNIX socket
+UNIX socket             /var/lib/mysql/mysql.sock
+Uptime:                 1 hour 44 min 34 sec
+Threads: 4  Questions: 189  Slow queries: 0  Opens: 287  Flush tables: 3  Open 
+tables: 206  Queries per second avg: 0.030
+[root@localhost ~]# mysqladmin status
+Uptime: 6352  Threads: 4  Questions: 191  Slow queries: 0  Opens: 287  Flush 
+tables: 3  Open tables: 206  Queries per second avg: 0.030
+[root@localhost ~]# mysqladmin -h1.2.3.4 --connect-timeout=2 ping
+mysqladmin: connect to server at '1.2.3.4' failed
+error: 'Can't connect to MySQL server on '1.2.3.4:3306' (110)'
+Check that mysqld is running on 1.2.3.4 and that the port is 3306.
+You can check this by doing 'telnet 1.2.3.4 3306'
+[root@localhost ~]# echo $?
+1
+#静默退出，不输出错误信息
+[root@localhost ~]# mysqladmin -h1.2.3.4 --connect-timeout=2 -s ping
+[root@localhost ~]# echo $?
+1
+#每秒执行一次ping命令，一直执行下去
+[root@localhost ~]# mysqladmin -i 1 ping
+mysqld is alive
+mysqld is alive
+mysqld is alive
+......
+#每秒执行一次ping命令，总共执行3次
+[root@localhost ~]# mysqladmin -i 1 -c 3 ping
+mysqld is alive
+mysqld is alive
+mysqld is alive

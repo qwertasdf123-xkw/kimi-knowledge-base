@@ -1,0 +1,46 @@
+ 
+3.6 DML 语句
+ 
+DML语句包括INSERT，UDPATE，DELETE
+3.6.1插入数据
+ 
+INSERT可以一次往表中插入一条或多条记录
+格式
+| stu2          |
+| student2      |
+| student3      |
++---------------+
+4 rows in set (0.00 sec)
+mysql> drop table student2;drop table db1.student3;
+Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.01 sec)
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| stu           |
+| stu2          |
++---------------+
+2 rows in set (0.00 sec)
+mysql> help INSERT
+Name: 'INSERT'
+Description:
+Syntax:
+INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name
+    [PARTITION (partition_name [, partition_name] ...)]
+    [(col_name [, col_name] ...)]
+    { {VALUES | VALUE} (value_list) [, (value_list)] ...
+      |
+      VALUES row_constructor_list
+    }
+    [AS row_alias[(col_alias [, col_alias] ...)]]
+    [ON DUPLICATE KEY UPDATE assignment_list]
+INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name
+    [PARTITION (partition_name [, partition_name] ...)]
+    [AS row_alias[(col_alias [, col_alias] ...)]]
+    SET assignment_list
+    [ON DUPLICATE KEY UPDATE assignment_list]
+INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name

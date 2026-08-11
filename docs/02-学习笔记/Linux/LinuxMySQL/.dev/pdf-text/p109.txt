@@ -1,0 +1,32 @@
+结果：
+技术部、产品部、运营部 全部显示
+运营部没有员工 → 员工部分为 NULL
+4. 右连接 RIGHT JOIN
+右边表（yuangong）全部保留
+左边表（bumen）能匹配就显示，不能匹配显示 NULL
+语法
+RIGHT JOIN  = 右表全部保留
+右表数据一条都不会少
+sql
+结果：
+张三、李四、王五、赵六 全部显示
+赵六没有部门 → 部门部分为 NULL
+5. 全连接 FULL JOIN（MySQL 模拟）
+左边全部 + 右边全部，一条数据都不丢（并集）
+MySQL 不支持直接 FULL JOIN，用 LEFT JOIN + UNION + RIGHT JOIN 实现
+语法
+UNION ：合并两个查询结果，自动去重
+最终结果：所有部门 + 所有员工，一个不丢
+SQL
+SELECT *
+FROM bumen
+LEFT JOIN yuangong
+ON bumen.bumen_id = yuangong.bumen_id;
+SELECT 列名
+FROM 表1
+RIGHT JOIN 表2
+ON 表1.关联字段 = 表2.关联字段;
+SELECT *
+FROM bumen
+RIGHT JOIN yuangong
+ON bumen.bumen_id = yuangong.bumen_id;

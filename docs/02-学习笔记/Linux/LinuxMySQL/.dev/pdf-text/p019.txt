@@ -1,0 +1,25 @@
+Sohu.com – 搜狐
+Apple.com – 苹果
+WrodPress.com – 成行经历
+Sina.com – 新浪
+Amazon.com - 亚马逊
+ 
+全球MySQL行业应用
+国内MySQL行业应用
+2.1.2 MySQL 系列
+ 
+尽管 MySQL 是最受欢迎的程序之一，但是许多开发人员认为有必要将其拆分成其他项目，并且每
+个分支项目都有自己的专长。该需求以及 Oracle 对核心产品增长缓慢的担忧，导致出现了许多开
+发人员感兴趣的子项目和分支。本文将讨论受人们关注的三个流行 MySQL 分支：Drizzle、
+MariaDB 和 Percona Server（包括 XtraDB 引擎）
+MySQL
+官方 MySQL，前身 MySQL AB / SUM / 最后被 Oracle 公司收入麾下。
+ 
+Percona
+Percona Server 就是这样一款产品，由领先的 MySQL 咨询公司 Percona 发布。Percona Server 是一款
+独立的数据库产品，为用户提供了换出其 MySQL 安装并换入 Percona Server 产品的能力。通过这样
+做，就可以利用 XtraDB 存储引擎。Percona Server 声称可以完全与 MySQL 兼容，因此从理论上讲，您
+无需更改软件中的任何代码。这确实是一个很大的优势，适合在您寻找快速性能改进时控制质量。因
+此，采用 Percona Server 的一个很好的理由是，利用 XtraDB 引擎来尽可能地减少代码更改。
+此外，他们是 XtraDB 存储引擎的原作者。Percona 将此代码用作开源代码，因此您可以在其他产品中找
+到它，但引擎的最初创建者与编写此产品的是同一个人，所以您可以随心所欲地使用此信息。

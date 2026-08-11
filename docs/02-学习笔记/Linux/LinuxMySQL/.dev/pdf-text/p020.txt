@@ -1,0 +1,41 @@
+Percona 团队的最终声明是 “Percona Server 是由 Oracle 发布的最接近官方 MySQL Enterprise 发行版
+的版本”，因此与其他更改了大量基本核心 MySQL 代码的分支有所区别。Percona Server 的一个缺点是
+他们自己管理代码，不接受外部开发人员的贡献，以这种方式确保他们对产品中所包含功能的控制。
+下面是 Percona Server 的声明，该声明来自它们自己的网站：
+可扩展性：处理更多事务；在强大的服务器上进行扩展
+性能：使用了 XtraDB 的 Percona Server 速度非常快
+可靠性：避免损坏，提供崩溃安全 (crash-safe) 复制
+管理：在线备份，在线表格导入 / 导出
+诊断：高级分析和检测
+灵活性：可变的页面大小，改进的缓冲池管理
+MariaDB
+MySQL 之父 Widenius 先生离开了 Sun 之后，觉得依靠 Sun/Oracle 来发 展 MySQL，实在很不靠谱，
+于是决定另开分支，这个分支的名字叫做 MariaDB；
+在卖出 MySQL 之后 Widenius 发现两个主要问题：
+MySQL 核心开发团队是封闭的，完全没有 Oracle 之外的成员参加。很多高手即使 有心做贡献，也
+没办法做到
+MySQL 新版本的发布速度，在 Oracle 收购 Sun 之后大为减缓。Widenius 用数据比 较了收购之前
+和之后新版本的发布速度。有很多 bugfix 和新的 feature，都没有及 时加入到发布版本之中
+目标是提供一个由社区开发的、稳定的、总是免费的 MySQL 分支，在用 户级别上兼容主流版本。我们
+为自己的版本和上游、社区版的互操作性 提高而努力；Monty Program 公司承诺 MariaDB 将会一直保
+持独立和开源。值得一提的是，Fedora 及 OpenSUSE Linux 更宣布将在 MariaDB 推出下 一个版本后抛
+弃 MySQL 使用 MariaDB。
+MariaDB 提供了 MySQL 提供的标准存储引擎，即 MyISAM 和 InnoDB。因此，实际上，可以将它视为 
+MySQL 的扩展集，它不仅提供 MySQL 提供的所有功能，还提供其他功能。MariaDB 还声称自己是 
+MySQL 的替代，因此从 MySQL 切换到 MariaDB 时，无需更改任何基本代码即可安装它。
+最后可能也是最重要的一点是，MariaDB 的主要创建者是 Monty Widenius，也是 MySQL 的初始创建
+者。Monty 成立了一家名为 Monty Program 的公司来管理 MariaDB 的开发，这家公司雇佣开发人员来
+编写和改进 MariaDB 产品。这既是一件好事，也是一件坏事：有利的一面在于他们是 Maria 功能和 bug 
+修复的佼佼者，但公司不是以赢利为目的，而是由产品驱动的，这可能会带来问题，因为没有赢利的公
+司不一定能长久维持下去。
+ 
+ 
+2.1.3 MySQL 的特性
+ 
+MySQL是基于开源协议发布的，可以免费使用，也可以基于源码进行二次开发。
+MySQL使用标准SQL语言进行管理。
+MySQL可以运行于多个系统上，具有跨平台特性，并且支持多种语言。
+MySQL使用插件式存储引擎，不同的存储引擎，有着不同的功能和特性，使用者可以根据需要灵活
+选择。
+MySQL基于单进程，多线程的模式进行工作。
+MySQL提供了大量的测试组件和诸多的扩展。

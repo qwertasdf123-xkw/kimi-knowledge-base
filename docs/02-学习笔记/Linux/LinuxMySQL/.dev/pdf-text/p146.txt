@@ -1,0 +1,48 @@
+#安装依赖包，ncurses（操作终端） ncurses-devel（编译软件时用）bison（解析语法） cmake（源码
+编译工具） gcc，gcc-c++（编译器）
+[root@mysql01 ~]# yum -y install ncurses ncurses-devel bison cmake gcc gcc-c++
+#配置程序用户（不允许终端登录）
+[root@mysql01 ~]# useradd -s /sbin/nologin mysql
+#解压mysql和boost包到指定目录，boost是支持mysql底层c++运行的仓库
+[root@mysql01 ~]# tar zxvf mysql-5.7.17.tar.gz -C /opt/
+[root@mysql01 ~]# tar zxvf boost_1_59_0.tar.gz -C /usr/local/
+[root@mysql01 ~]# cd /usr/local/
+[root@mysql01 ~]# mv boost_1_59_0 boost
+#配置安装环境
+[root@mysql01 ~]# cd /opt/mysql-5.7.17/
+[root@mysql01 mysql-5.7.17]# cmake \
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+-DMYSQL_UNIX_ADDR=/usr/local/mysql/mysql.sock \
+-DSYSCONFDIR=/etc \
+-DSYSTEMD_PID_DIR=/usr/local/mysql \
+-DDEFAULT_CHARSET=utf8  \
+-DDEFAULT_COLLATION=utf8_general_ci \
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE=1 \
+-DMYSQL_DATADIR=/usr/local/mysql/data \
+-DWITH_BOOST=/usr/local/boost \
+-DWITH_SYSTEMD=1
+#注释 
+cmake \
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql \ #安装路径
+-DMYSQL_UNIX_ADDR=/usr/local/mysql/mysql.sock \ #客户端连服务的通讯文件
+-DSYSCONFDIR=/etc \ #mysql的配置文件
+-DSYSTEMD_PID_DIR=/usr/local/mysql \ #pid进程文件存放位置
+-DDEFAULT_CHARSET=utf8  \   #字符集格式
+-DDEFAULT_COLLATION=utf8_general_ci \   #排序规则
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \  #开启支持的存储引擎
+-DWITH_ARCHIVE_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE=1 \
+-DMYSQL_DATADIR=/usr/local/mysql/data \  #数据存放位置
+-DWITH_BOOST=/usr/local/boost \     #底层的c++支持库位置
+-DWITH_SYSTEMD=1    #id号
+------注意：如果在CMAKE的过程中有报错，当报错解决后，需要把源码目录中的CMakeCache.txt文件删
+除，然后再重新CMAKE，否则错误依旧------------
+#编译和安装
+[root@mysql01 mysql-5.7.17]# make && make install
+#递归配置目录所属主和组
+[root@mysql01 ~]# chown -R mysql.mysql /usr/local/mysql/
+#编辑mysql的配置文件，直接全替换 

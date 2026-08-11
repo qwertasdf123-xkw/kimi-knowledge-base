@@ -1,0 +1,47 @@
+回到amoeba服务器
+#amooba访问数据库的账号 
+#mysql-master
+mysql> grant all on *.* to test@'192.168.108.%' identified by '123.com';
+#mysql-slave01
+mysql> grant all on *.* to test@'192.168.108.%' identified by '123.com';
+#mysql-slave02
+mysql> grant all on *.* to test@'192.168.108.%' identified by '123.com';
+[root@amoeba ~]# cd /usr/local/amoeba/
+[root@amoeba amoeba]# vim conf/amoeba.xml
+---30行--
+ <property name="user">amoeba</property           #客户端访问amoeba账号
+----32行---------
+ <property name="password">123456</property>        #客户端访问ameoba密码
+---117和120-去掉注释-
+ 115行 <property name="defaultPool">master</property>
+ 116
+ 117
+ 118行<property name="writePool">master</property>
+ 119行<property name="readPool">slaves</property>
+ 120
+[root@amoeba amoeba]# vim conf/dbServers.xml         #数据库配置
+---23--注意！！！（mysql5.7，默认没有test数据库所以需要修改为mysql数据库）-（mysql5.5直接忽
+略）--
+<!-- mysql schema -->
+<property name="schema">mysql</property>
+--25行到30行，第30行-->移动到28行后面
+ 25                         <!-- mysql user -->
+ 26                         <property name="user">test</property>
+ 27
+ 28                         <!--  mysql password -->
+ 29                         <property name="password">123.com</property>
+ 30
+-----45到50行主服务器地址---
+45行<dbServer name="master"  parent="abstractServer">
+48行<property name="ipAddress">192.168.108.101</property>
+--52到57行从服务器主机名-
+52行<dbServer name="slave1"  parent="abstractServer">
+--55-从服务器地址-
+55 <property name="ipAddress">192.168.108.102</property>
+ ---52到57行复制一份在58行后面
+原52行<dbServer name="slave2"  parent="abstractServer">
+--55-从服务器地址-
+原55 <property name="ipAddress">192.168.108.103</property>
+ 
+ ---仅跟在上面的配置后面，multiPool行（本来就有，修改）
+ <dbServer name="slaves" virtual="true">

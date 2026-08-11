@@ -1,0 +1,47 @@
+ 
+3.5.3修改和删除表
+ 
+范例
+     Comment: /dev/null storage engine (anything you write to it disappears)
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 8. row ***************************
+      Engine: CSV
+     Support: YES
+     Comment: CSV storage engine
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 9. row ***************************
+      Engine: ARCHIVE
+     Support: YES
+     Comment: Archive storage engine
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+9 rows in set (0.00 sec)
+ALTER TABLE tbl_name
+    [alter_option [, alter_option] ...]
+    [partition_options]
+{ ADD COLUMN <列名> <类型>
+| CHANGE COLUMN <旧列名> <新列名> <新列类型>
+| ALTER COLUMN <列名> { SET DEFAULT <默认值>丨DROP DEFAULT }
+| MODIFY COLUMN <列名> <类型>
+| DROP COLUMN <列名>
+| RENAME TO <新表名> }
+#修改表名
+mysql> ALTER TABLE student RENAME stu;
+Query OK, 0 rows affected (0.01 sec)
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| stu           |
+| student2      |
+| student3      |
++---------------+
+3 rows in set (0.00 sec)
+mysql> desc stu;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |

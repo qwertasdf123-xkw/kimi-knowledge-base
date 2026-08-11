@@ -1,0 +1,46 @@
+创建表结构
+添加表信息
+mysql> create database school;         #创建数据库school
+Query OK, 1 row affected (0.00 sec)
+mysql> show databases;                #查看数据库，看到新建的数据库school
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| school             |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+mysql> use school;              #使用数据库school
+Database changed
+mysql> show tables;               #查看表
+Empty set (0.00 sec)
+mysql>
+mysql> CREATE TABLE info (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name CHAR(10) NOT NULL,
+    score DECIMAL(5,2), 
+    address CHAR(50) DEFAULT '南京',
+    hobby INT NOT NULL
+);
+Query OK, 0 rows affected (0.02 sec)
+mysql> show tables;
++------------------+
+| Tables_in_school |
++------------------+
+| info             |
++------------------+
+1 row in set (0.00 sec)
+mysql> describe info;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name    | char(10)     | NO   |     | NULL    |                |
+| score   | decimal(5,2) | YES  |     | NULL    |                |
+| address | char(50)     | YES  |     | 南京      |                |
+| hobby   | int(11)      | NO   |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)

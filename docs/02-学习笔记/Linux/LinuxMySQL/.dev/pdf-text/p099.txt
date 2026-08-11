@@ -1,0 +1,50 @@
+范例：模糊匹配
+| id | name     | age  |
++----+----------+------+
+| 11 | xiaohong |   30 |
+| 12 | zhangsan |   30 |
+| 13 | xiaozhou |   30 |
+| 14 | test1    |   30 |
+| 15 | test2    |   21 |
+| 16 | test3    |   31 |
+| 18 | xiaohong |   31 |
+| 19 | xiaohong |   31 |
+| 20 | zhangsan |   31 |
++----+----------+------+
+9 rows in set (0.00 sec)
+#以指定字符开头
+mysql> select id,name from stu where name like 'x%';
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 13 | xiaozhou |
+| 18 | xiaohong |
+| 19 | xiaohong |
++----+----------+
+4 rows in set (0.00 sec)
+#以指定字符开头
+mysql> select id,name from stu where name like 'xiao%';
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 13 | xiaozhou |
+| 18 | xiaohong |
+| 19 | xiaohong |
++----+----------+
+4 rows in set (0.00 sec)
+#以指定字符结尾
+mysql> select id,name from stu where name like '%ng';
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 18 | xiaohong |
+| 19 | xiaohong |
++----+----------+
+3 rows in set (0.00 sec)
+#包含指定字符串
+mysql> select id,name from stu where name like '%ou%';
++----+----------+
+| id | name     |

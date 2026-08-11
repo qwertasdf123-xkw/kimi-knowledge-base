@@ -1,0 +1,50 @@
+范例：去重
+范例：分页
+mysql> select id,name,age from stu order by age desc;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+| 16 | test3    |   31 |
+| 18 | xiaohong |   31 |
+| 19 | xiaohong |   31 |
+| 20 | zhangsan |   31 |
+| 11 | xiaohong |   30 |
+| 12 | zhangsan |   30 |
+| 13 | xiaozhou |   30 |
+| 14 | test1    |   30 |
+| 17 | NULL     |   23 |
+| 15 | test2    |   21 |
++----+----------+------+
+10 rows in set (0.00 sec)
+#去重
+mysql> select distinct age from stu order by age desc;
++------+
+| age  |
++------+
+|   31 |
+|   30 |
+|   23 |
+|   21 |
++------+
+4 rows in set (0.00 sec)
+#去重
+mysql> select distinct(age) from stu order by age desc;
++------+
+| age  |
++------+
+|   31 |
+|   30 |
+|   23 |
+|   21 |
++------+
+4 rows in set (0.00 sec)
+mysql> select id,name from stu;
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 12 | zhangsan |
+| 13 | xiaozhou |
+| 14 | test1    |
+| 15 | test2    |
+| 16 | test3    |

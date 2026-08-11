@@ -1,0 +1,33 @@
+提示符中可用的变量，全部可用的替换符用man mysql查看
+范例：执行SQL脚本
+[root@localhost ~]# mysql         #验证效果 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+(root@localhost) [(none)]>       #效果
+\C  #计数器
+\D  #年月日时分秒
+\d  #当前使用的数据库
+\h  #服务器主机名
+\l  #命令分隔符，默认；
+\m  #当前时间，分钟
+\n  #换行
+\O  #月份，以英文显示
+\o  #月份，数字显示
+\P  #pm/am
+\R  #小时，24小时制
+\r  #小时，12小时制
+\S  #分号
+\s  #秒，数字显示
+\t  #tab键
+\U  #客户端用户名和主机
+\u  #客户端用户名
+\v  #服务端版本
+\w  #星期几，英文显示
+\Y  #年份，四位，数字显示
+\y  #年份，两位，数字显示

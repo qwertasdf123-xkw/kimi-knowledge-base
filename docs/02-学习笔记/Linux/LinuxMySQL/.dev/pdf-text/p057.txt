@@ -1,0 +1,56 @@
+| utf16le_bin                | utf16le  |  62 |         | Yes      |       1 | 
+PAD SPACE     |
+| utf16le_general_ci         | utf16le  |  56 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| utf16_bin                  | utf16    |  55 |         | Yes      |       1 | 
+PAD SPACE     |
+| utf16_croatian_ci          | utf16    | 122 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_czech_ci             | utf16    | 111 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_danish_ci            | utf16    | 112 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_esperanto_ci         | utf16    | 118 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_estonian_ci          | utf16    | 107 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_general_ci           | utf16    |  54 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| utf16_german2_ci           | utf16    | 121 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_hungarian_ci         | utf16    | 119 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_icelandic_ci         | utf16    | 102 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_latvian_ci           | utf16    | 103 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_lithuanian_ci        | utf16    | 113 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_persian_ci           | utf16    | 117 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_polish_ci            | utf16    | 106 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_romanian_ci          | utf16    | 104 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_roman_ci             | utf16    | 116 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_sinhala_ci           | utf16    | 120 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_slovak_ci            | utf16    | 114 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_slovenian_ci         | utf16    | 105 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_spanish2_ci          | utf16    | 115 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_spanish_ci           | utf16    | 108 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_swedish_ci           | utf16    | 109 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_turkish_ci           | utf16    | 110 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_unicode_520_ci       | utf16    | 123 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_unicode_ci           | utf16    | 101 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf16_vietnamese_ci        | utf16    | 124 |         | Yes      |       8 | 
+PAD SPACE     |

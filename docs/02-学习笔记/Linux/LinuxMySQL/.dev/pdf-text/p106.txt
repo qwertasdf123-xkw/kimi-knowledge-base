@@ -1,0 +1,43 @@
+3.7.2 多表查询
+ 
+简单案例
+ 
+表名只用：yuangong（员工）、bumen（部门）
+一、创建表（只有 员工表、部门表）
+| 17 | NULL     |
+| 18 | xiaohong |
+| 19 | xiaohong |
+| 20 | zhangsan |
++----+----------+
+10 rows in set (0.00 sec)
+#第一页，每页3条记录
+# 0,3 跳过第0条从第一条开始，显示3条
+mysql> select id,name from stu limit 0,3;
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 12 | zhangsan |
+| 13 | xiaozhou |
++----+----------+
+3 rows in set (0.00 sec)
+#第二页，每页3条记录
+mysql> select id,name from stu limit 3,3;
++----+-------+
+| id | name  |
++----+-------+
+| 14 | test1 |
+| 15 | test2 |
+| 16 | test3 |
++----+-------+
+3 rows in set (0.00 sec)
+#第三页，每页3条记录
+mysql> select id,name from stu limit 6,3;
++----+----------+
+| id | name     |
++----+----------+
+| 17 | NULL     |
+| 18 | xiaohong |
+| 19 | xiaohong |
++----+----------+
+3 rows in set (0.01 sec)

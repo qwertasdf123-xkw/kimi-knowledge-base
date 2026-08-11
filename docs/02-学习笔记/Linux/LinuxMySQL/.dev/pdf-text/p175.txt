@@ -1,0 +1,36 @@
+在mysql-slave01上
+mysql-slave02上
+验证主从复制
+ 
+在mysql-slave01和mysql-slave02上查看
+并没有将客户端写入的insert student (name,age)values('卡卡西',30);同步
+在mysq-master上查看内容发现写入成功：
+#mysql-client上添加，由于不会同步，只有mysql-master192.168.108.101节点有该记录
+# mysql-client
+MySQL [school]> insert student (name,age)values('卡卡西',30);
+#mysql-slave01
+mysql> use school;
+mysql> insert student (name,age)values('卡卡西',31);
+# mysql-slave02
+mysql> use school;
+mysql> insert student (name,age)values('卡卡西',32);
+# mysql-slave01
+mysql> select * from student;
++----+-----------+------+--------+
+| id | name      | age  | gender |
++----+-----------+------+--------+
+| 10 | 路飞      |   20 | M      |
+| 11 | 鸣人      |   20 | M      |
+| 12 | 卡卡西    |   31 | M      |
++----+-----------+------+--------+
+3 rows in set (0.00 sec)
+#mysql-slave02
+mysql> select * from student;
++----+-----------+------+--------+
+| id | name      | age  | gender |
++----+-----------+------+--------+
+| 10 | 路飞      |   20 | M      |
+| 11 | 鸣人      |   20 | M      |
+| 12 | 卡卡西    |   32| M      |
++----+-----------+------+--------+
+3 rows in set (0.00 sec)

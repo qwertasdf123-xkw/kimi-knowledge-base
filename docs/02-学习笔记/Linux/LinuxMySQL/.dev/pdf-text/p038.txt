@@ -1,0 +1,56 @@
+  --default-character-set=name
+                      Set the default character set.
+  -?, --help          Display this help and exit.            #显示帮助信息
+  -h, --host=name     Connect to host.                       #指定服务器地址
+  -b, --no-beep       Turn off beep on error.
+  -p, --password[=name]                                      #指定连接服务器的密码
+                      Password to use when connecting to server. If password is
+                      not given it's asked from the tty.
+  -P, --port=#        Port number to use for connection or 0 for default to, in    
+#指定服务器端口，默认3306
+                      order of preference, my.cnf, $MYSQL_TCP_PORT,
+                      /etc/services, built-in default (3306).
+  --protocol=name     The protocol to use for connection (tcp, socket, pipe,     
+  #指定连接方式(tcp\socket\pipe\memory)
+                      memory).
+  -r, --relative      Show difference between current and previous values when
+                      used with -i. Currently only works with extended-status.
+  -s, --silent        Silently exit if one can't connect to server.        #如果无
+法连接，则静默退出
+  -S, --socket=name   The socket file to use for connection.               #指定连
+接时使用socket文件
+  -i, --sleep=#       Execute commands repeatedly with a sleep between.   #持续执
+行命令，间隔N秒执行一次
+  --ssl-mode=name     SSL connection mode.
+  --ssl-ca=name       CA file in PEM format.
+  --ssl-capath=name   CA directory.
+  --ssl-cert=name     X509 cert in PEM format.
+  --ssl-cipher=name   SSL cipher to use.
+  --ssl-key=name      X509 key in PEM format.
+  --ssl-crl=name      Certificate revocation list.
+  --ssl-crlpath=name  Certificate revocation list path.
+  --tls-version=name  TLS version to use, permitted values are: TLSv1, TLSv1.1,
+                      TLSv1.2, TLSv1.3
+  --ssl-fips-mode=name
+                      SSL FIPS mode (applies only for OpenSSL); permitted
+                      values are: OFF, ON, STRICT
+  --tls-ciphersuites=name
+                      TLS v1.3 cipher to use.
+  --server-public-key-path=name
+                      File path to the server public RSA key in PEM format.
+  --get-server-public-key
+                      Get server public key
+  -u, --user=name     User for login if not current user.             #指定用户名
+  -v, --verbose       Write more information.              
+  -V, --version       Output version information and exit.             #显示客户端
+版本
+  -E, --vertical      Print output vertically. Is similar to --relative, but
+                      prints output vertically.
+  -w, --wait[=#]      Wait and retry if connection is down.           #如果连接失
+败，是否等待重试，如果指定了具体数字，则表示重试几次
+  --connect-timeout=#                                          #指定连接超时时长
+  --shutdown-timeout=#                                         #指定关机超时时长
+  --plugin-dir=name   Directory for client-side plugins.       #客户端插件目录
+  --default-auth=name Default authentication client-side plugin to use.
+  --enable-cleartext-plugin
+                      Enable/disable the clear text authentication plugin.

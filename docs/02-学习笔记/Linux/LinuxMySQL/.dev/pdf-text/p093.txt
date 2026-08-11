@@ -1,0 +1,46 @@
+ 
+3.6.3 删除数据
+ 
+ 
+格式
+范例
+| 19 | xiaohong |   31 | F      |      1 |
+| 20 | zhangsan |   31 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+DELETE [LOW_PRIORITY] [QUICK] [IGNORE]
+    tbl_name[.*] [, tbl_name[.*]] ...
+    FROM table_references
+    [WHERE where_condition]
+DELETE [LOW_PRIORITY] [QUICK] [IGNORE]
+    FROM tbl_name[.*] [, tbl_name[.*]] ...
+    USING table_references
+    [WHERE where_condition]
+#查看全部数据
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 10 | xiaoming |   30 | F      |      0 |
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |
+| 14 | test1    |   30 | F      |      1 |
+| 15 | test2    |   21 | M      |      1 |
+| 16 | test3    |   31 | F      |      1 |
+| 17 | NULL     |   23 | F      |      0 |
+| 18 | xiaohong |   31 | F      |      1 |
+| 19 | xiaohong |   31 | F      |      1 |
+| 20 | zhangsan |   31 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+#根据条件删除
+mysql> delete from stu where id=10;
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |

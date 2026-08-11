@@ -1,0 +1,47 @@
+程序
+功能
+mysqld_safe
+安全启动脚本
+mysqld
+服务端程序，是mysql服务的核心程序
+mysqld_multi
+多实例工具
+程序
+功能
+mysql
+基于mysql协议的交互式CLI工具
+mysqldump
+备份工具
+mysqladmin
+服务端管理工具
+mysqlimport
+数据导入工具
+程序
+功能
+myisamchk
+检测MyISAM库
+myisampack
+打包MyISAM表，只读
+2.4MySQL组成和常用工具
+ 
+2.4.1 MySQL主要组成
+ 
+mysql基于C/S模式提供服务，主要有客户端程序和服务端程序组成，另外还有一些管理工具。
+服务端主要组成
+客户端主要组成
+MyISAM存储引擎的管理工具
+配置文件
+不同版本配置文件略有不同
+[root@localhost ~]# cat /etc/my.cnf
+#
+# This group is read both both by the client and the server
+# use it for options that affect everything
+#
+[client-server]
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d
+[root@localhost ~]# tree /etc/my.cnf.d/
+/etc/my.cnf.d/
+├── client.cnf                  #客户端配置

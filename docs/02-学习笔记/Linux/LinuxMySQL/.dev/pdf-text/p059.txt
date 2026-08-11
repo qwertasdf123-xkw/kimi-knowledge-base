@@ -1,0 +1,56 @@
+| utf8mb4_0900_as_cs         | utf8mb4  | 278 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_0900_bin           | utf8mb4  | 309 |         | Yes      |       1 | NO 
+PAD        |
+| utf8mb4_bin                | utf8mb4  |  46 |         | Yes      |       1 | 
+PAD SPACE     |
+| utf8mb4_croatian_ci        | utf8mb4  | 245 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_cs_0900_ai_ci      | utf8mb4  | 266 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_cs_0900_as_cs      | utf8mb4  | 289 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_czech_ci           | utf8mb4  | 234 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_danish_ci          | utf8mb4  | 235 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_da_0900_ai_ci      | utf8mb4  | 267 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_da_0900_as_cs      | utf8mb4  | 290 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_de_pb_0900_ai_ci   | utf8mb4  | 256 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_de_pb_0900_as_cs   | utf8mb4  | 279 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_eo_0900_ai_ci      | utf8mb4  | 273 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_eo_0900_as_cs      | utf8mb4  | 296 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_esperanto_ci       | utf8mb4  | 241 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_estonian_ci        | utf8mb4  | 230 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_es_0900_ai_ci      | utf8mb4  | 263 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_es_0900_as_cs      | utf8mb4  | 286 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_es_trad_0900_ai_ci | utf8mb4  | 270 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_es_trad_0900_as_cs | utf8mb4  | 293 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_et_0900_ai_ci      | utf8mb4  | 262 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_et_0900_as_cs      | utf8mb4  | 285 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_general_ci         | utf8mb4  |  45 |         | Yes      |       1 | 
+PAD SPACE     |
+| utf8mb4_german2_ci         | utf8mb4  | 244 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_hr_0900_ai_ci      | utf8mb4  | 275 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_hr_0900_as_cs      | utf8mb4  | 298 |         | Yes      |       0 | NO 
+PAD        |
+| utf8mb4_hungarian_ci       | utf8mb4  | 242 |         | Yes      |       8 | 
+PAD SPACE     |
+| utf8mb4_hu_0900_ai_ci      | utf8mb4  | 274 |         | Yes      |       0 | NO 
+PAD        |

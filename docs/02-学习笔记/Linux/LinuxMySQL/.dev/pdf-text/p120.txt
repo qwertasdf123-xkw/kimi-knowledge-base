@@ -1,0 +1,48 @@
+玩家昵称
+邀请人昵称
+国服韩信
+NULL
+野王妹妹
+国服韩信
+菜鸡互啄
+野王妹妹
+新玩家小 A
+NULL
+法王妲己
+国服韩信
+案例：查询所有玩家 + 所有英雄，不管有没有对战记录
+ 
+结果说明
+ 
+结果会包含：
+1. 所有有战绩的玩家 + 英雄
+2. 没有战绩的新玩家
+3. 没人用的新英雄蔡文姬、暃
+所有数据全部保留，没有遗漏。
+6. 自连接（SELF JOIN）：自己连自己
+ 
+概念
+ 
+把同一张表，当成两张表来连接，用来处理表内的关联关系（比如邀请人、上下级这种自己关联自己的
+场景）。
+案例：查询每个玩家，以及他的邀请人是谁
+ 
+查询结果
+ 
+-- 左连接结果
+SELECT wj.wanjia_nicheng, yx.yingxiong_ming
+FROM wanjia wj
+LEFT JOIN zhanji zj ON wj.wanjia_id = zj.wanjia_id
+LEFT JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id
+UNION -- 合并去重
+-- 右连接结果
+SELECT wj.wanjia_nicheng, yx.yingxiong_ming
+FROM wanjia wj
+RIGHT JOIN zhanji zj ON wj.wanjia_id = zj.wanjia_id
+RIGHT JOIN yingxiong yx ON zj.yingxiong_id = yx.yingxiong_id;
+SELECT 
+  u.wanjia_nicheng AS 玩家昵称,
+  inviter.wanjia_nicheng AS 邀请人昵称
+FROM wanjia u
+-- 玩家表自己连自己：u是当前玩家，inviter是邀请人
+LEFT JOIN wanjia inviter ON u.yaoqingren_id = inviter.wanjia_id;

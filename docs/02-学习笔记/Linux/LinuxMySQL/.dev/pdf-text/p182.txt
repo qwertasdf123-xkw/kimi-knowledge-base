@@ -1,0 +1,41 @@
+接下来在 mysql-slave01 和 mysql-slave02分别执行同步。
+查看 IO 和 SQL 线程都是 yes 代表同步是否正常
+必须设置两个从库为只读模式：
+注意：设置完成直接验证主从复制功能
+安装 MHA 软件
+ 
+所有服务器上都安装 MHA 依赖的环境，首先安装 epel 源。
+mysql> show master status;
++-------------------+----------+--------------+------------------+---------------
+----+
+| File              | Position | Binlog_Do_DB | Binlog_Ignore_DB | 
+Executed_Gtid_Set |
++-------------------+----------+--------------+------------------+---------------
+----+
+| master-bin.000001 |     1897 |              |                  |               
+    |
++-------------------+----------+--------------+------------------+---------------
+----+
+#mysql-slave01，命令中的master_log_pos的值，取决于msql-master show master status查看的
+Position
+mysql> change master to 
+master_host='192.168.108.131',master_user='myslave',master_password='123',master_
+log_file='master-bin.000001',master_log_pos=1897; 
+mysql> start slave;
+#mysql-slave02
+mysql> change master to 
+master_host='192.168.108.131',master_user='myslave',master_password='123',master_
+log_file='master-bin.000001',master_log_pos=1897; 
+mysql> start slave;
+#mysql-slave01
+mysql> show slave status\G;
+Slave_IO_Running: Yes
+Slave_SQL_Running: Yes
+#mysql-slave02
+mysql> show slave status\G;
+Slave_IO_Running: Yes
+Slave_SQL_Running: Yes
+#mysql-slave01
+mysql> set global read_only=1;
+#mysql-slave02
+mysql> set global read_only=1;

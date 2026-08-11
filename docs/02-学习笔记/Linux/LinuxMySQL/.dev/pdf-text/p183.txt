@@ -1,0 +1,39 @@
+MHA 软件包对于每个操作系统版本不一样，这里 CentOS7.9 必须选择 0.57 版本，
+  在<注意：所有服务器>上必须先安装 node 组件，最后在 MHA 节点上安装 manager 组件，
+  因为 manager 依赖 node 组件。
+ 
+在 MHA上安装 manager 组件（！注意：一定要先安装node 组件才能安装manager 组件）
+#4个节点
+# yum install epel-release --nogpgcheck -y
+# yum install -y perl-DBD-MySQL \
+perl-Config-Tiny \
+perl-Log-Dispatch \
+perl-Parallel-ForkManager \
+perl-ExtUtils-CBuilder \
+perl-ExtUtils-MakeMaker \
+perl-CPAN
+#mysql-master
+[root@mysql-master ~]# tar zxvf mha4mysql-node-0.57.tar.gz
+[root@mysql-master ~]# cd mha4mysql-node-0.57
+[root@mysql-master ~]# perl Makefile.PL
+[root@mysql-master ~]# make && make install
+#mysql-slave01
+[root@mysql-slave01 ~]# tar zxvf mha4mysql-node-0.57.tar.gz
+[root@mysql-slave01 ~]# cd mha4mysql-node-0.57
+[root@mysql-slave01 ~]# perl Makefile.PL
+[root@mysql-slave01 ~]# make && make install
+#mysql-slave02
+[root@mysql-slave02 ~]# tar zxvf mha4mysql-node-0.57.tar.gz
+[root@mysql-slave02 ~]# cd mha4mysql-node-0.57
+[root@mysql-slave02 ~]# perl Makefile.PL
+[root@mysql-slave02 ~]# make && make install
+#mha
+[root@mha ~]# tar zxvf mha4mysql-node-0.57.tar.gz
+[root@mha ~]# cd mha4mysql-node-0.57
+[root@mha ~]# perl Makefile.PL
+[root@mha ~]# make && make install
+#mha
+[root@mha ~]# tar zxvf mha4mysql-manager-0.57.tar.gz
+[root@mha ~]# cd mha4mysql-manager-0.57
+[root@mha mha4mysql-manager-0.57]# perl Makefile.PL
+[root@mha mha4mysql-manager-0.57]# make && make install

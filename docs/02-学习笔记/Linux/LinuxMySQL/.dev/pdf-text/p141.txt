@@ -1,0 +1,26 @@
+通过浏览器访问
+#添加php测试页面
+[root@web ~]# vim /var/www/html/test.php
+<?php
+phpinfo();
+#下载wordpress 源码
+[root@web ~]# cd /var/www/html/
+[root@web html]# wget https://cn.wordpress.org/latest-zh_CN.zip
+[root@web html]# unzip latest-zh_CN.zip
+[root@web html]# ls
+latest-zh_CN.zip  test.php  wordpress
+#修改属主属组
+[root@web html]# chown -R apache.apache wordpress/
+#切换到101节点，创建数据库
+[root@mysql ~]# mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+#创建数据库
+mysql> create database wordpress;

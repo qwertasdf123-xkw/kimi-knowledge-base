@@ -1,0 +1,48 @@
+范例：NULL值
++----+----------+
+| 11 | xiaohong |
++----+----------+
+1 row in set (0.00 sec)
+#多条
+mysql> select id,name from stu where id in(11,15,19);
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 15 | test2    |
+| 19 | xiaohong |
++----+----------+
+3 rows in set (0.00 sec)
+#and 可以写为 &&
+mysql> select id,name from stu where id>=11 and id <14;
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 12 | zhangsan |
+| 13 | xiaozhou |
++----+----------+
+3 rows in set (0.00 sec)
+#or 可以写为 ||
+mysql> select id,name from stu where id<=12 or id>19;
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 12 | zhangsan |
+| 20 | zhangsan |
++----+----------+
+3 rows in set (0.00 sec)
+mysql> select id,name,age from stu where name=NUll;    #语法错误
+Empty set (0.01 sec)
+#null值
+mysql> select id,name,age from stu where name IS NULL;
++----+------+------+
+| id | name | age  |
++----+------+------+
+| 17 | NULL |   23 |
++----+------+------+
+1 row in set (0.00 sec)
+#非null值
+mysql> select id,name,age from stu where name is not null;
++----+----------+------+

@@ -1,0 +1,45 @@
+范例：创建数据库和删除数据库
+#mysqladmin只能关闭服务，不能启动服务
+[root@localhost ~]# mysqladmin shutdown
+[root@localhost ~]# mysqladmin ping
+mysqladmin: connect to server at 'localhost' failed
+error: 'Can't connect to local MySQL server through socket 
+'/var/lib/mysql/mysql.sock' (2)'
+Check that mysqld is running and that the socket: '/var/lib/mysql/mysql.sock' 
+exists!
+[root@localhost ~]# echo $?
+1
+[root@localhost ~]# systemctl start mysqld
+#创建
+[root@localhost ~]# mysqladmin create mysqladmin-db1
+[root@localhost ~]# mysqladmin create mysqladmin-db2
+[root@localhost ~]# mysql -e 'show databases'
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| mysqladmin-db1     |
+| mysqladmin-db2     |
+| performance_schema |
+| sys                |
++--------------------+
+#删除
+[root@localhost ~]# mysqladmin drop mysqladmin-db1
+Dropping the database is potentially a very bad thing to do.
+Any data stored in the database will be destroyed.
+Do you really want to drop the 'mysqladmin-db1' database [y/N] y      #回答y确认
+Database "mysqladmin-db1" dropped
+[root@localhost ~]# mysqladmin -f drop mysqladmin-db2      #强制删除，不需要确认
+Database "mysqladmin-db2" dropped
+[root@localhost ~]# mysql -e 'show databases'     #验证mysqladmin-db1和mysqladmin-
+db2已经删除
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+[root@localhost ~]#

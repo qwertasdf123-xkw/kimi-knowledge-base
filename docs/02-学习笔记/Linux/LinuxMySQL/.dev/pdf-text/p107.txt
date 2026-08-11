@@ -1,0 +1,38 @@
+二、插入测试数据
+数据情况：
+bumen： 1 技术、2 产品、3 运营
+yuangong： 张三、李四、王五（有部门），赵六（无部门）
+三、7 种多表查询
+1. 交叉连接 CROSS JOIN
+两张表所有行两两组合，不看任何关联条件，叫笛卡尔积。
+语法
+语法介绍
+不需要 ON  条件
+结果行数 = 表 1 行数 × 表 2 行数
+实际开发几乎不用，容易产生巨量数据
+完整SQL
+-- 部门表
+CREATE TABLE bumen (
+    bumen_id   INT PRIMARY KEY,  -- 部门ID
+    bumen_name VARCHAR(20)       -- 部门名称
+);
+-- 员工表
+CREATE TABLE yuangong (
+    yuangong_id INT PRIMARY KEY, -- 员工ID
+    name        VARCHAR(20),     -- 员工姓名
+    bumen_id    INT              -- 所属部门ID（用来关联）
+);
+-- 部门：技术部、产品部、运营部
+INSERT INTO bumen VALUES
+(1, '技术部'),
+(2, '产品部'),
+(3, '运营部');
+-- 员工
+INSERT INTO yuangong VALUES
+(101, '张三', 1),    -- 技术部
+(102, '李四', 1),    -- 技术部
+(103, '王五', 2),    -- 产品部
+(104, '赵六', NULL); -- 没有部门
+SELECT 列名
+FROM 表1
+CROSS JOIN 表2;

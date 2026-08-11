@@ -1,0 +1,42 @@
+下面三条授权按理论是不用添加的，但是做案例实验环境时候通过 MHA 检查MySQL 主从有报错，
+报两个从库通过主机名连接不上主库，所以所有数据库加上下面的授权。
+在mysql-master主机上查看二进制文件和同步点
+mysql> grant all privileges on *.* to 'mha'@'192.168.108.%' identified by 
+'manager';
+mysql> flush privileges;
+#mysql-slave01
+mysql> grant replication slave on *.* to 'myslave'@'192.168.108.%' identified by 
+'123';
+mysql> grant all privileges on *.* to 'mha'@'192.168.108.%' identified by 
+'manager';
+mysql> flush privileges;
+#mysql-slave02
+mysql> grant replication slave on *.* to 'myslave'@'192.168.108.%' identified by 
+'123';
+mysql> grant all privileges on *.* to 'mha'@'192.168.108.%' identified by 
+'manager';
+mysql> flush privileges;
+#mysql-master配置(mha@mysql-master与主机名相同)
+mysql> grant all privileges on *.* to 'mha'@'mysql-master' identified by 
+'manager';       
+mysql> grant all privileges on *.* to 'mha'@'mysql-slave01' identified by 
+'manager';
+mysql> grant all privileges on *.* to 'mha'@'mysql-slave02' identified by 
+'manager';
+mysql> flush privileges;
+#mysql-slave01配置(mha@mysql-master与主机名相同)
+mysql> grant all privileges on *.* to 'mha'@'mysql-master' identified by 
+'manager';       
+mysql> grant all privileges on *.* to 'mha'@'mysql-slave01' identified by 
+'manager';
+mysql> grant all privileges on *.* to 'mha'@'mysql-slave02' identified by 
+'manager';
+mysql> flush privileges;
+#mysql-slave02配置(mha@mysql-master与主机名相同)
+mysql> grant all privileges on *.* to 'mha'@'mysql-master' identified by 
+'manager';       
+mysql> grant all privileges on *.* to 'mha'@'mysql-slave01' identified by 
+'manager';
+mysql> grant all privileges on *.* to 'mha'@'mysql-slave02' identified by 
+'manager';
+mysql> flush privileges;

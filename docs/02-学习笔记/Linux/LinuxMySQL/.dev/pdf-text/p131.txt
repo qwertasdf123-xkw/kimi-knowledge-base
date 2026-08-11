@@ -1,0 +1,37 @@
+ 
+3.9.3 取消权限
+ 
+格式
+范例
+ 
+3.9.4查看用户权限
+ 
+格式
+注意
+MariaDB服务进程启动时会读取mysql库中所有授权表至内存。
+GRANT或REVOKE等执行权限操作会保存于系统表中，MariaDB的服务进程通常会自动重读授权
+表，使之生效。
+对于不能够或不能及时重读授权表的命令，可手动让MariaDB的服务进程重读授权表：
+mysql>FLUSH PRIVILEGES。
+范例
+#只能查询，插入指定字段
+GRANT SELECT(col1),INSERT(col1,col2) ON mydb.mytbl TO 'someuser'@'somehost';
+#有指定库的所有权限
+GRANT ALL ON wordpress.* TO wordpress '10.0.0.%';
+#授予所有权限
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'10.0.0.%' WITH GRANT OPTION;
+#创建用户和授权同时执行的方式在MySQL8.0取消了
+GRANT ALL ON wordpress.* TO wordpress@'192.168.108.%' IDENTIFIED BY 'huawei';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.108.%' IDENTIFIED BY 'huawei' WITH 
+GRANT OPTION;
+REVOKE
+    priv_type [(column_list)]
+      [, priv_type [(column_list)]] ...
+    ON [object_type] priv_level
+    FROM user_or_role [, user_or_role] ...
+REVOKE DELETE ON *.* FROM 'testuser'@'172.16.0.%';
+REVOKE ALL ON *.* FROM'testuser'@'172.16.0.%';
+#查看指定用户权限
+SHOW GRANTS FOR 'user'@'host';
+#查看当前使用中的用户的权限
+SHOW GRANTS FOR CURRENT_USER[()];

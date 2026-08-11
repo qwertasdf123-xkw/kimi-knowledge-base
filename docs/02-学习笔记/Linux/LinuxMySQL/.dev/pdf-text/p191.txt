@@ -1,0 +1,43 @@
+ 
+第一次配置需要去master上手动开启虚拟IP
+ 
+启动 MHA
+ 
+--remove_dead_master_conf 该参数代表当发生主从切换后，老的主库的 ip 将会从配置文件中移除。
+--manger_log 日志存放位置。
+--ignore_last_failover 在缺省情况下，如果 MHA 检测到连续发生宕机，且两次宕机间隔不足 8 小时的
+话，则不会进行 Failover，之所以这样限制是为了避免 ping-pong 效应。该参数代表忽略上次 MHA 触
+发切换产生的文件，默认情况下，MHA 发生切换后会在日志记目录，也就是上面设置的日志 
+app1.failover.complete 文件，下次再次切换的时候如果发现该目录下存在该文件将不允许触发切换，
+除非在第一次切换后收到删除该文件，为了方便，这里设置为-–ignore_last_failover。
+ done.
+    Testing mysqlbinlog output.. done.
+    Cleaning up test file(s).. done.
+Tue Oct  7 15:30:07 2025 - [info] Slaves settings check done.
+Tue Oct  7 15:30:07 2025 - [info]
+192.168.108.131(192.168.108.131:3306) (current master)
+ +--192.168.108.132(192.168.108.132:3306)
+ +--192.168.108.133(192.168.108.133:3306)
+Tue Oct  7 15:30:07 2025 - [info] Checking replication health on 
+192.168.108.132..
+Tue Oct  7 15:30:07 2025 - [info]  ok.
+Tue Oct  7 15:30:07 2025 - [info] Checking replication health on 
+192.168.108.133..
+Tue Oct  7 15:30:07 2025 - [info]  ok.
+Tue Oct  7 15:30:07 2025 - [info] Checking master_ip_failover_script status:
+Tue Oct  7 15:30:07 2025 - [info]   /usr/local/bin/master_ip_failover --
+command=status --ssh_user=root --orig_master_host=192.168.108.131 --
+orig_master_ip=192.168.108.131 --orig_master_port=3306
+IN SCRIPT TEST====/sbin/ifconfig ens33:1 down==/sbin/ifconfig ens33:1 
+192.168.108.200===
+Checking the Status of the script.. OK
+Tue Oct  7 15:30:07 2025 - [info]  OK.
+Tue Oct  7 15:30:07 2025 - [warning] shutdown_script is not defined.
+Tue Oct  7 15:30:07 2025 - [info] Got exit code 0 (Not master dead).
+MySQL Replicaxtion Health is OK.
+#注意：第一次配置需要去master上手动开启虚拟IP
+[root@mysql-master ~]# /sbin/ifconfig ens33:1 192.168.108.200/24
+[root@mha ~]# nohup masterha_manager --conf=/etc/masterha/app1.cnf --
+remove_dead_master_conf --ignore_last_failover < /dev/null > 
+/var/log/masterha/app1/manager.log 2>&1 &
+[1] 48240

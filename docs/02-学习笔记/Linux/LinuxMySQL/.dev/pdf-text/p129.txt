@@ -1,0 +1,43 @@
+ 
+3.9权限管理和DCL语句
+ 
+在MySQL服务中，新创建的用户仅仅只能连接，没有操作权限，需要配置相应的权限后才能使用。
+ 
+3.9.1 权限类别
+ 
+管理类
+CREATE USER，FILE，SUPER，SHOW DATABASES，RELOAD，SHUTDOWN，REPLICATION SLAVE，
+REPLICATION CLIENT，LOCK TABLES，PROCESS，CREATE TEMPORARY TABLES
+程序类针对FUNCTION、PROCEDURE、TRIGGER
+CREATE，ALTER，DROP，EXCUTE
+库和表级别针对DATABASE、TABLE
+ALTER，CREATE，CREATE VIEW，DROP INDEX，SHOW VIEW，WITH GRANT OPTION(将自己获得的
+权限转赠给其他用户）
+数据操作
+SELECT，INSERT，DELETE，UPDATE
+字段级别
+SELECT(col1,coI2.,..)，UPDATE(col1,col2,..)，INSERT(col1,col2,..)
+所有权限
+ALL PRIVILEGES或ALL
+| 11 | root | localhost           | mysql | Sleep   |  360 |       | NULL         
+    |
+| 14 | root | 192.168.108.1:63707 | NULL  | Query   |    0 | init  | show 
+processlist |
++----+------+---------------------+-------+---------+------+-------+-------------
+-----+
+2 rows in set (0.00 sec)
+#查看数据库
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
++--------------------+
+1 row in set (0.00 sec)
+#没有权限
+mysql> use msyql;
+ERROR 1044 (42000): Access denied for user 'root'@'192.168.108.1' to database 
+'msyql'
+mysql> create database db1;
+ERROR 1044 (42000): Access denied for user 'root'@'192.168.108.1' to database 
+'db1'

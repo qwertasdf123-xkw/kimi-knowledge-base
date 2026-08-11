@@ -1,0 +1,56 @@
+| ucs2_croatian_ci           | ucs2     | 149 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_czech_ci              | ucs2     | 138 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_danish_ci             | ucs2     | 139 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_esperanto_ci          | ucs2     | 145 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_estonian_ci           | ucs2     | 134 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_general_ci            | ucs2     |  35 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| ucs2_general_mysql500_ci   | ucs2     | 159 |         | Yes      |       1 | 
+PAD SPACE     |
+| ucs2_german2_ci            | ucs2     | 148 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_hungarian_ci          | ucs2     | 146 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_icelandic_ci          | ucs2     | 129 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_latvian_ci            | ucs2     | 130 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_lithuanian_ci         | ucs2     | 140 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_persian_ci            | ucs2     | 144 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_polish_ci             | ucs2     | 133 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_romanian_ci           | ucs2     | 131 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_roman_ci              | ucs2     | 143 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_sinhala_ci            | ucs2     | 147 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_slovak_ci             | ucs2     | 141 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_slovenian_ci          | ucs2     | 132 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_spanish2_ci           | ucs2     | 142 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_spanish_ci            | ucs2     | 135 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_swedish_ci            | ucs2     | 136 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_turkish_ci            | ucs2     | 137 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_unicode_520_ci        | ucs2     | 150 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_unicode_ci            | ucs2     | 128 |         | Yes      |       8 | 
+PAD SPACE     |
+| ucs2_vietnamese_ci         | ucs2     | 151 |         | Yes      |       8 | 
+PAD SPACE     |
+| ujis_bin                   | ujis     |  91 |         | Yes      |       1 | 
+PAD SPACE     |
+| ujis_japanese_ci           | ujis     |  12 | Yes     | Yes      |       1 | 
+PAD SPACE     |

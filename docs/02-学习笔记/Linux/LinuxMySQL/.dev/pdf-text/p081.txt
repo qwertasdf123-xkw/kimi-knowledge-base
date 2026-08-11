@@ -1,0 +1,50 @@
+查看当前MySQL服务支持的引擎
+格式
+范例
+    Create_time: 2025-09-18 22:35:06
+    Update_time: 2025-09-18 22:35:06
+     Check_time: NULL
+      Collation: utf8mb4_0900_ai_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+*************************** 3. row ***************************
+           Name: student3
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 0
+ Avg_row_length: 0
+    Data_length: 16384
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: 1
+    Create_time: 2025-09-18 22:49:14
+    Update_time: NULL
+     Check_time: NULL
+      Collation: utf8mb4_0900_ai_ci
+       Checksum: NULL
+ Create_options:
+        Comment:
+3 rows in set (0.01 sec)
+SHOW ENGINES
+mysql> SHOW ENGINES;
++--------------------+---------+-------------------------------------------------
+---------------+--------------+------+------------+
+| Engine             | Support | Comment                                         
+               | Transactions | XA   | Savepoints |
++--------------------+---------+-------------------------------------------------
+---------------+--------------+------+------------+
+| FEDERATED          | NO      | Federated MySQL storage engine                   
+              | NULL         | NULL | NULL       |
+| MEMORY             | YES     | Hash based, stored in memory, useful for 
+temporary tables      | NO           | NO   | NO         |
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and 
+foreign keys     | YES          | YES  | YES        |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                               
+              | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                           
+               | NO           | NO   | NO         |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables           
+               | NO           | NO   | NO         |

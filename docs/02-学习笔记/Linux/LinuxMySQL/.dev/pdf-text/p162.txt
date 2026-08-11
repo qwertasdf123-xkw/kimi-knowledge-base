@@ -1,0 +1,36 @@
+主机名
+IP地址
+作用
+mysql-master
+192.168.108.101
+mysql主服务器
+mysql-slave01
+192.168.108.102
+mysql从节点1
+mysql-slave02
+192.168.108.103
+mysql从节点2
+amoeba
+192.168.108.110
+amoeba
+mysql-client
+192.168.108.111
+应用客户端
+Slave将Master 的 Binary log复制到其中继日志(Relay log)。首先，Slave开始一个工作线程-I/0线
+程,I/0线程在Master上打开一个普通的连接，然后开始Binlog dump process。Binlog dump 
+process从Master 的二进制日志中读取事件，如果已经跟上Master，它会睡眠并等待Master产生
+新的事件。I/0线程将这些事件写入中继日志。
+SQL slave thread(SQL从线程）处理该过程的最后一步。SQL线程从中继日志读取事件，并重放其
+中的事件而更新Slave数据，使其与Master中的数据保持一致。只要该线程与I/0线程保持一致，中
+继日志通常会位于0S的缓存中，所以中继日志的开销很小。复制过程有一个很重要的限制，即复制
+在Slave上是串行化的，也就是说Master上的并行更新操作不能在Slave上并行操作。
+实验拓扑图
+ 
+使用Centos-7-template 模板克隆产生应用客户端和amoeba
+使用mysql模板克隆产生mysql主服务器，mysql从节点1，mysql从节点2
+根据下表，将IP地址，主机名更改好
+ 
+ 
+时间同步
+ 
+通过时间戳实现业务的一致性

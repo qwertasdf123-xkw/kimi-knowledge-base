@@ -1,0 +1,45 @@
+范例：修改连接密码
+ 
+2.4.4.4 mycli 工具
+ 
+MyCLI是基于Python开发的MySQL的命令行工具，具有自动完成和语法突出显示功能
+#旧密码为空，root用户，localhost主机连接
+[root@localhost ~]# mysqladmin password 123456             #设置密码为123456
+mysqladmin: [Warning] Using a password on the command line interface can be 
+insecure.
+Warning: Since password will be sent to server in plain text, use ssl connection 
+to ensure password safety.
+[root@localhost ~]# mysqladmin ping                  #不使用密码不行
+mysqladmin: connect to server at 'localhost' failed
+error: 'Access denied for user 'root'@'localhost' (using password: NO)'
+[root@localhost ~]# mysqladmin -uroot -hlocalhost -p123456 ping       #使用密码
+123456
+mysqladmin: [Warning] Using a password on the command line interface can be 
+insecure.
+mysqld is alive
+#用旧密码修改新密码
+[root@localhost ~]# mysqladmin -uroot -p123456 -hlocalhost password abcde      #
+更改密码为abcde
+mysqladmin: [Warning] Using a password on the command line interface can be 
+insecure.
+Warning: Since password will be sent to server in plain text, use ssl connection 
+to ensure password safety.
+[root@localhost ~]# mysqladmin -uroot -p123456 -hlocalhost ping         #使用原密码
+测试不行
+mysqladmin: [Warning] Using a password on the command line interface can be 
+insecure.
+mysqladmin: connect to server at 'localhost' failed
+error: 'Access denied for user 'root'@'localhost' (using password: YES)'
+[root@localhost ~]# mysqladmin -uroot -pabcde -hlocalhost ping       #使用新密码测
+试
+mysqladmin: [Warning] Using a password on the command line interface can be 
+insecure.
+mysqld is alive
+[root@localhost ~]# yum install -y python39
+[root@localhost ~]# pip3.9 config set global.index-url 
+https://pypi.tuna.tsinghua.edu.cn/simple
+Writing to /root/.config/pip/pip.conf
+[root@localhost ~]# pip3 install mycli==1.2.0
+#使用
+[root@localhost ~]# mycli -uroot -pabcde
+Connecting to socket /var/lib/mysql/mysql.sock, owned by user mysql

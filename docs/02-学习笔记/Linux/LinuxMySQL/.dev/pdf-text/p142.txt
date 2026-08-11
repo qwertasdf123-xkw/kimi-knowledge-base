@@ -1,0 +1,25 @@
+为项目配置域名
+在页面上填写相关配置
+Query OK, 1 row affected (0.02 sec)
+#创建用户
+mysql> create user 'wordpresser'@'192.168.108.%' identified by '123456';
+Query OK, 0 rows affected (0.01 sec)
+#授权
+mysql> grant all on wordpress.* to 'wordpresser'@'192.168.108.%';
+Query OK, 0 rows affected (0.01 sec)
+#在web服务器上配置域名指向的目录
+[root@web ~]# vim /etc/httpd/conf.d/blog.gqd.cloud.conf
+<VirtualHost *:80>
+  ServerName blog.gqd.cloud
+  DocumentRoot "/var/www/html/wordpress"
+  <Directory "/var/www/html/wordpress">
+    AllowOverride all
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
+#重启httpd
+[root@web ~]# systemctl restart httpd
+#在物理机上为域名设置解析
+#在C:\windows\System32\drivers\etc\hosts添中如下行
+192.168.108.100 blog.gqd.cloud

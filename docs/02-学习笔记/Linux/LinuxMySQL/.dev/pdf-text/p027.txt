@@ -1,0 +1,40 @@
+范例：
+--print-defaults            #打印参数列表，放在最前面
+--connect-timeout=N         #连接超时时长，单位S
+--max-allowed-packet=N      #一次查交互发送或反回数据的大小，默认16MB，最大值为1GB，最小值
+为4096字节
+#免密登录
+[root@localhost ~]# mysql -uroot -pHuawei@123
+mysql> alter user root@localhost identified by '';        #将mysql root账号密码设置
+为空
+mysql> quit                                               #退出mysql
+#显示版本
+[root@localhost ~]# mysql -V
+mysql  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+#指定用户名，主机，端口
+[root@localhost ~]# mysql -uroot -h127.0.0.1 -P3306
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 22
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+#使用主机名
+[root@localhost ~]# mysql --user=root --host=localhost --port=3306
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+#默认使用root连接，密码为空
+[root@localhost ~]# mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.0.26 Source distribution

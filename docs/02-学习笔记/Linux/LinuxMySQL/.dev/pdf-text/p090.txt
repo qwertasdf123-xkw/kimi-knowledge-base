@@ -1,0 +1,47 @@
+ 
+3.6.2 更新数据
+ 
+更新数据一定要加条件限制，没有条件则会更新表中所有记录。
+范例
+| 11 | xiaohong |   18 | F      |      0 |
+| 12 | zhangsan |   19 | F      |      0 |
+| 13 | xiaozhou |   20 | M      |      1 |
+| 14 | test1    |   20 | M      |      1 |
+| 15 | test2    |   21 | M      |      1 |
+| 16 | test3    |   22 | M      |      1 |
+| 17 | NULL     |   23 | M      |      0 |
+| 18 | xiaohong |   18 | F      |      1 |
+| 19 | xiaohong |   18 | F      |      1 |
+| 20 | zhangsan |   19 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+UPDATE [LOW_PRIORITY] [IGNORE] table_reference
+    SET assignment_list
+    [WHERE where_condition]
+    [ORDER BY ...]
+    [LIMIT row_count]
+#不加条件表示更新所有
+mysql> UPDATE stu set age=30,gender='F';
+Query OK, 11 rows affected (0.00 sec)
+Rows matched: 11  Changed: 11  Warnings: 0
+mysql> select * from stu;
++----+----------+------+--------+--------+
+| id | name     | age  | gender | is_del |
++----+----------+------+--------+--------+
+| 10 | xiaoming |   30 | F      |      0 |
+| 11 | xiaohong |   30 | F      |      0 |
+| 12 | zhangsan |   30 | F      |      0 |
+| 13 | xiaozhou |   30 | F      |      1 |
+| 14 | test1    |   30 | F      |      1 |
+| 15 | test2    |   30 | F      |      1 |
+| 16 | test3    |   30 | F      |      1 |
+| 17 | NULL     |   30 | F      |      0 |
+| 18 | xiaohong |   30 | F      |      1 |
+| 19 | xiaohong |   30 | F      |      1 |
+| 20 | zhangsan |   30 | F      |      1 |
++----+----------+------+--------+--------+
+11 rows in set (0.00 sec)
+#根据条件更新
+mysql> update stu set age=31 WHERE id>15;
+Query OK, 5 rows affected (0.01 sec)
+Rows matched: 5  Changed: 5  Warnings: 0

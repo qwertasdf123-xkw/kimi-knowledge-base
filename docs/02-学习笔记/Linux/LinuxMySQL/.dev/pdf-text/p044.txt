@@ -1,0 +1,54 @@
+组件
+关键字
+说明
+数据库
+database
+表的集合，一个数据库中可以有多个表，在文件系统中表出就是
+一个目录
+表
+table
+在数据库中以二维表的形式出现，有行和列，数据库中的数据就
+是存放于表中的
+索引
+index
+索引通常建立在一个列上，用以加快数据查询速度
+视图
+view
+用SQL语言构建的虚拟表，可以临时把两个或多个表以逻辑关系
+关联上，对外提供查询
+存储过
+程
+procedure
+存储过程是一组为了完成特定功能的SQL语句集合，客户端可以
+直接调用
+存储函
+数
+function
+存储函数和存储过程一样，都是SQL语句集合，但可以使用参数
+触发器
+tigger
+触发器也是有SQL语句的集合组成，但需要达到触发条件才能调
+用
+事件调
+度器
+event
+scheduler
+数据库中的计划任务
+用户
+user
+连接服务端时的用户名
+权限
+privilege
+每个用户可以对哪些数据库或表进行操作，在什么IP能连接
+ 
+3 SQL 语言
+ 
+3.1关系型数据库的构成
+ 
+ 
+MySQL
+mycli 1.38.4
+Home: http://mycli.net
+Bug tracker: https://github.com/dbcli/mycli/issues
+Thanks to the contributor - Artem Bezsmertnyi
+MySQL root@(none):(none)>

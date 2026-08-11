@@ -1,0 +1,51 @@
+#求和
+mysql> select sum(age) from stu;
++----------+
+| sum(age) |
++----------+
+|      288 |
++----------+
+1 row in set (0.00 sec)
+#分组统计
+mysql> select sum(age),gender from stu group by gender;
++----------+--------+
+| sum(age) | gender |
++----------+--------+
+|      183 | F      |
+|      105 | M      |
++----------+--------+
+2 rows in set (0.00 sec)
+#分组统计
+mysql> select count(*),gender from stu group by gender;
++----------+--------+
+| count(*) | gender |
++----------+--------+
+|        6 | F      |
+|        4 | M      |
++----------+--------+
+2 rows in set (0.00 sec)
+#分组带where条件
+mysql> select count(*),max(id),avg(age),gender from stu where name is not null 
+group by gender;
++----------+---------+----------+--------+
+| count(*) | max(id) | avg(age) | gender |
++----------+---------+----------+--------+
+|        6 |      19 |  30.5000 | F      |
+|        3 |      20 |  27.3333 | M      |
++----------+---------+----------+--------+
+2 rows in set (0.00 sec)
+#分组后过滤
+mysql> select count(*) as total,max(id),avg(age),gender from stu where name is 
+not null group by gender having total=3;
++-------+---------+----------+--------+
+| total | max(id) | avg(age) | gender |
++-------+---------+----------+--------+
+|     3 |      20 |  27.3333 | M      |
++-------+---------+----------+--------+
+1 row in set (0.00 sec)
+#分组统计
+mysql> select count(*),max(id),avg(age),gender from stu group by gender;         
+                                   
++----------+---------+----------+--------+
+| count(*) | max(id) | avg(age) | gender |
++----------+---------+----------+--------+

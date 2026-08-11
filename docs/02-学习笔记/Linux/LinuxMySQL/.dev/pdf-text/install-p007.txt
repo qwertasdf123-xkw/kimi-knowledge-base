@@ -1,0 +1,4 @@
+Start the MySQL Server at System Startup          #开机自启动
+Standard System Account                 #标准操作系统账号，一定要有系统管理员权限，否则无法启动服
+务
+授予权限

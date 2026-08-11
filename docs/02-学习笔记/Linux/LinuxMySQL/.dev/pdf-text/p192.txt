@@ -1,0 +1,43 @@
+ 
+查看 MHA 状态，可以看到当前的 master 是 mysql-master 节点。
+查看 MHA 日志，也以看到当前的 master 是 192.168.108.131，如下所示。
+查看 mysql-master 的 VIP 地址 192.168.108.200 是否存在？,这个 VIP 地址不会因为manager 节点停止 
+MHA 服务而消失。
+[root@mha ~]# masterha_check_status --conf=/etc/masterha/app1.cnf
+app1 (pid:48240) is running(0:PING_OK), master:192.168.108.131
+[root@mha ~]# cat /var/log/masterha/app1/manager.log
+......
+Tue Oct  7 15:32:17 2025 - [info] Slaves settings check done.
+Tue Oct  7 15:32:17 2025 - [info]
+192.168.108.131(192.168.108.131:3306) (current master)
+ +--192.168.108.132(192.168.108.132:3306)
+ +--192.168.108.133(192.168.108.133:3306)
+Tue Oct  7 15:32:17 2025 - [info] Checking master_ip_failover_script status:
+Tue Oct  7 15:32:17 2025 - [info]   /usr/local/bin/master_ip_failover --
+command=status --ssh_user=root --orig_master_host=192.168.108.131 --
+orig_master_ip=192.168.108.131 --orig_master_port=3306
+IN SCRIPT TEST====/sbin/ifconfig ens33:1 down==/sbin/ifconfig ens33:1 
+192.168.108.200===
+Checking the Status of the script.. OK
+Tue Oct  7 15:32:17 2025 - [info]  OK.
+Tue Oct  7 15:32:17 2025 - [warning] shutdown_script is not defined.
+Tue Oct  7 15:32:17 2025 - [info] Set master ping interval 1 seconds.
+Tue Oct  7 15:32:17 2025 - [info] Set secondary check script: 
+/usr/local/bin/masterha_secondary_check -s 192.168.108.132 -s 192.168.108.133
+Tue Oct  7 15:32:17 2025 - [info] Starting ping health check on 
+192.168.108.131(192.168.108.131:3306)..
+Tue Oct  7 15:32:17 2025 - [info] Ping(SELECT) succeeded, waiting until MySQL 
+doesn't respond..
+[root@mha ~]#
+[root@mysql-master ~]# ifconfig
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.108.131  netmask 255.255.255.0  broadcast 192.168.108.255
+        inet6 fe80::deb2:46ba:c54a:56ed  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:43:0b:39  txqueuelen 1000  (Ethernet)
+        RX packets 42430  bytes 22790429 (21.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 29947  bytes 9476691 (9.0 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+ens33:1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.108.200  netmask 255.255.255.0  broadcast 192.168.108.255
+        ether 00:0c:29:43:0b:39  txqueuelen 1000  (Ethernet)

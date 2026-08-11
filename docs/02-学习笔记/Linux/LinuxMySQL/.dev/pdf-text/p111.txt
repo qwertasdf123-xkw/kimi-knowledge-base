@@ -1,0 +1,34 @@
+语法
+UNION ：合并结果，自动去重
+UNION ALL ：合并结果，不去重，速度更快
+字段数量必须一样
+示例：把部门名和员工名合并成一列展示
+结果：
+技术部、产品部、运营部、张三、李四、王五、赵六
+（上下排成一列）
+四、一句话终极总结（必背）
+1. CROSS JOIN：全组合，笛卡尔积
+2. INNER JOIN：两边匹配才显示（交集）
+3. LEFT JOIN：左表全保留
+4. RIGHT JOIN：右表全保留
+5. FULL JOIN：左右都保留（并集）
+6. SELF JOIN：自己连自己（层级关系）
+7. UNION：结果上下拼接
+ 
+MySQL多表查询详解（王者荣耀实战案例）
+ 
+一、准备工作：创建测试库 & 表 & 测试数据
+ 
+我们用王者荣耀的真实业务场景，设计 4 张核心表，覆盖玩家、英雄、战绩、皮肤 4 个维度，完美适配
+多表查询的各种场景。
+1. 创建测试数据库
+ 
+查询1
+UNION
+查询2
+SELECT bumen_name AS name FROM bumen
+UNION
+SELECT name FROM yuangong;
+-- 创建王者荣耀测试库，字符集用utf8mb4支持全字符
+CREATE DATABASE IF NOT EXISTS wzry_test DEFAULT CHARACTER SET utf8mb4;
+USE wzry_test;

@@ -1,0 +1,50 @@
+范例：显示版本信息
+--defaults-file=#       Only read default options from the given file #.      #从
+指定文件中读取选项
+--defaults-extra-file=# Read this file after the global files are read.
+--defaults-group-suffix=#
+                        Also read groups with concat(group, suffix)
+--login-path=#          Read this path from the login file.
+Where command is a one or more of: (Commands may be shortened)
+  create databasename   Create a new database                  #创建新的数据库
+  debug                 Instruct server to write debug information to log      #
+开启调试模式，将调试信息写入log
+  drop databasename     Delete a database and all its tables       #删除指定数据库
+  extended-status       Gives an extended status message from the server       #
+显示扩展状态
+  flush-hosts           Flush all cached hosts                 #刷新所有缓存的主机
+  flush-logs            Flush all logs                         #刷新所有日志    
+  flush-status          Clear status variables                 #刷新状态变量
+  flush-tables          Flush all tables                       #刷新所有表，会强制关
+闭已打开的表
+  flush-threads         Flush the thread cache                 #刷新线程缓存
+  flush-privileges      Reload grant tables (same as reload)   #刷新访问权限       
+         
+  kill id,id,...        Kill mysql threads
+  password [new-password] Change old password to new-password in current format   
+ #修改密码
+  ping                  Check if mysqld is alive               #心跳检测
+  processlist           Show list of active threads in server  #显示活动线程列表
+  reload                Reload grant tables                    #刷新授权信息
+  refresh               Flush all tables and close and open logfiles   #刷新所有数
+据库表，重新打开日志文件
+  shutdown              Take server down                       #关闭服务
+  status                Gives a short status message from the server      #简短显
+示服务端状态
+  start-replica         Start replication                     
+  start-slave           Deprecated: use start-replica instead            #开启主从
+同步
+  stop-replica          Stop replication       
+  stop-slave            Deprecated: use stop-replica instead             #停止主从
+同步
+  variables             Prints variables available                       #显示服务
+端所有变量
+  version               Get version info from server                     #显示客户
+端和服务端版本
+#客户端版本
+[root@localhost ~]# mysqladmin -V            
+mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+#客户端和服务端版本信息
+[root@localhost ~]# mysqladmin version
+mysqladmin  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.

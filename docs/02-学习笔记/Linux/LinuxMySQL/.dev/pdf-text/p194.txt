@@ -1,0 +1,42 @@
+        
+ 
+故障模拟
+ 
+在主库上：
+可以看到从库的状态，其中之一肯定有切换到主库的
+切换备选主库的算法：
+1.一般判断从库的是从（position/GTID）判断优劣，数据有差异，最接近于master的slave，成为备选
+主。
+2.数据一致的情况下，按照配置文件顺序，选择备选主库。
+3.设定有权重（candidate_master=1），按照权重强制指定备选主。
+1）默认情况下如果一个slave落后master 100M的relay logs的话，即使有权重，也会失效。
+2）如果check_repl_delay=0的话，即使落后很多日志，也强制选择其为备选主。
+故障修复
+ 
+1.修复db
+修复主从
+让slave01（备用master）成为master，让原master变成slave01
+继续查看
+# master 停止mysql观察现象
+[root@mysql-master ~]# systemctl stop mysqld   
+# master切换成功
+[root@mysql-master ~]# systemctl start mysqld  
+# mysql-slave01
+mysql> show master status;
++-------------------+----------+--------------+------------------+---------------
+----+
+| File              | Position | Binlog_Do_DB | Binlog_Ignore_DB | 
+Executed_Gtid_Set |
++-------------------+----------+--------------+------------------+---------------
+----+
+| master-bin.000002 |     2210 |              |                  |               
+    |
++-------------------+----------+--------------+------------------+---------------
+----+
+1 row in set (0.00 sec)
+# mysql-master操作
+mysql> change master to 
+master_host='192.168.108.132',master_user='myslave',master_password='123',master_
+log_file='master-bin.000002',master_log_pos=2210;       #这里的master_log_pos写
+mysq_slave01的
+mysql> start slave;

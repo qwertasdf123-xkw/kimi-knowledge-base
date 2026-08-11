@@ -1,0 +1,38 @@
+ 
+范例：删库跑路之清空root密码方法
+！！！学完就忘
+ 
+在当前MYSQL服务中添加用户
+Query OK, 0 rows affected (0.00 sec)
+[root@localhost ~]# vim /etc/my.cnf.d/mysql-server.cnf
+[mysqld]
+#pid-file=/run/mysqld/mysqld.pid
+#skip-grant-tables
+[root@localhost ~]# mysql -uroot -pxiaomi
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> 
+#方式二，会清除所有数据
+#停止服务
+[root@localhost ~]# systemctl stop mysqld.service
+#删除数据目录下所有内容
+[root@localhost ~]# rm -rf /var/lib/mysql/*
+#重启服务，恢复空密码登陆
+[root@localhost ~]# systemctl start mysqld.service
+[root@localhost ~]# mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>

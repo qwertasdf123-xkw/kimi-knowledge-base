@@ -1,0 +1,40 @@
+故障：使用此方法，对时完成后，无法重启mysqld服务
+原因：之前在windows端使用navicat连接过mysql
+解决：pkill -9 mysql;systemctl restart mysqld
+mysql主从服务器配置
+ 
+mysql主服务器配置
+# 所有节点
+ntpdate ntp.aliyun.com
+date -R
+systemctl disable firewalld --now
+setenforce 0
+[root@mysql-master ~]# vim /etc/my.cnf
+server-id = 11
+log-bin = master-bin                         #主服务器日志文件
+log-slave-updates = true                     #从服务器更新二进制日志
+[root@mysql-master ~]# systemctl restart mysqld
+[root@mysql-master ~]# mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 5.7.17-log Source distribution
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> GRANT REPLICATION SLAVE ON *.* TO 'myslave'@'192.168.108.%' IDENTIFIED BY 
+'123456';
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+mysql> show master status;
++-------------------+----------+--------------+------------------+---------------
+----+
+| File              | Position | Binlog_Do_DB | Binlog_Ignore_DB | 
+Executed_Gtid_Set |
++-------------------+----------+--------------+------------------+---------------
+----+
+| master-bin.000001 |      604 |              |                  |               
+    |

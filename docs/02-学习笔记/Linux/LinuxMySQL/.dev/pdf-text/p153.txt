@@ -1,0 +1,20 @@
+下图演示了pip install pandas，另外3个一样
+代码如下
+左上角新建项目，新建python文件
+pip install  
+https://mirrors.aliyun.com/pypi/packages/6c/4c/bf2100cbc1bd07f39bee3b09e7eef39bef
+fe29f5453dc2477a2693737913/greenlet-3.2.3-cp39-cp39-win_amd64.whl
+pip install pandas
+pip install sqlalchemy
+pip install pymysql
+pip install openpyxl
+import pandas as pd
+from sqlalchemy import create_engine
+#创建数据连接
+engine = create_engine('mysql+pymysql://root:huawei@192.168.108.142:3306/school')
+#执行获取数据
+df = pd.read_sql('select * from info', engine)
+print(df)
+#导出到excel表格
+df.to_excel('info.xlsx', index=False)
+print('excel 导出成功！')

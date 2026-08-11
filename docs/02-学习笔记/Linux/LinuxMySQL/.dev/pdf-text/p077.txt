@@ -1,0 +1,40 @@
+列出数据库中的表
+格式
+范例
+查看建表语句
+格式
+范例
+mysql> help show tables
+Name: 'SHOW TABLES'
+Description:
+Syntax:
+SHOW [EXTENDED] [FULL] TABLES
+    [{FROM | IN} db_name]
+    [LIKE 'pattern' | WHERE expr]
+SHOW TABLES [FROM db_name]
+#查看当前库中所有表
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| student       |
+| student2      |
+| student3      |
++---------------+
+3 rows in set (0.00 sec)
+#查看指定库中的表
+mysql> show tables from db1;
++---------------+
+| Tables_in_db1 |
++---------------+
+| student       |
+| student2      |
+| student3      |
++---------------+
+3 rows in set (0.00 sec)
+SHOW CREATE TABLE [db_name.]tbl_name
+mysql> show create table student;
++---------+----------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+-----------------------------------------------------+

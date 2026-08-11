@@ -1,0 +1,47 @@
+ 
+逻辑备份
+ 
+恢复数据
+ 
+#测试服务正常
+# 删除数据
+[root@mysql01 ~]# systemctl stop mysqld  # 先停止服务
+[root@mysql01 ~]# rm -rf /usr/local/mysql/data/*            # 清空数据目录（谨慎操
+作！）
+#再次开启测试，发现数据库坏了
+[root@mysql01 ~]# systemctl start mysqld
+#停止数据库，恢复数据库
+[root@mysql01 ~]# systemctl stop mysqld
+[root@mysql01 ~]# tar xzf /mysql_bak/mysql-backup-2025-10-15.tar.gz -C 
+/usr/local/mysql/data/
+[root@mysql01 ~]# chown -R mysql:mysql /usr/local/mysql/data       # 恢复权限
+[root@mysql01 ~]# systemctl start mysqld          # 启动服务
+#再次测试，发现数据库恢复了
+#备份数据库
+[root@mysql01 ~]# systemctl start mysqld
+[root@mysql01 ~]# mysqldump -u root -p school > /mysql_bak/school.sql
+Enter password:
+[root@mysql01 ~]# ls /mysql_bak/school.sql
+mysql_bak/school.sql
+[root@mysql01 ~]# cat /mysql_bak/school.sql
+#备份多个数据库
+[root@mysql01 ~]# mysqldump -u root -p --databases school mysql > 
+/mysql_bak/school-mysql.sql
+Enter password:
+[root@mysql01 ~]# cat /mysql_bak/school-mysql.sql
+#备份所有数据库
+[root@mysql01 ~]# mysqldump -u root -p --opt --all-databases > /mysql_bak/all.sql
+Enter password:
+[root@mysql01 ~]# cat /mysql_bak/all.sql 
+#备份整个表
+[root@mysql01 ~]# mysqldump -u root -p school info  > /mysql_bak/info.sql
+Enter password:
+[root@mysql01 ~]# cat /mysql_bak/info.sql
+[root@mysql01 ~]# mysql -u root -p
+Enter password:
+mysql> use school
+mysql> show tables;
++------------------+
+| Tables_in_school |
++------------------+
+| info             |

@@ -1,0 +1,26 @@
+Lerdorf 把它的 PHP发布于comp.infosystems.www.authoring.cgi Usenet讨论组，从此PHP开始走进人
+们的视野。1997年，其2.0版本发布。
+1997年，两名以色列程序员Zeev Suraski 和Andi Gutmans重写的PHP的分析器（parser)成为 PHP发展
+到3.0的基础，而且从此将PHP重命名为PHP:Hypertext Preprocessor。此后，这两名程序员开始重写整
+个PHP核心，并于1999年发布了Zend Engine1.0，这也意味着PHP 4.0的诞生。2004年7月，
+ZendEngine 2.0发布，由此也将PHP带入了PHP5时代。PHP5包含了许多重要的新特性，如增强的面向
+对象编程的支持、支持PDO(PHP Data Objects）扩展机制以及一系列对PHP性能的改进。
+Zend Engine是开源的、PHP脚本语言的解释器，它最早是由以色列理工学院（Technion）的学生
+AndiGutmans和Zeev Suraski 所开发，Zend也正是此二人名字的合称。后来两人联合创立了
+ZendTechnologies公司。
+Zend Engine1.0于1999年随PHP4发布，由C语言开发且经过高度优化，并能够做为PHP的后端模块使
+用。Zend Engine为PHP提供了内存和资源管理的功能以及其它的一些标准服务，其高性能、可靠性和可
+扩展性在促进PHP成为一种流行的语言方面发挥了重要作用。Zend Engine的出现将PHP代码的处理过程
+分成了两个阶段：首先是分析PHP代码并将其转换为称作Zend opcode的二进制格式opcode(类似Java的
+字节码），并将其存储于内存中；第二阶段是使用ZendEngine去执行这些转换后的Opcode。
+ 
+PHP各种版本官方支持时间
+https://www.php.net/supported-versions.php
+/etc/php.ini配置文件格式
+ 
+php.ini 配置参考文档
+ 
+[foo]: Section Header
+directive = value
+php.ini的核心配置选项文档            http://php.net/manual/zh/ini.core.php
+php.ini配置选项列表                 http://php.net/manual/zh/ini.1ist.php

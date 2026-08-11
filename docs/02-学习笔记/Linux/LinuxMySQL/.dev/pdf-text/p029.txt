@@ -1,0 +1,43 @@
+范例：修改提示符
+范例：指定数据库
+performance_schema
+sys
+#标准输入重定向执行
+[root@localhost ~]# mysql -uroot < test.sql
+Database
+information_schema
+mysql
+performance_schema
+sys
+#以table格式输出
+[root@localhost ~]# mysql -e "show databases;"
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+#垂直显示
+[root@localhost ~]# mysql -e "show databases;" -E
+*************************** 1. row ***************************
+Database: information_schema
+*************************** 2. row ***************************
+Database: mysql
+*************************** 3. row ***************************
+Database: performance_schema
+*************************** 4. row ***************************
+Database: sys
+[root@localhost ~]# mysql --prompt=[test]
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+[test]
+#默认
+[root@localhost ~]# mysql

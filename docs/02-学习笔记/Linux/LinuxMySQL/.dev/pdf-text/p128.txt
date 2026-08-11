@@ -1,0 +1,35 @@
+到192.168.108.1(笔记本)操作
+mysql> use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+Database changed
+mysql> create user root@'192.168.108.1' identified by '123456';   #需要远程连接本
+mysql的客户端地址
+Query OK, 0 rows affected (0.00 sec)
+mysql> select Host,User from user;
++---------------+------------------+
+| Host          | User             |
++---------------+------------------+
+| 192.168.108.1 | root             |
+| localhost     | mysql.infoschema |
+| localhost     | mysql.session    |
+| localhost     | mysql.sys        |
+| localhost     | root             |
++---------------+------------------+
+5 rows in set (0.00 sec)
+#查看当前客户端连接时适用的用户名和主机
+mysql> select user();
++--------------------+
+| user()             |
++--------------------+
+| root@192.168.108.1 |
++--------------------+
+1 row in set (0.00 sec)
+#查看线程
+mysql> show processlist;
++----+------+---------------------+-------+---------+------+-------+-------------
+-----+
+| Id | User | Host                | db    | Command | Time | State | Info         
+    |
++----+------+---------------------+-------+---------+------+-------+-------------
+-----+

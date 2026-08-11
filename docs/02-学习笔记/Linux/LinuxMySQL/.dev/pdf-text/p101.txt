@@ -1,0 +1,48 @@
+范例：统计和分组
++----+----------+
+3 rows in set (0.01 sec)
+#不连续取反
+mysql> select id,name from stu where id not in (12,15,19);
++----+----------+
+| id | name     |
++----+----------+
+| 11 | xiaohong |
+| 13 | xiaozhou |
+| 14 | test1    |
+| 16 | test3    |
+| 17 | NULL     |
+| 18 | xiaohong |
+| 20 | zhangsan |
++----+----------+
+7 rows in set (0.00 sec)
+#统计表中的记录条数
+mysql> select count(*) as total from stu;
++-------+
+| total |
++-------+
+|    10 |
++-------+
+1 row in set (0.00 sec)
+#name字段中有null，不统计
+mysql> select count(name) from stu;
++-------------+
+| count(name) |
++-------------+
+|           9 |
++-------------+
+1 row in set (0.00 sec)
+mysql> select count(id) from stu;
++-----------+
+| count(id) |
++-----------+
+|        10 |
++-----------+
+1 row in set (0.00 sec)
+#最大值，最小值，平均值
+mysql> select max(id),min(id),avg(age) from stu;
++---------+---------+----------+
+| max(id) | min(id) | avg(age) |
++---------+---------+----------+
+|      20 |      11 |  28.8000 |
++---------+---------+----------+
+1 row in set (0.00 sec)

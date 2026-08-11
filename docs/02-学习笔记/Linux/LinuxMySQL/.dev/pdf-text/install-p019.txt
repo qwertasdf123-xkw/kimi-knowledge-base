@@ -1,0 +1,33 @@
+ 
+登录及初始化MySQL
+ 
+步骤 1     登录MySQL
+安装完成后，使用命令mysql登录MySQL，如下图所示：
+思考：当前登录MySQL的用户名密码分别是什么？
+答：当前用户为root，8.0.x在安装完成后，root的默认密码为空，因此不需要输入密码即可登录
+MySQL，但是权限很低，必须要进行密码初始化才可以进行下一步操作。
+在MySQL5.7版本中，root的密码不为空，是由系统自动为其生成一个密码，具体可以
+在/var/log/mysql/mysqld.log中查看到。
+步骤 2     初始化MySQL
+使用以下命令配置root用户的密码：
+具体如下：
+[root@localhost ~]# systemctl enable mysqld --now
+Created symlink /etc/systemd/system/multi-user.target.wants/mysqld.service → 
+/usr/lib/systemd/system/mysqld.service.
+[root@localhost ~]# ss -nlp | grep 3306
+tcp   LISTEN 0      151                                     *:3306               
+    *:*     users:(("mysqld",pid=15397,fd=25))
+tcp   LISTEN 0      70                                      *:33060               
+   *:*     users:(("mysqld",pid=15397,fd=22))
+[root@localhost ~]# mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+mysql> ALTER USER root@'localhost' IDENTIFIED BY 'Huawei@123';
+Query OK, 0 rows affected (0.01 sec)

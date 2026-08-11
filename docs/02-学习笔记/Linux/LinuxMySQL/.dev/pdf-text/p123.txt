@@ -1,0 +1,41 @@
+创建用户：CREATE USER
+重命名用户：RENAME USER
+删除用户：DROP USER
+1 row in set (0.00 sec)
+#也可以用status命令来查看
+mysql> status
+--------------
+mysql  Ver 8.0.26 for Linux on x86_64 (Source distribution)
+Connection id:          9
+Current database:       mysql
+Current user:           root@localhost
+SSL:                    Not in use
+Current pager:          stdout
+Using outfile:          ''
+Using delimiter:        ;
+Server version:         8.0.26 Source distribution
+Protocol version:       10
+Connection:             Localhost via UNIX socket
+Server characterset:    utf8mb4
+Db     characterset:    utf8mb4
+Client characterset:    utf8mb4
+Conn.  characterset:    utf8mb4
+UNIX socket:            /var/lib/mysql/mysql.sock
+Binary data as:         Hexadecimal
+Uptime:                 38 min 22 sec
+Threads: 2  Questions: 93  Slow queries: 0  Opens: 199  Flush tables: 3  Open 
+tables: 118  Queries per second avg: 0.040
+--------------
+#无法在远程主机上连接当前主机的MySQL服务
+#192.168.108.128是mysql主机ip地址,动态Ip获取，自己ip -br a检测
+#本地PC远程过来(192.168)
+C:\Users\69466>mysql -uroot -h192.168.108.128 -phuawei
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1130 (HY000): Host '192.168.108.1' is not allowed to connect to this MySQL 
+server
+#格式
+CREATE USER 'USERNAME'@'HOST' [IDENTIFIED BY 'password'];
+#范例
+create user test@'192.168.108.0/255.255.255.0' identified by '123456';
+create user test2@'192.168.108.%' identified by '123456';
+RENAME USER 'USERNAME'@'HOST' TO 'USERNAME'@'HOST';

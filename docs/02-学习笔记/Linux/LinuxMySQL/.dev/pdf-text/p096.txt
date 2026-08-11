@@ -1,0 +1,45 @@
+HAVING：对分组聚合运算后的结果指定过滤条件
+一旦分组group by，select语句后只跟分组的字段，聚合函数
+ 
+ORDERBY：根据指定的字段对查询结果进行排序
+升序：ASC
+降序：DESC
+ 
+LIMIT[offset,]row_count]：对查询的结果进行输出行数数量限制，跳过offset，显示row_count 行，
+offset默为值为0。
+`
+对查询结果中的数据请求施加“锁"
+FOR UPDATE：写锁，独占或排它锁，只有一个读和写操作
+LOCK IN SHARE MODE：读锁，共享锁，同时多个读操作
+3.7.1单表操作
+ 
+范例：查字符串和变量
+#直接查字符串
+mysql> select 123;
++-----+
+| 123 |
++-----+
+| 123 |
++-----+
+1 row in set (0.00 sec)
+#指定别名
+mysql> select 'gqd' as 'laogao';
++--------+
+| laogao |
++--------+
+| gqd    |
++--------+
+1 row in set (0.00 sec)
+#数学计算
+mysql> select 1+2*3;
++-------+
+| 1+2*3 |
++-------+
+|     7 |
++-------+
+1 row in set (0.01 sec)
+#查询变量
+mysql> select @@port;
++--------+
+| @@port |
++--------+

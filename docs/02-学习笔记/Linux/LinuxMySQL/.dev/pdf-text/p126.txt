@@ -1,0 +1,39 @@
+忘记密码
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+#方式一，保留原有数据
+#1 启动时添加指定项
+--skip-grant-tables
+--skip-networking
+#2 使用UPDATE命令修改管理员密码
+#3 移除配置项重启
+#方式一范例
+[root@localhost ~]# vim /etc/my.cnf.d/mysql-server.cnf
+[mysqld]
+skip-grant-tables
+skip-networking          #MYSQL8.0不需要
+[root@localhost ~]# systemctl restart mysqld.service
+[root@localhost ~]# mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+#步骤1
+mysql> update mysql.user set authentication_string='' where user='root' and 
+host='localhost';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+#步骤2
+mysql> flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+#再执行下面命令
+mysql> alter user root@'localhost' identified by 'xiaomi';

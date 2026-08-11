@@ -1,0 +1,25 @@
+ 
+python导出表
+ 
+先配置pip源：
+Windows系统：
+在用户目录下（如 C:\Users\你的用户名\）创建一个名为 pip 的文件夹。
+以我举例
+C:\Users\69466
+在 pip 文件夹内创建一个名为 pip.ini 的文件。
+用记事本打开 pip.ini，输入以下内容并保存：
+pycharm下载软件包
+mysql> delete from info where id=3;
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from info;
++----+--------+-------+---------+-------+
+| id | name   | score | address | hobby |
++----+--------+-------+---------+-------+
+|  1 | 唐三   | 90.00 | 广州    |     1 |
+|  2 | 叶凡   | 91.00 | 伦敦    |     2 |
+|  4 | 曹操   | 66.50 | 合肥    |     4 |
++----+--------+-------+---------+-------+
+3 rows in set (0.00 sec)
+[global]
+index-url = https://mirrors.aliyun.com/pypi/simple/
+trusted-host = mirrors.aliyun.com

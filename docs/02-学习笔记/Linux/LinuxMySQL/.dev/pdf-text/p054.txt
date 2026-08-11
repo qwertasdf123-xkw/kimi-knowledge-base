@@ -1,0 +1,56 @@
+| dec8_swedish_ci            | dec8     |   3 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| eucjpms_bin                | eucjpms  |  98 |         | Yes      |       1 | 
+PAD SPACE     |
+| eucjpms_japanese_ci        | eucjpms  |  97 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| euckr_bin                  | euckr    |  85 |         | Yes      |       1 | 
+PAD SPACE     |
+| euckr_korean_ci            | euckr    |  19 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| gb18030_bin                | gb18030  | 249 |         | Yes      |       1 | 
+PAD SPACE     |
+| gb18030_chinese_ci         | gb18030  | 248 | Yes     | Yes      |       2 | 
+PAD SPACE     |
+| gb18030_unicode_520_ci     | gb18030  | 250 |         | Yes      |       8 | 
+PAD SPACE     |
+| gb2312_bin                 | gb2312   |  86 |         | Yes      |       1 | 
+PAD SPACE     |
+| gb2312_chinese_ci          | gb2312   |  24 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| gbk_bin                    | gbk      |  87 |         | Yes      |       1 | 
+PAD SPACE     |
+| gbk_chinese_ci             | gbk      |  28 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| geostd8_bin                | geostd8  |  93 |         | Yes      |       1 | 
+PAD SPACE     |
+| geostd8_general_ci         | geostd8  |  92 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| greek_bin                  | greek    |  70 |         | Yes      |       1 | 
+PAD SPACE     |
+| greek_general_ci           | greek    |  25 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| hebrew_bin                 | hebrew   |  71 |         | Yes      |       1 | 
+PAD SPACE     |
+| hebrew_general_ci          | hebrew   |  16 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| hp8_bin                    | hp8      |  72 |         | Yes      |       1 | 
+PAD SPACE     |
+| hp8_english_ci             | hp8      |   6 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| keybcs2_bin                | keybcs2  |  73 |         | Yes      |       1 | 
+PAD SPACE     |
+| keybcs2_general_ci         | keybcs2  |  37 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| koi8r_bin                  | koi8r    |  74 |         | Yes      |       1 | 
+PAD SPACE     |
+| koi8r_general_ci           | koi8r    |   7 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| koi8u_bin                  | koi8u    |  75 |         | Yes      |       1 | 
+PAD SPACE     |
+| koi8u_general_ci           | koi8u    |  22 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| latin1_bin                 | latin1   |  47 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin1_danish_ci           | latin1   |  15 |         | Yes      |       1 | 
+PAD SPACE     |

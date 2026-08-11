@@ -1,0 +1,47 @@
+创建 MHA 软件目录并拷贝配置文件。
+配置文件解析
+ 
+}
+[root@mha ~]# mkdir /etc/masterha
+[root@mha ~]# cp /root/mha4mysql-manager-0.57/samples/conf/app1.cnf 
+/etc/masterha/
+[root@mha ~]# vim /etc/masterha/app1.cnf
+#全部删掉，替换
+[server default]
+manager_log=/var/log/masterha/app1/manager.log
+manager_workdir=/var/log/masterha/app1
+master_binlog_dir=/usr/local/mysql/data
+master_ip_failover_script=/usr/local/bin/master_ip_failover
+master_ip_online_change_script=/usr/local/bin/master_ip_online_change
+password=manager
+ping_interval=1
+remote_workdir=/tmp
+repl_password=123
+repl_user=myslave
+secondary_check_script=/usr/local/bin/masterha_secondary_check -s 192.168.108.132 
+-s 192.168.108.133
+shutdown_script=""
+ssh_user=root
+user=mha
+[server1]
+hostname=192.168.108.131
+port=3306
+[server2]
+candidate_master=1
+check_repl_delay=0
+hostname=192.168.108.132
+port=3306
+[server3]
+hostname=192.168.108.133
+port=3306
+[server default]
+manager_workdir=/var/log/masterha/app1　　　　　　　　　　　　　　 ##manager工作目录
+manager_log=/var/log/masterha/app1/manager.log　　　　　　　　　　　　#manager日志
+master_binlog_dir=/usr/local/mysql/data/　　　　　　　　　　　　　　　　#master保存
+binlog的位置，这里的路径要与master里配置的binlog的路径一致，以便mha能找到
+master_ip_failover_script= /usr/local/bin/master_ip_failover　　　　#设置自动
+failover时候的切换脚本，也就是上边的那个脚本
+master_ip_online_change_script= /usr/local/bin/master_ip_online_change　　#设置手动
+切换时候的切换脚本
+password=manager　　　　　　#设置mysql中mha用户的密码
+user=mha　　　　　　　　#设置监控用户mha

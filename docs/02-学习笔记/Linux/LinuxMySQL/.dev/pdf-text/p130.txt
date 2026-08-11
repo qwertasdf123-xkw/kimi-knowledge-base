@@ -1,0 +1,37 @@
+ 
+3.9.2 授权
+ 
+格式
+范例：
+ mysql> help grant
+Name: 'GRANT'
+Description:
+Syntax:
+GRANT
+    priv_type [(column_list)]
+      [, priv_type [(column_list)]] ...
+    ON [object_type] priv_level
+    TO user_or_role [, user_or_role] ...
+    [WITH GRANT OPTION]
+    [AS user
+        [WITH ROLE
+            DEFAULT
+          | NONE
+          | ALL
+          | ALL EXCEPT role [, role ] ...
+          | role [, role ] ...
+#priv_type       要授予的权限ALL [PRIVILEGES]
+#object_type     对象的类型TABLE|FUNCTION|PROCEDURE
+#priv_level      范围  
+*|*.*|db_name.*|db_name.tbl_name|tbl_name|db_name.routine_name(指定库的函数，存储过
+程，触发器)
+#with_option   选项
+                #GRANT OPTION   可以将自己的权限授权给其它账号
+                #MAX_QUERIES_PER_HOUR N    每小时最大查询次数
+                #MAX_UPDATES_PER_HOUR N    每小时最大更新次数
+                #MAX_CONNECTIONS_PER_HOUR N    每小时最大连接次数
+                #MAX_USER_CONNECTIONS N    最大用户连接数
+#MAX_USER_CONNECTIONS    指的是瞬间的并发连接数，而MAX_CONNECTIONS_PER_HOUR指的是每小时
+累计的最大连接次数
+#资源限制是对某一账号进行累计的，而不是对账号的一次连接进行累计的，当资源限制到达后，账号的任何一
+次相关操作都会被拒

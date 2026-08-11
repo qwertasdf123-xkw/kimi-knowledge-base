@@ -1,0 +1,45 @@
+#本地操作
+#创建用户
+mysql> create user 'root'@'192.168.108.%' identified by '123456';
+Query OK, 0 rows affected (0.01 sec)
+mysql> select host,user from mysql.user;
++---------------+------------------+
+| host          | user             |
++---------------+------------------+
+| 192.168.108.% | root             |
+| localhost     | mysql.infoschema |
+| localhost     | mysql.session    |
+| localhost     | mysql.sys        |
+| localhost     | root             |
++---------------+------------------+
+5 rows in set (0.00 sec)
+#查看新用户的权限，默认只有 USAGE 权限，只能连接
+mysql> show grants for 'root'@'192.168.108.%';
++----------------------------------------------+
+| Grants for root@192.168.108.%                |
++----------------------------------------------+
+| GRANT USAGE ON *.* TO `root`@`192.168.108.%` |
++----------------------------------------------+
+1 row in set (0.00 sec)
+#远程连接，远程操作
+[root@localhost ~]# mysql -uroot -p123456 -h192.168.108.128
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.26 Source distribution
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+#查看权限，远程操作
+mysql> SHOW GRANTS FOR CURRENT_USER;
++----------------------------------------------+
+| Grants for root@192.168.108.%                |
++----------------------------------------------+
+| GRANT USAGE ON *.* TO `root`@`192.168.108.%` |
++----------------------------------------------+
+1 row in set (0.00 sec)
+#无权限创建，远程操作
+mysql> create database db1;

@@ -1,0 +1,41 @@
+ 
+通过复制现存的表的表结构创建，但不复制数据
+范例
+ 
+3.5.2查看表
+ 
+格式
+2 rows in set (0.00 sec)
+mysql> desc student;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+mysql> create table student3 like student;
+Query OK, 0 rows affected (0.01 sec)
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| student       |
+| student2      |
+| student3      |
++---------------+
+3 rows in set (0.00 sec)
+mysql> desc student3;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+mysql> select * from student3;
+Empty set (0.00 sec)

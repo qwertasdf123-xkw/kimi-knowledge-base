@@ -1,0 +1,46 @@
+4. 外键的约束模式
+ 
+默认情况下，外键是“严格约束”（不能删除被关联数据、不能插入无效数据），但实际开发中，我们可以
+根据需求设置约束模式，常用2种：ON DELETE CASCADE、ON DELETE SET NULL。
+说明：为避免影响前面创建的4张核心表及后续实验，以下两个约束模式案例，均创建全新的测试表，独
+立运行、不干扰原有数据。
+（1）ON DELETE CASCADE：级联删除（常用）
+ 
+含义：当关联表的主键数据被删除时，当前表中关联的外键数据也会自动删除。
+（2）ON DELETE SET NULL：置空（常用）
+ 
+含义：当关联表的主键数据被删除时，当前表中关联的外键数据会自动设为NULL（注意：外键字段必须
+允许为NULL）。
+案例：创建全新测试表（英雄表_级联、皮肤表_级联），测试级联删除
+-- 1. 创建全新关联表（英雄表_级联），作为主表
+CREATE TABLE IF NOT EXISTS yingxiong_jilian (
+  yingxiong_id INT PRIMARY KEY AUTO_INCREMENT,
+  yingxiong_ming VARCHAR(50) NOT NULL COMMENT '英雄名'
+) COMMENT '英雄表_级联（用于测试级联删除）';
+-- 2. 创建全新关联表（皮肤表_级联），作为从表，设置级联删除
+CREATE TABLE IF NOT EXISTS pifu_jilian (
+  pifu_id INT PRIMARY KEY AUTO_INCREMENT,
+  yingxiong_id INT NOT NULL COMMENT '所属英雄ID',
+  pifu_ming VARCHAR(50) NOT NULL COMMENT '皮肤名',
+  -- 级联删除：删除主表（英雄表_级联）的英雄时，自动删除从表对应皮肤
+  FOREIGN KEY (yingxiong_id) REFERENCES yingxiong_jilian(yingxiong_id) ON DELETE 
+CASCADE
+) COMMENT '皮肤表_级联（用于测试级联删除）';
+-- 3. 插入测试数据
+INSERT INTO yingxiong_jilian (yingxiong_ming) VALUES ('韩信'), ('李白');
+INSERT INTO pifu_jilian (yingxiong_id, pifu_ming) VALUES (1, '街头霸王'), (2, '凤求
+凰');
+-- 4. 测试级联删除：删除主表的韩信（yingxiong_id=1）
+DELETE FROM yingxiong_jilian WHERE yingxiong_id=1;
+-- 5. 验证结果：韩信对应的皮肤会被自动删除
+SELECT * FROM pifu_jilian; -- 仅显示李白的凤求凰，韩信的皮肤已被删除
+案例：创建全新测试表（玩家表_置空），测试置空约束
+-- 1. 创建全新测试表（玩家表_置空），自关联设置置空约束
+CREATE TABLE IF NOT EXISTS wanjia_zhikong (
+  wanjia_id INT PRIMARY KEY AUTO_INCREMENT,
+  wanjia_nicheng VARCHAR(50) NOT NULL COMMENT '玩家昵称',
+  yaoqingren_id INT COMMENT '邀请人ID（允许为NULL，用于测试置空）',
+  -- 置空约束：删除邀请人（主数据）时，被邀请人的yaoqingren_id自动设为NULL
+  FOREIGN KEY (yaoqingren_id) REFERENCES wanjia_zhikong(wanjia_id) ON DELETE SET 
+NULL
+) COMMENT '玩家表_置空（用于测试置空约束）';

@@ -1,0 +1,50 @@
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+#添加表字段
+mysql> ALTER TABLE stu ADD phone varchar(11) AFTER name;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> desc stu;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| phone  | varchar(11)      | YES  |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+#修改字段类型
+mysql> ALTER TABLE stu MODIFY phone int;
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+mysql> desc stu;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| phone  | int              | YES  |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |
++--------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+#修改字段名称和类型
+mysql> ALTER TABLE stu CHANGE COLUMN phone mobile char(11);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+mysql> desc stu;
++--------+------------------+------+-----+---------+----------------+
+| Field  | Type             | Null | Key | Default | Extra          |
++--------+------------------+------+-----+---------+----------------+
+| id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(20)      | NO   |     | NULL    |                |
+| mobile | char(11)         | YES  |     | NULL    |                |
+| age    | tinyint unsigned | YES  |     | NULL    |                |
+| gender | enum('M','F')    | YES  |     | M       |                |

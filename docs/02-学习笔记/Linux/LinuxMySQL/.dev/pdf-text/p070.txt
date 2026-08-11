@@ -1,0 +1,62 @@
+类型
+大小
+范围（有符号）
+范围（无符
+号）
+用
+途
+TINYINT
+1 Bytes
+(-128，127)
+(0，255)
+小
+整
+数
+值
+SMALLINT
+2 Bytes
+(-32 768，32 767)
+(0，65 535)
+大
+整
+数
+值
+MEDIUMINT
+3 Bytes
+(-8 388 608，8 388 607)
+(0，16 777
+215)
+大
+整
+数
+值
+INT或
+INTEGER
+4 Bytes
+(-2 147 483 648，2 147 483
+647)
+(0，4 294
+967 295)
+大
+整
+数
+值
+CHAR(n)：固定长度字符串，n表示固定长度（如身份证号、手机号，长度固定的场景）；
+TEXT：存储长文本（如备注、简介，长度超过VARCHAR上限时使用）。
+3. 日期时间类型（存储时间相关数据）
+DATETIME：存储日期+时间（如注册时间、交易时间，格式：YYYY-MM-DD HH:MM:SS）；
+DATE：只存储日期（如出生日期，格式：YYYY-MM-DD）；
+TIME：只存储时间（如打卡时间，格式：HH:MM:SS）；
+TIMESTAMP：时间戳，自动记录数据插入/更新时间，范围比DATETIME小。
+4. 其他常用类型
+BOOLEAN：布尔类型，存储TRUE（1）或FALSE（0），如“是否有效”“是否审核”；
+ENUM：枚举类型，只能从预设的选项中选择一个值（如性别：'男','女'）。
+3.4.1数值型
+ 
+MySQL 支持所有标准 SQL 数值数据类型。
+这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL 和 NUMERIC)，以及近似数值数据类
+型(FLOAT、REAL 和 DOUBLE PRECISION)。
+关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。
+BIT数据类型保存位字段值，并且支持 MyISAM、MEMORY、InnoDB 和 BDB表。
+作为 SQL 标准的扩展，MySQL 也支持整数类型 TINYINT、MEDIUMINT 和 BIGINT。下面的表显示了需
+要的每个整数类型的存储和范围。

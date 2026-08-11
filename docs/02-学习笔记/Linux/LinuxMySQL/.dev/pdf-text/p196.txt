@@ -1,0 +1,14 @@
+ 
+ 
+ 
+ 
+ 
+           Retrieved_Gtid_Set:
+            Executed_Gtid_Set:
+                Auto_Position: 0
+         Replicate_Rewrite_DB:
+                 Channel_Name:
+           Master_TLS_Version:
+1 row in set (0.00 sec)
+ERROR:
+No query specified

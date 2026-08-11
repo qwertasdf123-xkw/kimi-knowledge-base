@@ -1,0 +1,56 @@
+| latin1_general_ci          | latin1   |  48 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin1_general_cs          | latin1   |  49 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin1_german1_ci          | latin1   |   5 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin1_german2_ci          | latin1   |  31 |         | Yes      |       2 | 
+PAD SPACE     |
+| latin1_spanish_ci          | latin1   |  94 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin1_swedish_ci          | latin1   |   8 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| latin2_bin                 | latin2   |  77 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin2_croatian_ci         | latin2   |  27 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin2_czech_cs            | latin2   |   2 |         | Yes      |       4 | 
+PAD SPACE     |
+| latin2_general_ci          | latin2   |   9 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| latin2_hungarian_ci        | latin2   |  21 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin5_bin                 | latin5   |  78 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin5_turkish_ci          | latin5   |  30 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| latin7_bin                 | latin7   |  79 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin7_estonian_cs         | latin7   |  20 |         | Yes      |       1 | 
+PAD SPACE     |
+| latin7_general_ci          | latin7   |  41 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| latin7_general_cs          | latin7   |  42 |         | Yes      |       1 | 
+PAD SPACE     |
+| macce_bin                  | macce    |  43 |         | Yes      |       1 | 
+PAD SPACE     |
+| macce_general_ci           | macce    |  38 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| macroman_bin               | macroman |  53 |         | Yes      |       1 | 
+PAD SPACE     |
+| macroman_general_ci        | macroman |  39 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| sjis_bin                   | sjis     |  88 |         | Yes      |       1 | 
+PAD SPACE     |
+| sjis_japanese_ci           | sjis     |  13 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| swe7_bin                   | swe7     |  82 |         | Yes      |       1 | 
+PAD SPACE     |
+| swe7_swedish_ci            | swe7     |  10 | Yes     | Yes      |       1 | 
+PAD SPACE     |
+| tis620_bin                 | tis620   |  89 |         | Yes      |       1 | 
+PAD SPACE     |
+| tis620_thai_ci             | tis620   |  18 | Yes     | Yes      |       4 | 
+PAD SPACE     |
+| ucs2_bin                   | ucs2     |  90 |         | Yes      |       1 | 
+PAD SPACE     |

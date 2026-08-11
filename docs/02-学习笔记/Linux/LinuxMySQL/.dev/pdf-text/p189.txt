@@ -1,0 +1,55 @@
+Tue Oct  7 15:16:58 2025 - [debug]  Connecting via SSH from 
+root@192.168.108.132(192.168.108.132:22) to 
+root@192.168.108.131(192.168.108.131:22)..
+Tue Oct  7 15:16:58 2025 - [debug]   ok.
+Tue Oct  7 15:16:58 2025 - [debug]  Connecting via SSH from 
+root@192.168.108.132(192.168.108.132:22) to 
+root@192.168.108.133(192.168.108.133:22)..
+Tue Oct  7 15:16:59 2025 - [debug]   ok.
+Tue Oct  7 15:16:59 2025 - [debug]
+Tue Oct  7 15:16:59 2025 - [debug]  Connecting via SSH from 
+root@192.168.108.133(192.168.108.133:22) to 
+root@192.168.108.131(192.168.108.131:22)..
+Tue Oct  7 15:16:59 2025 - [debug]   ok.
+Tue Oct  7 15:16:59 2025 - [debug]  Connecting via SSH from 
+root@192.168.108.133(192.168.108.133:22) to 
+root@192.168.108.132(192.168.108.132:22)..
+Tue Oct  7 15:16:59 2025 - [debug]   ok.
+Tue Oct  7 15:16:59 2025 - [info] All SSH connection tests passed successfully.
+#检测下主从复制
+[root@mha ~]# masterha_check_repl -conf=/etc/masterha/app1.cnf
+Tue Oct  7 15:30:03 2025 - [warning] Global configuration file 
+/etc/masterha_default.cnf not found. Skipping.
+Tue Oct  7 15:30:03 2025 - [info] Reading application default configuration from 
+/etc/masterha/app1.cnf..
+Tue Oct  7 15:30:03 2025 - [info] Reading server configuration from 
+/etc/masterha/app1.cnf..
+Tue Oct  7 15:30:03 2025 - [info] MHA::MasterMonitor version 0.57.
+Tue Oct  7 15:30:04 2025 - [info] GTID failover mode = 0
+Tue Oct  7 15:30:04 2025 - [info] Dead Servers:
+Tue Oct  7 15:30:04 2025 - [info] Alive Servers:
+Tue Oct  7 15:30:04 2025 - [info]   192.168.108.131(192.168.108.131:3306)
+Tue Oct  7 15:30:04 2025 - [info]   192.168.108.132(192.168.108.132:3306)
+Tue Oct  7 15:30:04 2025 - [info]   192.168.108.133(192.168.108.133:3306)
+Tue Oct  7 15:30:04 2025 - [info] Alive Slaves:
+Tue Oct  7 15:30:04 2025 - [info]   192.168.108.132(192.168.108.132:3306) 
+ Version=5.7.17-log (oldest major version between slaves) log-bin:enabled
+Tue Oct  7 15:30:04 2025 - [info]     Replicating from 
+192.168.108.131(192.168.108.131:3306)
+Tue Oct  7 15:30:04 2025 - [info]     Primary candidate for the new Master 
+(candidate_master is set)
+Tue Oct  7 15:30:04 2025 - [info]   192.168.108.133(192.168.108.133:3306) 
+ Version=5.7.17 (oldest major version between slaves) log-bin:disabled
+Tue Oct  7 15:30:04 2025 - [info]     Replicating from 
+192.168.108.131(192.168.108.131:3306)
+Tue Oct  7 15:30:04 2025 - [info] Current Alive Master: 
+192.168.108.131(192.168.108.131:3306)
+Tue Oct  7 15:30:04 2025 - [info] Checking slave configurations..
+Tue Oct  7 15:30:04 2025 - [warning]  relay_log_purge=0 is not set on slave 
+192.168.108.132(192.168.108.132:3306).
+Tue Oct  7 15:30:04 2025 - [warning]  relay_log_purge=0 is not set on slave 
+192.168.108.133(192.168.108.133:3306).
+Tue Oct  7 15:30:04 2025 - [warning]  log-bin is not set on slave 
+192.168.108.133(192.168.108.133:3306). This host cannot be a master.
+Tue Oct  7 15:30:04 2025 - [info] Checking replication filtering settings..
+Tue Oct  7 15:30:04 2025 - [info]  binlog_do_db= , binlog_ignore_db=

@@ -1,0 +1,40 @@
+验证
+ 
+mha节点观察日志如下
+pkill -9 mysql，mysqld短暂暂停又会启动
+从 其他节点依然能够访问master，不会主从切换
+#mha节点A窗口操作
+[root@mha ~]# tailf /var/log/masterha/app1/manager.log     //启用监控观察日志记录
+#mysql-master节点操作
+[root@mysql-master ~]# pkill -9 mysql         //查看master变化，看上面命令的日志
+#回到mha节点A窗口观察日志
+[root@mha ~]# tailf /var/log/masterha/app1/manager.log
+IN SCRIPT TEST====/sbin/ifconfig ens33:1 down==/sbin/ifconfig ens33:1 
+192.168.108.200===
+Checking the Status of the script.. OK
+Tue Oct  7 15:32:17 2025 - [info]  OK.
+Tue Oct  7 15:32:17 2025 - [warning] shutdown_script is not defined.
+Tue Oct  7 15:32:17 2025 - [info] Set master ping interval 1 seconds.
+Tue Oct  7 15:32:17 2025 - [info] Set secondary check script: 
+/usr/local/bin/masterha_secondary_check -s 192.168.108.132 -s 192.168.108.133
+Tue Oct  7 15:32:17 2025 - [info] Starting ping health check on 
+192.168.108.131(192.168.108.131:3306)..
+Tue Oct  7 15:32:17 2025 - [info] Ping(SELECT) succeeded, waiting until MySQL 
+doesn't respond..
+Tue Oct  7 15:39:47 2025 - [warning] Got error on MySQL select ping: 2006 (MySQL 
+server has gone away)
+Tue Oct  7 15:39:47 2025 - [info] Executing secondary network check script: 
+/usr/local/bin/masterha_secondary_check -s 192.168.108.132 -s 192.168.108.133  --
+user=root  --master_host=192.168.108.131  --master_ip=192.168.108.131  --
+master_port=3306 --master_user=mha --master_password=manager --ping_type=SELECT
+Tue Oct  7 15:39:47 2025 - [info] Executing SSH check script: save_binary_logs --
+command=test --start_pos=4 --binlog_dir=/usr/local/mysql/data --
+output_file=/tmp/save_binary_logs_test --manager_version=0.57 --
+binlog_prefix=master-bin
+Tue Oct  7 15:39:47 2025 - [info] HealthCheck: SSH to 192.168.108.131 is 
+reachable.
+Master is reachable from 192.168.108.132!
+Tue Oct  7 15:39:47 2025 - [warning] Master is reachable from at least one of 
+other monitoring servers. Failover should not happen.
+Tue Oct  7 15:39:48 2025 - [info] Ping(SELECT) succeeded, waiting until MySQL 
+doesn't respond..

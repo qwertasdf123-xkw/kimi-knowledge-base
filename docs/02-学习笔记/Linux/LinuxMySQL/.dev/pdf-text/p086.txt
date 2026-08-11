@@ -1,0 +1,46 @@
+删除表
+格式
+范例
+| age    | tinyint unsigned | YES  |     | NULL    |       |
+| gender | enum('M','F')    | YES  |     | M       |       |
+| is_del | tinyint(1)       | YES  |     | 1       |       |
++--------+------------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+#添加主键
+mysql> ALTER TABLE stu2 ADD PRIMARY KEY (id);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> desc stu2;
++--------+------------------+------+-----+---------+-------+
+| Field  | Type             | Null | Key | Default | Extra |
++--------+------------------+------+-----+---------+-------+
+| id     | int unsigned     | NO   | PRI | 0       |       |
+| name   | char(30)         | YES  |     | NULL    |       |
+| age    | tinyint unsigned | YES  |     | NULL    |       |
+| gender | enum('M','F')    | YES  |     | M       |       |
+| is_del | tinyint(1)       | YES  |     | 1       |       |
++--------+------------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+#删除主键
+mysql> ALTER TABLE stu2 DROP PRIMARY KEY;
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+mysql> desc stu2;
++--------+------------------+------+-----+---------+-------+
+| Field  | Type             | Null | Key | Default | Extra |
++--------+------------------+------+-----+---------+-------+
+| id     | int unsigned     | NO   |     | 0       |       |
+| name   | char(30)         | YES  |     | NULL    |       |
+| age    | tinyint unsigned | YES  |     | NULL    |       |
+| gender | enum('M','F')    | YES  |     | M       |       |
+| is_del | tinyint(1)       | YES  |     | 1       |       |
++--------+------------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+DROP [TEMPORARY] TABLE [IF EXISTS]
+    tbl_name [, tbl_name] ...
+    [RESTRICT | CASCADE]
+mysql> show tables;
++---------------+
+| Tables_in_db1 |
++---------------+
+| stu           |

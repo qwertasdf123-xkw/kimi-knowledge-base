@@ -1,0 +1,50 @@
+SQL语句类
+型
+说明
+具体语句
+DDL
+Data Defination Language数据定义语
+言
+CREATE，DROP，ALTER
+DML
+Data Mainpulation Language数据操
+纵语言
+INSERT，DELETE，UPDATE
+DQL
+Data Query Language数据查询语言
+SELECT
+DCL
+Data Control Language数据控制语言
+GRANT，REVOKE
+TCL
+Transaction Control Language事务控
+制语言
+BEGIN，COMMIT，ROLLBACK，
+SAVEPOINT
+3.2.2数据库对象和命名
+ 
+数据库中的组件（对象）
+组件命名规则
+可以包括字母，数字和三个特殊字符（#_$）
+不能使用MySQL的保留字
+ 
+3.2.3 SQL 语句分类
+ 
+DDL：定义结构（建库、建表、删表）
+DML：操作表中数据（增、删、改）
+DQL：查询表中数据（SELECT）
+DCL：权限控制（授权、收权）
+TCL：事务控制（提交、回滚）
+3.2.4 SQL 语句构成
+ 
+关键字keyword组成子句clause，多条clause组成语句
+说明：
+数据库、表、索引、视图、用户、存储过程、函数、触发器、事件调度器等
+mysql> SELECT host,user,authentication_string FROM mysql.user WHERE 
+authentication_string = '';
++-----------+------+-----------------------+
+| host      | user | authentication_string |
++-----------+------+-----------------------+
+| localhost | root |                       |
++-----------+------+-----------------------+
+1 row in set (0.00 sec)
